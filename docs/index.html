@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#254a3b">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>晴汀园 · 原片与建模环视</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="tour" class="tour">
+    <header class="masthead">
+      <div class="masthead-top"><div class="brand"><span class="brand-seal" aria-hidden="true">晴汀</span><span id="tour-title">晴汀园 · 原片与建模环视</span></div><button id="about-open" class="quiet-button" type="button" aria-haspopup="dialog" aria-controls="about-dialog">取景说明 ↗</button></div>
+      <div class="scene-heading"><div><p id="source-time" class="source-time">原片 104 秒</p><h1 id="scene-title">平亭望湖</h1></div><div class="mode-switch" role="group" aria-label="查看方式"><button id="mode-photo" type="button" aria-pressed="true">原片画面</button><button id="mode-model" type="button" aria-pressed="false" disabled>建模环视</button></div></div>
+      <div class="view-caption"><span id="scope-label" class="scope-label" role="status" aria-live="polite">原片画面</span><span id="view-hint">按原始像素约束放大</span><a id="download-source" class="download-source" download hidden>下载原片 PNG</a></div>
+    </header>
+    <section id="view-area" class="view-area" tabindex="0" role="region" aria-label="原片画面，可缩放拖移，Home 复位">
+      <div id="photo-stage" class="photo-stage"><div id="photo-slot" class="photo-slot"></div></div>
+      <canvas id="model-canvas" class="panorama" aria-hidden="true" hidden></canvas>
+      <div id="load-state" class="load-state is-error" role="status" aria-live="polite" aria-atomic="true"><p id="load-title">取景数据尚未载入</p><p id="load-message">请检查网络后重试，或切换其他节点。</p><button id="retry" class="primary-button" type="button">重新载入</button></div>
+      <div class="view-tools glass" role="toolbar" aria-label="画面控制"><button id="zoom-in" type="button" aria-label="放大画面" title="放大" disabled>＋</button><button id="zoom-out" type="button" aria-label="缩小画面" title="缩小" disabled>−</button><output id="view-value" aria-label="画面缩放">100%</output><span class="tool-divider" aria-hidden="true"></span><button id="reset-view" type="button" aria-label="复位画面" title="复位 / Home" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5"/></svg></button><button id="fullscreen" type="button" aria-label="进入全屏" aria-pressed="false" title="全屏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button></div>
+      <p id="toast" class="toast glass" role="status" aria-live="polite" hidden></p>
+    </section>
+    <footer class="journey-bar"><div class="journey-head"><p>原片取景 <span aria-hidden="true">/</span> <span id="scene-counter">06 / 08</span></p><p class="journey-hint">八处固定节点</p></div><div class="journey-controls"><button id="scene-prev" class="step-button" type="button" aria-label="上一处节点" disabled>‹</button><nav id="scene-nav" class="scene-nav" aria-label="选择原片取景节点"></nav><button id="scene-next" class="step-button" type="button" aria-label="下一处节点" disabled>›</button></div><p class="disclosure">原片保持原始 PNG；建模环视根据原片补建，细节可能有差异。固定节点，不支持自由行走。</p></footer>
+    <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title"><button id="about-close" class="dialog-close" type="button" aria-label="关闭取景说明">×</button><p class="eyebrow">1022v14 · 原片与实体场景</p><h2 id="about-title">原片与建模环视</h2><p>“原片画面”直接显示最终 v14 影片提取的原始 PNG，可拖移、下载，并在原始像素允许的范围内放大。</p><p>“建模环视”来自根据原片补建的实体场景，使用原生渲染的六面影像。模型的尺寸、未拍方向和细节包含推定，可能与影片不同。</p><p>八个节点用于固定位置环视，俯仰范围为上下 85°。这不代表原始影片存在已核实的共享三维模型，也不支持自由行走。</p><p>聚焦画面后，方向键移动，＋ / − 缩放，Home 或 R 复位；双击原片也可复位。放大上限按影像像素与当前画面大小调整。</p><details class="source-identity"><summary>来源标识</summary><dl><dt>影片 SHA-256</dt><dd id="movie-sha">未提供</dd><dt>原帧 SHA-256</dt><dd id="source-sha">未提供</dd><dt>取景时间</dt><dd id="about-time">未提供</dd><dt>补建模型 SHA-256</dt><dd id="model-sha">未提供</dd><dt>建模环视</dt><dd id="model-status">尚未载入</dd></dl></details></dialog>
+  </main>
+  <noscript><p class="noscript-message">请启用 JavaScript 后查看取景画面。</p></noscript>
+  <script src="photo-vr-index.js"></script>
+  <script src="viewer.js"></script>
+</body>
+</html>

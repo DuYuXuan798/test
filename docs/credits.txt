@@ -1,0 +1,2 @@
+本轮使用已有本地Blender、缓存植物/木材/石材与HDR照明，未新增下载或付费。缓存资产为Poly Haven CC0：wood_planks、granite_tile、rocky_terrain_02、rock_moss_set_01及原模型其他已缓存植物；具体原模型资产来源保留在旧模型交付清单。https://polyhaven.com/license
+原片为AI辅助影像；本轮高清环视是实体建模原生渲染，不是原片的原始共享模型。

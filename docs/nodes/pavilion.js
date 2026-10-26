@@ -1,0 +1,1 @@
+window.QINGT_HD_NODE({"id":"pavilion","sourceUrl":"assets/source/pavilion.png","cubeFaces":{"px":"assets/cubes/pavilion/px.avif","nx":"assets/cubes/pavilion/nx.avif","py":"assets/cubes/pavilion/py.avif","ny":"assets/cubes/pavilion/ny.avif","pz":"assets/cubes/pavilion/pz.avif","nz":"assets/cubes/pavilion/nz.avif"}});

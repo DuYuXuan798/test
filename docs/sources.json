@@ -1,0 +1,991 @@
+{
+  "status": "native-3072-mobile-avif-assets-prepared",
+  "movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+  "render_model_sha256": "46a10fae8347819ae6a4beabb3acc5287b3e67c7d4b9110256d01921bc05bf0d",
+  "nodes": [
+    {
+      "id": "overview",
+      "source_path": "assets/source/overview.png",
+      "source_sha256": "42b753dfb9cf560a9057eb5a747a5f21c085df9ebc1969de78be5d67fef49978",
+      "source_bytes": 3675752,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/overview/px.avif",
+          "sha256": "fdb08ba78f55701d00e11d7186ebaa0a329b05088d7b564e33f3a5bef3498c52",
+          "bytes": 969660,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.0420410721390336,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "74c024f5d6311b67b80428c9a16b46c332b25899c3e8c92060662d2e0104bcc9",
+          "native_png_sha256": "df9bfb65addbd83386bad5a8a8503f95032e3943547e1e916fbaaad0617e0827",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/overview/nx.avif",
+          "sha256": "d10ac282ab95756734bb5399ecb84051bba5c39296063d1e309f1dcafe01563b",
+          "bytes": 1099812,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.282239454763907,
+          "p95_error": 9.0,
+          "source_native_jpeg_sha256": "77af6a11b2336771eb296c27207b9911864df41245aea7d44c94e2d725ffcd20",
+          "native_png_sha256": "24798ddabcf9e98b33c631ce4f9a3e3bc5beb1a40e4e1c3901034600854474d3",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/overview/py.avif",
+          "sha256": "e9b203a2a6d6de26776590aac1e26d679df78bc6a6399875558e5a7f9faf9b9b",
+          "bytes": 64427,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 0.9104069250601309,
+          "p95_error": 2.0,
+          "source_native_jpeg_sha256": "72dd1a4f820181035ec4d2982818cfcd4e6961564ea5caf8283a8c22742ac71b",
+          "native_png_sha256": "b8be5e1b1e7e67e90cb5f92803d142b990a63d4cc0cfdc8194b4b7fa017ac3a3",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/overview/ny.avif",
+          "sha256": "c9d09f2ca134518469cc35b9bda1357c88b8e092cfda043c913b5fc63512767e",
+          "bytes": 1900412,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 3.261080989131221,
+          "p95_error": 10.0,
+          "source_native_jpeg_sha256": "839b2efa7ff4f33295cc8bbd6c007fadfe6c49fdba77cf1dd69c13ac7942bc28",
+          "native_png_sha256": "53519958a969015a7561f844bb1eb5a4ade5d67a1e352158bd5e2e2e13297eb4",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/overview/pz.avif",
+          "sha256": "8e41548ab04ac6027b5b85b5355cb4f8e684f81920847a439925736728a30d32",
+          "bytes": 845898,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.8600386866816767,
+          "p95_error": 7.0,
+          "source_native_jpeg_sha256": "3840923bbec47b508dc4b95cb59e9edd8b9b8ebee180b60cb0ffd50bb92c87ef",
+          "native_png_sha256": "c1c3ab9f59c4b1bdd029b743ea3fd8eed58bec262afe5a5065d50a8b8473b030",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/overview/nz.avif",
+          "sha256": "244cf7f7e5ec5491f2d45479871ec0335b44e5ee481bbb89a4a3ffce1b7aea53",
+          "bytes": 972984,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.0600178683245622,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "3d1030aad63ca332dd6da0ee85545fd299243fc069db551dda71370bb7179e30",
+          "native_png_sha256": "db588cf0438fdbb66e256c2b106e1c9bc96968bb09970de4de9d593f690d0bde",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    },
+    {
+      "id": "court",
+      "source_path": "assets/source/court.png",
+      "source_sha256": "f41a23417e870ed6f3782b183b3484815da37e39efaaea4fe578de26feb3c893",
+      "source_bytes": 3332105,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/court/px.avif",
+          "sha256": "ea158f1417a6c44269a24fbfce964772db421534d796dab7bb1e7bceb3c998b1",
+          "bytes": 842964,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.7570855882432725,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "76093334d9113c872dc47ad3231925c44dd56850e0031800d2abe8e6cff1102a",
+          "native_png_sha256": "e40ab093936bc58523ce6206dc29d9b259cf1cdf463776e879876eae63e1d60c",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/court/nx.avif",
+          "sha256": "6fb722beb2b30946dd73a82bb4ce602517c029ed86195e5d8da574bb253a23a4",
+          "bytes": 1148180,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.238625314500597,
+          "p95_error": 7.0,
+          "source_native_jpeg_sha256": "98ff410da919f246288f045d14d8dc4933a0a80aa86c4d8683ab247e3d3ada77",
+          "native_png_sha256": "86fec9c4615035076047961f2d34583ecef8907835adbee8ba3edcb1c1b3a6c6",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/court/py.avif",
+          "sha256": "9e5a2246d391b4f1d8ee780f1afab70b30dc789c070c8e2c2ae512a9cb49983d",
+          "bytes": 396519,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.258069391603823,
+          "p95_error": 4.0,
+          "source_native_jpeg_sha256": "7f7c09ab7dc9b4224bf34892f0ba00813cc375ef7a56d79d1a387e1da7251f9f",
+          "native_png_sha256": "0c994afa9e67a2a5e196bdc6504cda194597937ef5aa762d861ed476e2d125fc",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/court/ny.avif",
+          "sha256": "de9a3db50b502fcf885ecba15d9193917546d8b7e731407860323e8af8aa7687",
+          "bytes": 541319,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.2953514169763636,
+          "p95_error": 3.0,
+          "source_native_jpeg_sha256": "cf4d60b40bd2b314aa947b5227651fd35993440d5653d772f9cf26b1ca2be8b0",
+          "native_png_sha256": "af5324598afa219dc24d49d31a43524af9e509fda3b85e5aaf1a3c888bd6185a",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/court/pz.avif",
+          "sha256": "f4f2f722b4d5d3d83d6a19f70dfc2b03c86fed9622f5c0f47d42fce650fc313c",
+          "bytes": 604288,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.4365337159898546,
+          "p95_error": 4.0,
+          "source_native_jpeg_sha256": "eb7684db44ceda0b13a76667c4c2c698e3d4f771cdac1a415e6c0c76f76a3b7b",
+          "native_png_sha256": "15dca67a43d09e73bab51d345b1999bf562a53220dc7088910e3def1fcb2ec70",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/court/nz.avif",
+          "sha256": "6fefa60d4ee0a108ee0169b1cdc0151869485f6845d900b13e655eedfec688a2",
+          "bytes": 1548789,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.7368673748440213,
+          "p95_error": 9.0,
+          "source_native_jpeg_sha256": "d6b503e4e421758ddc3a09630cd23de75e7aae19bb4e940e1be0668ac4fedfb5",
+          "native_png_sha256": "76eb0ec0254f49f8e0b57d281687a4b6fa4fd2fe18ea15cb635dce442a0a0640",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    },
+    {
+      "id": "bridge",
+      "source_path": "assets/source/bridge.png",
+      "source_sha256": "d548fec28e1a2f26a1700023cfa6e5590bf30309627fc78b624a68b823f52aab",
+      "source_bytes": 3618378,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/bridge/px.avif",
+          "sha256": "51c9b32af3781a258da9bcbf11aad4a3a84b1f736ce89b75af7832cd28f1df26",
+          "bytes": 1026816,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.027907194914641,
+          "p95_error": 7.0,
+          "source_native_jpeg_sha256": "38bac9329003348bb197b579ef5d6f8b338b29b6a882bbc56ba24b09a721d6d9",
+          "native_png_sha256": "b8b3c0a6c705673f62399ba89443f7b1d36e3a778bcb64bfd7e00c78e4e4fadd",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/bridge/nx.avif",
+          "sha256": "34cade057a6a5414ad2435fcd8ac02706c933c59fe5d18f748a072d7d3c4dd72",
+          "bytes": 1988425,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 3.3068729683204934,
+          "p95_error": 10.0,
+          "source_native_jpeg_sha256": "45a601ae995240d2bb829f7733d476e564e514ae2d80df03907ad6aac8cc7652",
+          "native_png_sha256": "dac632b5deb40ce8ed8ed81eef962a5b794d5ffefd1154092d0407ba62214d2b",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/bridge/py.avif",
+          "sha256": "8a31e7771ac238bff45120343ec7b2f38de546c3d5b8926810efb3c0d64006a6",
+          "bytes": 278993,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.1596254066184715,
+          "p95_error": 3.0,
+          "source_native_jpeg_sha256": "2631cc533c518da5c81f0058245201924a72698c80336a982fdca6b4b7c3d866",
+          "native_png_sha256": "1ca77667445369c2e0159cc9bc543488a21b22722c8a93df2c90f7293dd0f342",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/bridge/ny.avif",
+          "sha256": "da3e9b778eb87a45a549fbd69c6e03172dade74b183c2ebbf57250adeb7f1cac",
+          "bytes": 1053885,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.9500614095617224,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "3d0181f4663f01878409de13ed56a5ab436be6151b1e1678b66372b0bf62d88b",
+          "native_png_sha256": "ee4dcbaedf4a566585db0ef0c36f2b3db769a500f6d9cad0826a4d79a869463a",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/bridge/pz.avif",
+          "sha256": "72c0bce00b8d83943189e8a49fb7a2691a41c54b1725168a997794967ee1e949",
+          "bytes": 1385086,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.554644196121781,
+          "p95_error": 9.0,
+          "source_native_jpeg_sha256": "37e058c776bd045febf56eb9400813d695e0f2ed5e7868a2ca053de12864ccd0",
+          "native_png_sha256": "a6f5de1211562463bb3b1e0a79affc176b986314e404d24171e8a62f7ede14df",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/bridge/nz.avif",
+          "sha256": "126ff5929f1698e7f137f9e7202f70010987b2575b21acdfd0460b26e7a8866d",
+          "bytes": 1907089,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 3.2448619913171837,
+          "p95_error": 10.0,
+          "source_native_jpeg_sha256": "04b1138510561efc939f80e3db1bc7a6430d447e0e30693840155e882b3d55cf",
+          "native_png_sha256": "d286a65ddc4fffc28d30468eec5ed2c83f53086b6ed14d3475f8dcfd3990104b",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    },
+    {
+      "id": "bamboo",
+      "source_path": "assets/source/bamboo.png",
+      "source_sha256": "8e3d36d62f08aedd83b08f5d896861748477898128df1ba747bf906507d4fd4d",
+      "source_bytes": 3473510,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/bamboo/px.avif",
+          "sha256": "f779e499921bd5d983e2070d34a6a18aad0afdaffdea810853f40fb4d093d2be",
+          "bytes": 960936,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.868872218661838,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "1b45f884474da1fc898b194327c3bfc9e95368a269ab994080857ebf85c890f9",
+          "native_png_sha256": "de4095fb8c6225d2bf020b489893d9165186e3a6550db25110a8f3da6bf7b7b6",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/bamboo/nx.avif",
+          "sha256": "e1454ea947d42aee8f2a9dcd04bb0871ffdf116d8e3a8966ee337468f13b8571",
+          "bytes": 1470024,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.4557133427372686,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "a5d0ee61a966d5ecb0f6ebfde86baf5983e2989043fd7d86ca6b58065a0ce8a6",
+          "native_png_sha256": "fe449a3f53972ae7ca3d665c238e6153e9e3a15150a0acff2681bbeb1e842261",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/bamboo/py.avif",
+          "sha256": "8456585f6c34d13ce544022d21a090a3e3cb23f41346487adced4b60ce9bdbef",
+          "bytes": 1567984,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.769656640511972,
+          "p95_error": 10.0,
+          "source_native_jpeg_sha256": "a5542b60194db2d94073bb08c9ea1dcdd177dbbe8d2afa67af78c6b1fad90ab4",
+          "native_png_sha256": "0b444475a4d3ff7132bdb306f2fc0d255d875cbc1789e4741965fb62fc261a24",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/bamboo/ny.avif",
+          "sha256": "0dfca3cf1b9a16f860ca0f7807211c6e53d9e958c386213305f632f2a11024bb",
+          "bytes": 1332754,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.157767966941551,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "e349881e64c6d4ad838ba9d02bbe3cf6b68cc8976883bf0de810a2d0ea5cae7c",
+          "native_png_sha256": "6223ff48c0851418d212e75b523be869fd9c749080140d9fc372b60888cd2674",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/bamboo/pz.avif",
+          "sha256": "9e466f1bc19bcaaccfd65ed807ba6739ba18694540d1fe261c221619de180510",
+          "bytes": 1762977,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 3.0291080474853516,
+          "p95_error": 10.0,
+          "source_native_jpeg_sha256": "e775196965082b19a8ba56a56de618bbaf6bd5ca0e26d28f9fe956d8df84f899",
+          "native_png_sha256": "f12c7e960895ae42d717bf6fa0118b011c1dc3a3ac3c2a695c82607c779daa5b",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/bamboo/nz.avif",
+          "sha256": "52602542cde1eecc83bc3701ca375a97f986c43af81e01a25a6a4bf37f2ee0fc",
+          "bytes": 1396813,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.3364307615492077,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "463d622876d7149c82d44df50329a8c2d40d37a5020b028944ea19cec1a59259",
+          "native_png_sha256": "69db8c50e8dc1007500071175f5517838553bada68135ec59e63db5b0495e7a1",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    },
+    {
+      "id": "gallery",
+      "source_path": "assets/source/gallery.png",
+      "source_sha256": "c662ba6c36dd7d71fd8c1c9b1da1387f7304754ada02f896565152ce5d6dc669",
+      "source_bytes": 3606209,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/gallery/px.avif",
+          "sha256": "afcbbc26e34c36bd23455c9028b56904e774dddbdd721b1d569660494dc4a30f",
+          "bytes": 1325229,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.334115734806767,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "392bce29c5e31f7dd3a8f658fc91f606002986d6ff611a70eeef7b6c3155df26",
+          "native_png_sha256": "323eec0dffcb679e143efce7dbf099f9fd6895c8b57c467920e56dc0ec2636b1",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/gallery/nx.avif",
+          "sha256": "5d77a5391b5f975d5b2247e81e568facc222f777935779a2d7f3f267068b32de",
+          "bytes": 1104192,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.0643565919664173,
+          "p95_error": 7.0,
+          "source_native_jpeg_sha256": "8e163523ac87cacb5e5d43f437969ea3e58e7bba0087e86912785ccf1738319d",
+          "native_png_sha256": "2401ff90d7367e06c911191f8ae654d4400bed889d2114bccf94e872419a67fc",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/gallery/py.avif",
+          "sha256": "ad9a1b57363a2c679e31acd0b6bb51abe5104705c307e35c85024eac4b8180c9",
+          "bytes": 94514,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 0.9038671210960105,
+          "p95_error": 2.0,
+          "source_native_jpeg_sha256": "398ecd491b623054bee211cffd45679f7af073d9f80a310121f83b5dc1a6a8ea",
+          "native_png_sha256": "3748039344d49212add8e278dcfcbeb4a59fb25f4424654b611a4572010a21ca",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/gallery/ny.avif",
+          "sha256": "a6b2b6c027725f0f484cf923b33a412002de0e6c6b970d626aef15ddef9c93e0",
+          "bytes": 611285,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.4097971386379666,
+          "p95_error": 4.0,
+          "source_native_jpeg_sha256": "3e628a2ba11f915cce4f8b025a050d9303bc054857ccfb17a3b8ec9d9c53ed1c",
+          "native_png_sha256": "e64facbf857ae96ce3816feed65a968c84cfd29706f0092cef46c77674b2feff",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/gallery/pz.avif",
+          "sha256": "e78e0288e73058e4fc8c6338626e391eeaf344c0523577fcdaef14cb1348c5ca",
+          "bytes": 758284,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.7151464179710105,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "62df86fdffdd4e0cedcb3784c6d2c1e4991ae016f87e7f4d772d0bf14fed0896",
+          "native_png_sha256": "9227b23819afeb1a04ea558a41957093e3f564a85ade91eee14e31a75a0120db",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/gallery/nz.avif",
+          "sha256": "70775c9aacdf7dcbec3a94e768eecab7ba7793ee799a0147ff9cf7b7b67c8742",
+          "bytes": 1244526,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.263353736312301,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "7ec76f921b21ac5f8235e2932edb61edad3e49b6ad257eea01f5d3321fdac322",
+          "native_png_sha256": "0f170721c025ed399c4ebd759e09a5951e0f904c4d46e200775f7c766fa1b997",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    },
+    {
+      "id": "pavilion",
+      "source_path": "assets/source/pavilion.png",
+      "source_sha256": "7ff8599621213f86f4355548df68d36c37f842824bf3f48d6dc68090b7c31bc5",
+      "source_bytes": 3192654,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/pavilion/px.avif",
+          "sha256": "bb05bd22dae5da93ffe09ea8eca787f2a37a490a27cda0351787bd9173ecc97c",
+          "bytes": 660164,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.56109294184932,
+          "p95_error": 4.0,
+          "source_native_jpeg_sha256": "34f95d49c0e7c97af87e72d378279f99f1abc2b7602c540e3de3103df5a52ec6",
+          "native_png_sha256": "448d5fa966a119f444a39f3fcd7ebf0139f4182efb05aa35e5a1e152e21199e0",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/pavilion/nx.avif",
+          "sha256": "0d867d45468819d4b063e2676354c7924f8a3b397688b4fa01e66272c6068940",
+          "bytes": 724567,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.6648966118141457,
+          "p95_error": 5.0,
+          "source_native_jpeg_sha256": "7c52ed1d772f6e8c65e43759deae18b8772b12920a2ce1067987a313b37113e4",
+          "native_png_sha256": "b25c1076b112f9d260001959e1db943ce0dc22dcd806d9af4c535ae35c64c5ff",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/pavilion/py.avif",
+          "sha256": "f4ece516bf94313075f1c447941b28cc4c46343d4a6630ee810d9fdcfb860466",
+          "bytes": 276077,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.0722089696813513,
+          "p95_error": 3.0,
+          "source_native_jpeg_sha256": "671aac0221218d6e2aa079fc0ab620655caea0d8e4fdd2adeb19b8fa3a146aaa",
+          "native_png_sha256": "5add54cf8507df60e538ae1212650182affe401ebe44344ef0f89e9e54849924",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/pavilion/ny.avif",
+          "sha256": "715620bc60c25e1958d35a9da01b00948af012bdbf30237730ffe553bfccc616",
+          "bytes": 619024,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.4630066906964336,
+          "p95_error": 4.0,
+          "source_native_jpeg_sha256": "2cbb44a19cda10c085b6569ef3067594de15ea4205aca039b13af091d24783bf",
+          "native_png_sha256": "98c835d22a3448a9b1f6528398ae83480ff2296e050e0e0c2afb8922cdebccdc",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/pavilion/pz.avif",
+          "sha256": "5ab4e32c41ee4eec2569d502f4246c5f3d3b652ebde872d258203c5f3da28511",
+          "bytes": 527534,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.435066788284867,
+          "p95_error": 4.0,
+          "source_native_jpeg_sha256": "2b7b7dcce91a234edcc9a0b12d0fb54cab65fff3ab68693b1eb1888475f3a482",
+          "native_png_sha256": "c9a0f99f735820e346dbeeb344708861ceb08260dc6ea2ba3f350cc058296409",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/pavilion/nz.avif",
+          "sha256": "b26d8a4883a1b313b9cf014dc052eb2f7b545162ed8225a16b51bfcbc907918d",
+          "bytes": 830403,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.833200701960811,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "934746a6d76d08d75fa22750789abaa450e62087b471d20e9caafba7a4d1311b",
+          "native_png_sha256": "16abe64a6906e7b6648ae5890c3217d5324813c996e6383e728b4dbf7aa39dd8",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    },
+    {
+      "id": "lotus",
+      "source_path": "assets/source/lotus.png",
+      "source_sha256": "a11474a02593474e72cbd14cba340057ee639463d5710eab210d20817321d1c7",
+      "source_bytes": 3293326,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/lotus/px.avif",
+          "sha256": "cef43a33af64492238fe8a21b0bfa3f37b4a4529fe993d39a56a133c986e34cb",
+          "bytes": 1295539,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.304576732494213,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "01dd1906c5feedbc7588025e0a688c2d32ec10a2b6c7dd050799f8f1a531602a",
+          "native_png_sha256": "8f5d5bf700216e6629e7c0d5b96df6d31b5cae68e1b225e64ae07ea28bf6258e",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/lotus/nx.avif",
+          "sha256": "f8e17944d0efe1c7c0f272af1c0e64c31c8a4635850c6c3182d2cffd7a120452",
+          "bytes": 1186264,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.1608397872359664,
+          "p95_error": 7.0,
+          "source_native_jpeg_sha256": "675d49da32e87fc07e4dd2e39deae7c05074b11a373d24a27a79853ea837a82e",
+          "native_png_sha256": "6c9629637a0094023e16ec31e8de37303c100c4d4941e7022abc391101f10968",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/lotus/py.avif",
+          "sha256": "051182965fd471eb1dd191810745547c52bb2c7e764120023ffecb4513f508ee",
+          "bytes": 915807,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.746676798220034,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "e906581a90488e55d3fc9225922844075511b443782f39672cf6b9ecf7bbcae0",
+          "native_png_sha256": "61615e996c118d6d0b9a2863883141f86343fc840c1f12f2c9ccff8bd94bdea7",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/lotus/ny.avif",
+          "sha256": "1190392f1e5f6e7d5abc0af63186209210c5de2ec5164ee429e13d99c7661de3",
+          "bytes": 1141791,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.004914707607693,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "562186acfe7b2afbf3a1d3957f0c86cc785289cb756194cd0deacc4a6725d23c",
+          "native_png_sha256": "de5f0d986121364f683f5ea7c8504bd10dadb62b6163cd0156b2924dc90eb4d5",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/lotus/pz.avif",
+          "sha256": "572783940905b03cf9b3cea5c0b09a2b51cdc11439a098eae0791f2420a95e39",
+          "bytes": 1073069,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.0412978066338434,
+          "p95_error": 7.0,
+          "source_native_jpeg_sha256": "e37a922fc85118a0ff6b582b00693f881be25fa4225007fbdc0b8aa45a57e309",
+          "native_png_sha256": "09b27a019f7388130253ce42a825702396368d0cd809d4a37b7fd02fe9612c9f",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/lotus/nz.avif",
+          "sha256": "65408943987b93928df98efca462b6e3ebab4b7eae2a77171d08ca0641e5bb09",
+          "bytes": 1510592,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.6545366357873985,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "ca660e0445e23c513d5c13f4f1639bf24b880c962b5f12d5f2126436e9c86c7c",
+          "native_png_sha256": "710149e37e11a5a22ae0fb535b7e74414101e0b553c543b826029a251ce52fbf",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    },
+    {
+      "id": "grove",
+      "source_path": "assets/source/grove.png",
+      "source_sha256": "0b19e4c82e5dc22b861c688e6272ae9090368762085d34c021213546357b3fe0",
+      "source_bytes": 3224279,
+      "faces": [
+        {
+          "face": "px",
+          "path": "assets/cubes/grove/px.avif",
+          "sha256": "3bf0fe5b6d0d6ea0777c924220a6d6d9787e9d0fb704d31ad33827e8dd154b5e",
+          "bytes": 1550380,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.6487288651642977,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "34e6cb95cf5eaeff425b1a01063d329e79923acc35d2e6759970df9af2ffa773",
+          "native_png_sha256": "356ff1eeae4d6f3b3221b2f833ea012411fb05721d0db0e0ad9f3d121c09f45b",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nx",
+          "path": "assets/cubes/grove/nx.avif",
+          "sha256": "a297cf685ca2476e651fa30334e80eba40e75f918edf9384e15473f15911d56c",
+          "bytes": 1873102,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 3.1654188014842846,
+          "p95_error": 10.0,
+          "source_native_jpeg_sha256": "967055bc1294842a1267c96dd1aebf058b198d397e45d4516f4aec5cd63ca442",
+          "native_png_sha256": "3ac812eb57bd66f472b4637d69f0faf4426c6ac1d7cbd92bf8ec277229e71501",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "py",
+          "path": "assets/cubes/grove/py.avif",
+          "sha256": "de0749064befbbf714ffdead2f2d41928a35565ece31d22051446be9774a88b5",
+          "bytes": 1407920,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.2413434629087097,
+          "p95_error": 8.0,
+          "source_native_jpeg_sha256": "a83725310e4e56c68e32ba1b21c7424fe704d67cbf4a99ec43d13b9c9d68a94a",
+          "native_png_sha256": "10b9197c843c805b73ae1b010456ec3eb988a9955a3e463b3d1bde5a1dcdf634",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "ny",
+          "path": "assets/cubes/grove/ny.avif",
+          "sha256": "84d1832586f384267d0c98194b9dd51c9f3a7199f9c2f52c26d49de62266bdfc",
+          "bytes": 1081132,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 1.9732252756754558,
+          "p95_error": 6.0,
+          "source_native_jpeg_sha256": "660b892c69f178cbb94006c57ee23a95281d46c0d44875f5a0b4ee89f4806da5",
+          "native_png_sha256": "c9bb8b1a1655e89d6defce7cceb4153cd0dff93e24bdcd700d9fc5b6cb849ee9",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "pz",
+          "path": "assets/cubes/grove/pz.avif",
+          "sha256": "2e812bc56f67a78e5b01427d755602bc4957f56daf7c80c6d0154a0c2bc7a365",
+          "bytes": 1645745,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.758586848223651,
+          "p95_error": 9.0,
+          "source_native_jpeg_sha256": "82d3eea3e59f5a26ad60956bb772ffbe472983a66d5ddaf6147ff1633ff914a8",
+          "native_png_sha256": "ccda6d132f35dbb155627bdb01540aeaa380b0405da750e257b0da05789895bc",
+          "resized": false,
+          "reencoded": true
+        },
+        {
+          "face": "nz",
+          "path": "assets/cubes/grove/nz.avif",
+          "sha256": "32ec851f59de5e75cd07df7b0d77f0c5457508142c81bfeed7700ecad5e583f9",
+          "bytes": 1641645,
+          "size": [
+            3072,
+            3072
+          ],
+          "format": "AVIF",
+          "quality": 70,
+          "chroma": "4:4:4",
+          "mean_rgb_error_against_native_jpeg": 2.7818578084309897,
+          "p95_error": 9.0,
+          "source_native_jpeg_sha256": "dbbbc107ede4628b6c1f02865c6746cbacc67b526b6431a70f92667c5026eff1",
+          "native_png_sha256": "9532fe2b54ff2be30e354ae1526a0c69b4c7747c293ffe10b69d561058ab008e",
+          "resized": false,
+          "reencoded": true
+        }
+      ]
+    }
+  ],
+  "model_scope": "Source-related new physical scene with inferred dimensions/connections/details, not recovered original shared film model or exact original video appearance.",
+  "native_spec": "Six90degree perspective cameras per node, native3072x3072/Cycles96/OptiX; no imagegen, SR or size enlargement in this revision.",
+  "source_png_unchanged": true,
+  "model_web_encoding": "AVIF70 or80/4:4:4; native3072 retained, no pixel resizing or SR. JPEG offline assets preserved separately.",
+  "browser_runtime_tested": false,
+  "physical_mobile_device_tested": false,
+  "paid_services_used": 0,
+  "created": 1792981974.7520053
+}
