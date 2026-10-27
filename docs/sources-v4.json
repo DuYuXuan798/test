@@ -1,0 +1,165 @@
+{
+  "status": "review-candidate-not-full-eight-node-surround-remake",
+  "movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+  "original_frame_bytes_unchanged": true,
+  "visible_source_direction": "Original PNG projected in fixed reconstructed source frustum; outer3percent of UV feathered",
+  "camera_fov_and_pose": "Source-derived reconstruction hypotheses, not recovered camera calibration",
+  "pavilion_method": "Built-in imagegen photographic surface edits of actual6face geometry guide, original104s film frame and adjacent edited faces used as references; then static cubemap viewing",
+  "native_pavilion_face_size": [
+    1254,
+    1254
+  ],
+  "pure_original_3d_model": false,
+  "unseen_surroundings_inferred": true,
+  "remaining_seven_nodes": "Original3072CGsurrounding faces retained; original source photographic directions now preserved",
+  "known_limitations": [
+    "Some generated cubeface boundary / roof and vegetation continuity still needs visual review",
+    "Photo edge blending can differ from inferred geometry",
+    "No physical phone/WeChat test in this run"
+  ],
+  "camera_plan_sha256": "363dcb6016b1f4380c4ac08e7b0e0d33ffcaf6bb81805f5cf6f46c1ccdc56f8d",
+  "pavilion_faces": [
+    {
+      "face": "px",
+      "path": "assets/cubes-v4/pavilion/px.avif",
+      "source_generated_png_sha256": "124d91e007a856d3cf16ee9cccc48a71ed6c575bdb4d44887d89835dc1380569",
+      "sha256": "2f6b8ed09ef5ef231f0823aba9b8ff44a710ee8b8be539a10bd4d8b175db1182",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "upscaled": false,
+      "mean_rgb_encode_error": 2.2907321769699003,
+      "p99_rgb_encode_error": 10.0,
+      "generation_prompt_sha256": "96d5c6fb7acbd38556224314ad91d265313506bfe3614bd505c2d8ca6d43db2f"
+    },
+    {
+      "face": "nx",
+      "path": "assets/cubes-v4/pavilion/nx.avif",
+      "source_generated_png_sha256": "9fcfe7b1101d1da0e66446b410495f4f40cf3e3ed20e11d413ff6fb7ad9f4840",
+      "sha256": "0a9a1b580142a55c7ebc60701502bf0050596b58c40d428455233d3f8c956bad",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "upscaled": false,
+      "mean_rgb_encode_error": 2.2674997689477667,
+      "p99_rgb_encode_error": 10.0,
+      "generation_prompt_sha256": "021a9759cbc03f523bb0d739b6f940ffac1d66c6f10b458a02435489942b77f5"
+    },
+    {
+      "face": "py",
+      "path": "assets/cubes-v4/pavilion/py.avif",
+      "source_generated_png_sha256": "2051457d92e8ea621e3177280c577696c6a15ba2fd32329d0c617db75d40490b",
+      "sha256": "ac7722011cbf217fbcccb8e00a3f9145814c19874da5bf4aef57985cb25899f1",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "upscaled": false,
+      "mean_rgb_encode_error": 1.6284368489732377,
+      "p99_rgb_encode_error": 6.0,
+      "generation_prompt_sha256": "a643b3f840a4271b22258de88e0e253e7717cf09af6f406d8abc5d2339457c5b"
+    },
+    {
+      "face": "ny",
+      "path": "assets/cubes-v4/pavilion/ny.avif",
+      "source_generated_png_sha256": "64ac068828668aef1d60db93fed3a472935c7a6ca27760120535d69468ca6357",
+      "sha256": "996e71984c483d1518c4414baffeee0b72798ee753042c736f8c47850989b5ec",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "upscaled": false,
+      "mean_rgb_encode_error": 2.8848912613077813,
+      "p99_rgb_encode_error": 10.0,
+      "generation_prompt_sha256": "5d0ba15c879e09d2195fc922100f401892eef4687fcac584a07ec28729c84794"
+    },
+    {
+      "face": "pz",
+      "path": "assets/cubes-v4/pavilion/pz.avif",
+      "source_generated_png_sha256": "9239eacbfb57d674e0f9e18c5fd1d8727d5deb6ec32f518907a8f06c7b21afa9",
+      "sha256": "d8fc0b04b1133638eff37b21ef42a2d23927a0f8a6ca99c100063114c18f65fa",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "upscaled": false,
+      "mean_rgb_encode_error": 2.4380936876529926,
+      "p99_rgb_encode_error": 10.0,
+      "generation_prompt_sha256": "0aa3096f43be1bbfddcc924773094353b0f40bc0895e89870a83d4053f045fed"
+    },
+    {
+      "face": "nz",
+      "path": "assets/cubes-v4/pavilion/nz.avif",
+      "source_generated_png_sha256": "d03757040a014f567414ecf6411483a06352bb39226e1e0bd8a35ba2ca2e3118",
+      "sha256": "ccf6e767354bde5dabcad8358bd8bb549ac27cfcbc475aee4cf1e4d2832dd550",
+      "native_size": [
+        1254,
+        1254
+      ],
+      "upscaled": false,
+      "mean_rgb_encode_error": 2.230630191786072,
+      "p99_rgb_encode_error": 10.0,
+      "generation_prompt_sha256": "1f513703d776c638ecf1c5798bc1be16dc93b96a4a3dc53d7c2da4d658c75f88"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "overview",
+      "source_second": 4.0,
+      "source_sha256": "42b753dfb9cf560a9057eb5a747a5f21c085df9ebc1969de78be5d67fef49978",
+      "source_fov_estimate": 70,
+      "cube_size": 3072
+    },
+    {
+      "id": "court",
+      "source_second": 27.2,
+      "source_sha256": "f41a23417e870ed6f3782b183b3484815da37e39efaaea4fe578de26feb3c893",
+      "source_fov_estimate": 96,
+      "cube_size": 3072
+    },
+    {
+      "id": "bridge",
+      "source_second": 43.0,
+      "source_sha256": "d548fec28e1a2f26a1700023cfa6e5590bf30309627fc78b624a68b823f52aab",
+      "source_fov_estimate": 85,
+      "cube_size": 3072
+    },
+    {
+      "id": "bamboo",
+      "source_second": 62.583333333333336,
+      "source_sha256": "8e3d36d62f08aedd83b08f5d896861748477898128df1ba747bf906507d4fd4d",
+      "source_fov_estimate": 75,
+      "cube_size": 3072
+    },
+    {
+      "id": "gallery",
+      "source_second": 91.28333333333333,
+      "source_sha256": "c662ba6c36dd7d71fd8c1c9b1da1387f7304754ada02f896565152ce5d6dc669",
+      "source_fov_estimate": 88,
+      "cube_size": 3072
+    },
+    {
+      "id": "pavilion",
+      "source_second": 104.0,
+      "source_sha256": "7ff8599621213f86f4355548df68d36c37f842824bf3f48d6dc68090b7c31bc5",
+      "source_fov_estimate": 83.328139,
+      "cube_size": 1254
+    },
+    {
+      "id": "lotus",
+      "source_second": 140.5,
+      "source_sha256": "a11474a02593474e72cbd14cba340057ee639463d5710eab210d20817321d1c7",
+      "source_fov_estimate": 84,
+      "cube_size": 3072
+    },
+    {
+      "id": "grove",
+      "source_second": 166.0,
+      "source_sha256": "0b19e4c82e5dc22b861c688e6272ae9090368762085d34c021213546357b3fe0",
+      "source_fov_estimate": 82,
+      "cube_size": 3072
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+window.QINGT_HD_NODE({"id":"bridge","sourceUrl":"assets/source/bridge.png","cubeFaces":{"px":"assets/cubes/bridge/px.avif","nx":"assets/cubes/bridge/nx.avif","py":"assets/cubes/bridge/py.avif","ny":"assets/cubes/bridge/ny.avif","pz":"assets/cubes/bridge/pz.avif","nz":"assets/cubes/bridge/nz.avif"}});

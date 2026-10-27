@@ -1,0 +1,1 @@
+window.QINGT_HD_NODE({"id":"grove","sourceUrl":"assets/source/grove.png","cubeFaces":{"px":"assets/cubes/grove/px.avif","nx":"assets/cubes/grove/nx.avif","py":"assets/cubes/grove/py.avif","ny":"assets/cubes/grove/ny.avif","pz":"assets/cubes/grove/pz.avif","nz":"assets/cubes/grove/nz.avif"}});
