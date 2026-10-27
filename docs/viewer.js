@@ -183,7 +183,9 @@
     previous: $('scene-prev'), next: $('scene-next'), counter: $('scene-counter'), zoomIn: $('zoom-in'), zoomOut: $('zoom-out'),
     reset: $('reset-view'), value: $('view-value'), fullscreen: $('fullscreen'), status: $('load-state'), statusTitle: $('load-title'),
     statusMessage: $('load-message'), retry: $('retry'), toast: $('toast'), about: $('about-dialog'), movieSHA: $('movie-sha'),
-    sourceSHA: $('source-sha'), aboutTime: $('about-time'), modelSHA: $('model-sha'), modelStatus: $('model-status') };
+    sourceSHA: $('source-sha'), aboutTime: $('about-time'), modelSHA: $('model-sha'), modelStatus: $('model-status'),
+    sceneDialog: $('scene-dialog'), sceneOpen: $('scenes-open'), sceneClose: $('scenes-close'),
+    tools: $('view-tools'), toolsToggle: $('tools-toggle') };
   const gate = createSelectionGate(), pointers = new Map(), buttons = [];
   let modeIntent = createModeIntent();
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -197,6 +199,7 @@
   const drawSize = () => { const r = size(); return canvasSize(r.width, r.height, window.devicePixelRatio || 1); };
   const modelMin = () => clarityFovMin(drawSize().width, current()?.cubeSize || CUBE_SIZE);
   const seconds = (v) => `${Number(v.toFixed(3))} 秒`;
+  const clock = (v) => `${String(Math.floor(v / 60)).padStart(2, '0')}:${String(Math.floor(v % 60)).padStart(2, '0')}`;
 
   function status(title, message, error = false, background = false) {
     ui.status.hidden = false; ui.status.classList.toggle('is-error', error); ui.statusTitle.textContent = title;
@@ -225,9 +228,10 @@
     ui.zoomIn.disabled = !usable || (mode === 'photo' ? photo.scale >= (p?.maxScale || 1) - 1e-8 : view.fov <= modelMin() + 1e-8);
     ui.zoomOut.disabled = !usable || (mode === 'photo' ? photo.scale <= 1 + 1e-8 : view.fov >= MAX_FOV - 1e-8);
     ui.reset.disabled = !usable; ui.value.value = mode === 'photo' ? `${Math.round(photo.scale * 100)}%` : `${Math.round(view.fov)}°`; ui.value.textContent = ui.value.value;
-    ui.scope.textContent = mode === 'photo' ? '原片画面' : modelLoading ? '原片画面 · 高清环视正在载入' : '建模环视 · 根据原片补建，细节可能有差异';
+    ui.scope.textContent = mode === 'photo' ? '影片原帧' : modelLoading ? '原片 · 环视载入中' : '根据原片补建';
     ui.scope.classList.toggle('is-supplement', mode !== 'photo' && !modelLoading);
-    ui.hint.textContent = mode === 'photo' ? '按原始像素约束放大' : modelLoading ? '可先看原片，载入后进入环视' : '原生六面渲染 · 固定节点';
+    ui.hint.textContent = modelLoading ? '可先看原片' : mode === 'photo' ? '拖移查看 · 缩放细节' : '拖动环视 · 缩放探索';
+    ui.tour.dataset.mode = mode === 'model' && modelReady ? 'model' : 'photo';
     ui.modelStatus.textContent = modelError || (modelReady ? '原生六面影像已载入，每面 3072×3072' : modelLoading ? '正在载入原生六面影像' : payload && !payload.hasFaces ? '六面影像尚未备齐，原片可查看' : '按需载入，每面 3072×3072');
   }
 
@@ -310,7 +314,7 @@
     ui.area.setAttribute('aria-label', `${current().label}原片画面，高清环视正在载入`); ui.area.focus({ preventScroll: true });
     if (modelReady && rendererReady) { showReadyModel(); return; }
     cancelFaces(); const run = modelRun, selected = ticket; modelLoading = true; modelError = ''; resetModel();
-    status('正在载入高清环视，可先看原片', '可点击“原片画面”停止载入；六面备齐后才进入环视。', false, true); controls();
+    status('环视正在载入', '先看原片，稍后进入环视。也可点“原片”停止载入。', false, true); controls();
     let jobs = [];
     try {
       if (!rendererReady) initializeRenderer();
@@ -344,15 +348,14 @@
     store.cancelPendingExcept(node.id);
     payload = null; sourceImage = null; sourceReady = false; modelError = ''; photo = { scale: 1, x: 0, y: 0 };
     ui.photoSlot.replaceChildren(); ui.download.hidden = true; ui.download.removeAttribute('href'); usePhoto();
-    ui.title.textContent = node.label; ui.time.textContent = `原片 ${seconds(node.sourceSecond)}`; ui.aboutTime.textContent = seconds(node.sourceSecond);
+    ui.title.textContent = node.label; ui.time.textContent = `原片 ${clock(node.sourceSecond)}`; ui.aboutTime.textContent = seconds(node.sourceSecond);
     ui.sourceSHA.textContent = node.sourceSHA; ui.counter.textContent = `${String(index + 1).padStart(2, '0')} / 08`;
     buttons.forEach((button, i) => { if (i === index) button.setAttribute('aria-current', 'location'); else button.removeAttribute('aria-current'); });
-    const button = buttons[index]; ui.nav.scrollTo({ left: Math.max(0, button.offsetLeft - ui.nav.offsetLeft - (ui.nav.clientWidth - button.offsetWidth) / 2), behavior: reducedMotion.matches ? 'auto' : 'smooth' });
-    status('正在载入取景节点', `${node.label} · 原片与建模影像`);
+    status('正在走近这处风景', node.label);
     try {
       const loaded = await store.load(node.id); if (!gate.current(selected)) return;
       payload = loaded;
-      status('正在载入原片画面', `${node.label} · 原始 PNG`);
+      status('正在载入原片画面', node.label);
       const job = imageLoad(loaded.sourceUrl); sourceJob = job; const image = await job.promise;
       if (!gate.current(selected)) { job.release(); return; }
       validateSourceDimensions(image.naturalWidth, image.naturalHeight);
@@ -410,7 +413,7 @@
   }, { passive: false });
   ui.area.addEventListener('dblclick', (event) => { if (mode === 'photo' && !event.target.closest('button,a,input')) resetView(); });
   ui.area.addEventListener('keydown', (event) => {
-    if (event.target.closest('button,a,input') || ui.about.open || !(mode === 'photo' ? sourceReady : modelReady)) return;
+    if (event.target.closest('button,a,input') || ui.about.open || ui.sceneDialog.open || !(mode === 'photo' ? sourceReady : modelReady)) return;
     if (event.key === 'Home' || event.key.toLowerCase() === 'r') { event.preventDefault(); resetView(); return; }
     if (['+', '=', '-', '_'].includes(event.key)) { event.preventDefault(); zoom(event.key === '+' || event.key === '=' ? -1 : 1); return; }
     if (!['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown'].includes(event.key)) return;
@@ -425,6 +428,36 @@
   ui.previous.addEventListener('click', () => selectNode((index + 7) % 8)); ui.next.addEventListener('click', () => selectNode((index + 1) % 8));
   ui.zoomIn.addEventListener('click', () => zoom(-1)); ui.zoomOut.addEventListener('click', () => zoom(1)); ui.reset.addEventListener('click', resetView);
   ui.retry.addEventListener('click', () => { if (data) { store.evict(current().id); selectNode(index); } else window.location.reload(); });
+  function closeTools(focus = false) {
+    ui.tools.hidden = true; ui.toolsToggle.setAttribute('aria-expanded', 'false');
+    if (focus) ui.toolsToggle.focus({ preventScroll: true });
+  }
+  ui.toolsToggle.addEventListener('click', () => {
+    const open = ui.tools.hidden; clearGesture(); ui.tools.hidden = !open;
+    ui.toolsToggle.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('pointerdown', (event) => {
+    if (!ui.tools.hidden && !ui.tools.contains(event.target) && !ui.toolsToggle.contains(event.target)) closeTools();
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !ui.tools.hidden && !ui.about.open && !ui.sceneDialog.open) {
+      closeTools(true); event.preventDefault();
+    }
+  });
+  ui.sceneOpen.addEventListener('click', () => {
+    clearGesture(); closeTools(); ui.sceneDialog.showModal(); ui.sceneOpen.setAttribute('aria-expanded', 'true');
+    const selected = buttons[index];
+    if (selected) { selected.focus({ preventScroll: true }); selected.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'auto' }); }
+  });
+  ui.sceneClose.addEventListener('click', () => ui.sceneDialog.close());
+  ui.sceneDialog.addEventListener('close', () => {
+    ui.sceneOpen.setAttribute('aria-expanded', 'false'); ui.sceneOpen.focus({ preventScroll: true });
+  });
+  for (const dialog of [ui.about, ui.sceneDialog]) dialog.addEventListener('click', (event) => {
+    if (event.target !== dialog) return;
+    const rect = dialog.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom) dialog.close();
+  });
   $('about-open').addEventListener('click', () => ui.about.showModal()); $('about-close').addEventListener('click', () => ui.about.close());
   ui.fullscreen.addEventListener('click', async () => { try { if (document.fullscreenElement) await document.exitFullscreen(); else if (ui.tour.requestFullscreen) await ui.tour.requestFullscreen(); else toast('此浏览器未提供全屏功能。'); } catch (error) { toast('浏览器未能进入全屏，可继续在当前窗口查看。'); } });
   document.addEventListener('fullscreenchange', () => { const active = Boolean(document.fullscreenElement); ui.fullscreen.setAttribute('aria-pressed', String(active)); ui.fullscreen.setAttribute('aria-label', active ? '退出全屏' : '进入全屏'); requestDraw(); });
@@ -434,16 +467,23 @@
 
   try {
     data = validateIndex(window.QINGT_HD_VR); modeIntent = createModeIntent(data.defaultMode);
-    ui.tourTitle.textContent = data.title; document.title = data.title; ui.movieSHA.textContent = data.movieSHA; ui.modelSHA.textContent = data.modelSHA;
+    ui.tourTitle.textContent = '晴汀园'; document.title = '晴汀园 · 云游园林'; ui.movieSHA.textContent = data.movieSHA; ui.modelSHA.textContent = data.modelSHA;
     store = createNodeStore(data.nodes, { loadScript(path, loaded, failed) {
       const script = document.createElement('script'); script.async = true; script.src = path; script.onload = loaded; script.onerror = failed; document.head.appendChild(script);
       return () => { script.onload = null; script.onerror = null; script.remove(); };
     } });
     window.QINGT_HD_NODE = (value) => store.accept(value);
     data.nodes.forEach((node, i) => { const button = document.createElement('button'); button.type = 'button'; button.className = 'scene-card';
+      const image = document.createElement('img'); image.className = 'scene-thumb'; image.alt = ''; image.width = 400; image.height = 225;
+      image.loading = 'lazy'; image.decoding = 'async'; image.src = `assets/thumbs/${node.id}.jpg`;
       const number = document.createElement('span'); number.className = 'node-number'; number.textContent = String(i + 1).padStart(2, '0');
-      const label = document.createElement('span'); label.className = 'node-label'; label.textContent = node.label; button.append(number, label);
-      button.setAttribute('aria-label', `查看${node.label}，原片${seconds(node.sourceSecond)}`); button.addEventListener('click', () => selectNode(i)); ui.nav.appendChild(button); buttons.push(button); });
+      const label = document.createElement('span'); label.className = 'node-label'; label.textContent = node.label;
+      const time = document.createElement('span'); time.className = 'node-time'; time.textContent = `原片 ${clock(node.sourceSecond)}`;
+      const info = document.createElement('span'); info.className = 'card-info'; info.append(number, label, time);
+      const check = document.createElement('span'); check.className = 'scene-check'; check.setAttribute('aria-hidden', 'true'); check.textContent = '✓';
+      button.append(image, info, check);
+      button.setAttribute('aria-label', `查看${node.label}，原片${seconds(node.sourceSecond)}`);
+      button.addEventListener('click', () => { ui.sceneDialog.close(); selectNode(i); }); ui.nav.appendChild(button); buttons.push(button); });
     ui.previous.disabled = false; ui.next.disabled = false; selectNode(data.nodes.findIndex((node) => node.id === data.defaultNode));
   } catch (error) { status('取景数据尚未就绪', error.message || '请检查网络后重试。', true); controls(); }
 })();
