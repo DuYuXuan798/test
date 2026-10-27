@@ -1,0 +1,1974 @@
+{
+  "schema": "qingt-source-photo-v5",
+  "movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+  "camera_plan_sha256": "363dcb6016b1f4380c4ac08e7b0e0d33ffcaf6bb81805f5cf6f46c1ccdc56f8d",
+  "camera_parameters_are_reconstruction_hypotheses": true,
+  "source_png_bytes_unchanged": true,
+  "original_png_size": [
+    1920,
+    1080
+  ],
+  "inferred_sphere_actual_size": [
+    1774,
+    887
+  ],
+  "generated_face_actual_size": [
+    1254,
+    1254
+  ],
+  "scope": "原片取景与摄影环视补全分开。原片模式完整显示所选原始PNG；环视模式只使用摄影风格推定六面影像，不叠加原片。不是恢复的原始共享三维模型，不保证完整360°与影片相同。",
+  "native3072_claim": false,
+  "native_photographic_detail_claim": false,
+  "resized_generated_faces": false,
+  "per_node_basis_hash_rule": "SHA256(canonical UTF8 JSON of node row excluding completion_basis_sha256; keys sorted; compact separators; ensure_ascii=False)",
+  "nodes": [
+    {
+      "id": "overview",
+      "source_png_sha256": "42b753dfb9cf560a9057eb5a747a5f21c085df9ebc1969de78be5d67fef49978",
+      "source_second": 4.0,
+      "camera_estimate": {
+        "yaw": 0.0,
+        "pitch": -47.290610042638534,
+        "horizontal_fov": 70
+      },
+      "sphere": {
+        "path": "overview/sphere.png",
+        "bytes": 3008133,
+        "sha256": "da8c68a040f1aa4bdc7deb2681790737252020e321925449508f7c0e2aafca81",
+        "git_blob_sha1": "77c78929bb59adf74d60d3ca005deda4ec25e461"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "overview/details/px.png",
+          "bytes": 2926819,
+          "sha256": "8c8a5acaf6fa509506a6982fbce4ea0af29c25e8ff0f4b35d04ad6d3175cdfe3",
+          "git_blob_sha1": "646db54ee4a2e1e241308152940b772d7be3f56e",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "c37550ab5d9d337caa0784fb52aca5b1c5f3182f9e79d0733e4f47e93a94e647",
+          "generation_receipt_sha256": "0b3479c6cd860a6334fdc6360a87c99f1b4ae3d45188189063c45a17a0ff9376"
+        },
+        {
+          "path": "overview/details/nx.png",
+          "bytes": 2972842,
+          "sha256": "a93a73e995196871d190cee00fe451250abb5fd832c4c5879aab0f25239ef569",
+          "git_blob_sha1": "ae7587f59cfdf04cc75a9c0b09f30ba8a89c5a16",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "c37550ab5d9d337caa0784fb52aca5b1c5f3182f9e79d0733e4f47e93a94e647",
+          "generation_receipt_sha256": "fcac4de28859259f2c628132efd3312b025e55f4763ab39100ced48cca44550c"
+        },
+        {
+          "path": "overview/details/py.png",
+          "bytes": 1840476,
+          "sha256": "7806ce8fc85b75359c314a49c3c8d739831ae929b4330e492f4f2737b08e5d79",
+          "git_blob_sha1": "6dae94b3fa99883bd6ec06e3d704735dbfd0a373",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "ccc3b711980423bc4839478beb76bf4129322be7060f9ae1ee8ffa85658e9426",
+          "generation_receipt_sha256": "e5f6b76c4f52a8400246a13ddec2f654864de429523955b4db08190fc686b58a"
+        },
+        {
+          "path": "overview/details/ny.png",
+          "bytes": 3908134,
+          "sha256": "d8b17f6bbf482a50577c5e6a98588e8984ba3394c6638db730bf20f3728205cd",
+          "git_blob_sha1": "8a1469d57f8729ff9a085421e2c4fa0f05ccf7ca",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "c172341ce61e499c25a01e85bcdd27ba62f5690e7fcceb087b5cd230dd301c32",
+          "generation_receipt_sha256": "de5a0c3ef58b8027493a5158c6729b82b0e2a90f9103eb0dde9341dd48d14301"
+        },
+        {
+          "path": "overview/details/pz.png",
+          "bytes": 2848587,
+          "sha256": "fad6324f9795bc4beeb4fa4923005ad4ea8dfa179a4cf37fe79d60c4c51fbc0a",
+          "git_blob_sha1": "320e0046a987704b55a4c0fa1c2809b21db2c4b0",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "c37550ab5d9d337caa0784fb52aca5b1c5f3182f9e79d0733e4f47e93a94e647",
+          "generation_receipt_sha256": "8f54e087eb89bbec442bddf5ff94261649965f855189cf6b1bf4e89b49d5462e"
+        },
+        {
+          "path": "overview/details/nz.png",
+          "bytes": 3025077,
+          "sha256": "c47613a212ab02e5f4b0129d21223da6bc36957de81f8e2f7fad80ddf3e4c2cb",
+          "git_blob_sha1": "3322ba1d2b0718a0cd240be2d88e2e4bb14fad7b",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "c37550ab5d9d337caa0784fb52aca5b1c5f3182f9e79d0733e4f47e93a94e647",
+          "generation_receipt_sha256": "84d70256e634fe85f7ffd183c3c5eee0005ad20f9cfac7fb57e8c2e2c90154c4"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/overview/px.avif",
+          "bytes": 395768,
+          "sha256": "18c356a87412ad4ea6961cff9cb09284b61ff1a8c89851aac42e8d38b976f2a5",
+          "git_blob_sha1": "73f4bd7b3d4a0e0b179181ce9a22d3e113bd7087",
+          "face": "px",
+          "generated_png_sha256": "8c8a5acaf6fa509506a6982fbce4ea0af29c25e8ff0f4b35d04ad6d3175cdfe3",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.079718743720255,
+          "p95_rgb_error": 6.0,
+          "max_rgb_error": 43,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/overview/nx.avif",
+          "bytes": 388346,
+          "sha256": "171837a48bd55aa74e1537c1f031a5008793f1303e7d23d6d8572b15478e7e8d",
+          "git_blob_sha1": "5da6c25385600075dc71c35d985b23264b5ccd3f",
+          "face": "nx",
+          "generated_png_sha256": "a93a73e995196871d190cee00fe451250abb5fd832c4c5879aab0f25239ef569",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.0563245991349746,
+          "p95_rgb_error": 6.0,
+          "max_rgb_error": 45,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/overview/py.avif",
+          "bytes": 139383,
+          "sha256": "311ded50b13c24a57b8a87ce200d9227a40b1be235a699926a75bb1039a24f85",
+          "git_blob_sha1": "f4143066927ba06d203ba96c4b15a844dc39b310",
+          "face": "py",
+          "generated_png_sha256": "7806ce8fc85b75359c314a49c3c8d739831ae929b4330e492f4f2737b08e5d79",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 1.3459867286988918,
+          "p95_rgb_error": 3.0,
+          "max_rgb_error": 18,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/overview/ny.avif",
+          "bytes": 603495,
+          "sha256": "db8fc5b0eeee9a6a20d395de8e1a7f523e75ab49935ced4d6b8e072ee0af8f5a",
+          "git_blob_sha1": "3e631a3a69358bd74c4bd1b72bc0b04c8615887a",
+          "face": "ny",
+          "generated_png_sha256": "d8b17f6bbf482a50577c5e6a98588e8984ba3394c6638db730bf20f3728205cd",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.7628545591904947,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 50,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/overview/pz.avif",
+          "bytes": 371971,
+          "sha256": "661fa9dfa8bae72dfb40a6f8d148f682984cdab7df05b39c99c88b9c86a9559b",
+          "git_blob_sha1": "4eb7f48342875a873e127f934f2da9510240fd7a",
+          "face": "pz",
+          "generated_png_sha256": "fad6324f9795bc4beeb4fa4923005ad4ea8dfa179a4cf37fe79d60c4c51fbc0a",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.000399148031986,
+          "p95_rgb_error": 6.0,
+          "max_rgb_error": 43,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/overview/nz.avif",
+          "bytes": 416800,
+          "sha256": "da9cf25f7608f21f9bdc19d4d304fdd53aab35e2f31583db68a6aa86a17bbe09",
+          "git_blob_sha1": "ec198191715aec8eae53f9afdc3aea6ff9d7fcef",
+          "face": "nz",
+          "generated_png_sha256": "c47613a212ab02e5f4b0129d21223da6bc36957de81f8e2f7fad80ddf3e4c2cb",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.16909165524124,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 44,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "d2467f54634eba13315f614c3560ff3abe5e483ce3db77bd4b720d325aca167f"
+    },
+    {
+      "id": "court",
+      "source_png_sha256": "f41a23417e870ed6f3782b183b3484815da37e39efaaea4fe578de26feb3c893",
+      "source_second": 27.2,
+      "camera_estimate": {
+        "yaw": -3.8481795921854483,
+        "pitch": -1.0253003766705306,
+        "horizontal_fov": 96
+      },
+      "sphere": {
+        "path": "court/sphere.png",
+        "bytes": 3814918,
+        "sha256": "16aab142a4e6e905fe3a1d9be2acc35e75aaf87b68d70bc14334840195f69901",
+        "git_blob_sha1": "e860d3452aa39ea542c403e121def8a4ac31aaa1"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "court/details/px.png",
+          "bytes": 3285133,
+          "sha256": "55676b373188ec2867c111a7836b4261e2f9a10b439370af6e474f74cd154fcb",
+          "git_blob_sha1": "711e38da83a55a3e65d4ca568a6b3b8385d22e3b",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "7dcff7177574358d2f804b11ae081ff5d95e1b781ba5b4223157663935957bb6",
+          "generation_receipt_sha256": "1e55825e44bb2600bc58aa813372ec0a86d76e9f29cf09ddd55a46c68b92c88d"
+        },
+        {
+          "path": "court/details/nx.png",
+          "bytes": 3936519,
+          "sha256": "3d64cdccf7f20f90b5dd1524d7c50d83ca1a4776702035a8b036b15c7eb0296e",
+          "git_blob_sha1": "285e235eba783422d85d42f57744e622f823fef4",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "7dcff7177574358d2f804b11ae081ff5d95e1b781ba5b4223157663935957bb6",
+          "generation_receipt_sha256": "1892799be05a165027ac3598a2d3f25e689b1ce2d8230e345aa1be89f3280861"
+        },
+        {
+          "path": "court/details/py.png",
+          "bytes": 3077448,
+          "sha256": "3f55fe561b640b4b0c3e089c775d2af917776fc32575fd90ddf5597477302215",
+          "git_blob_sha1": "8fa6c874856ab40c3269a0c9aa772d53149db27e",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "cca375f8b3f872d7fa446bd56ce16d05fa20ef20cd9ccd2d6d7b55ee9e100641",
+          "generation_receipt_sha256": "ba152f74c29a292807c1d1d49f2a99bdc69a1ed9648494f8d45794970436e03c"
+        },
+        {
+          "path": "court/details/ny.png",
+          "bytes": 4040515,
+          "sha256": "2b66e11b246669110c2cd7ff29fc6267633017d7201a2bc22906680f802b48e8",
+          "git_blob_sha1": "b706bbe80c32ce963592fe91b4b6f1f0c2c7a912",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "cca698032ed3a100ea9f521fd3be5a6e64b6079b00451978388679ba95d88c1c",
+          "generation_receipt_sha256": "7f276352d5b3fb460306fe5985abb711a9a9c695c0aae63a7119b683f098b8d3"
+        },
+        {
+          "path": "court/details/pz.png",
+          "bytes": 3671366,
+          "sha256": "0c618605c38d3cad7fdeb49af83db32330a0ecbcb33f7b69ed34d3952907101e",
+          "git_blob_sha1": "a46c3fef5ed89a47f7f193408ea6d3a57a60c788",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "7dcff7177574358d2f804b11ae081ff5d95e1b781ba5b4223157663935957bb6",
+          "generation_receipt_sha256": "bd1be438546cc13d57818520151bf928f23f4ce801ac0a0ba91771b3ee42ae3d"
+        },
+        {
+          "path": "court/details/nz.png",
+          "bytes": 4066666,
+          "sha256": "079d8e6ec7b32bb9c42106f895704f1a3269a0e2624ecbd1b0ce49f99db26b3c",
+          "git_blob_sha1": "6e73af4c24dcf1f4aaa8943cbab121bff5844384",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "7dcff7177574358d2f804b11ae081ff5d95e1b781ba5b4223157663935957bb6",
+          "generation_receipt_sha256": "da7932a56444132752cb11a8fc1c7793006cf0e6029551933c20a59e0f0ba5d0"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/court/px.avif",
+          "bytes": 504237,
+          "sha256": "f9bb8350aa656fd7df1a692deee1e1a19596f3134b6067a9a82d6828ecb715b0",
+          "git_blob_sha1": "e485d46c83c2e9788ce019a3528f3d70a20bdde9",
+          "face": "px",
+          "generated_png_sha256": "55676b373188ec2867c111a7836b4261e2f9a10b439370af6e474f74cd154fcb",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.3080676656602117,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 52,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/court/nx.avif",
+          "bytes": 666971,
+          "sha256": "5df23d457b0dd42e424ae36e71d72cce62b496ddb75cb5e2e8079e0b22bc841e",
+          "git_blob_sha1": "17de02bc0b42282587d8ebe94b3e10cf0166bdc3",
+          "face": "nx",
+          "generated_png_sha256": "3d64cdccf7f20f90b5dd1524d7c50d83ca1a4776702035a8b036b15c7eb0296e",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.9505111553713923,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 46,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/court/py.avif",
+          "bytes": 505731,
+          "sha256": "2e07c5c6b72c8522f28e7bc59cbe5ca67eb168b9871b014c913623ed5837d029",
+          "git_blob_sha1": "65f622541ad4108a5b9416a07eec4e7cdd6a5774",
+          "face": "py",
+          "generated_png_sha256": "3f55fe561b640b4b0c3e089c775d2af917776fc32575fd90ddf5597477302215",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.4034460274702028,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 65,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/court/ny.avif",
+          "bytes": 615293,
+          "sha256": "90acd0dcd4f80acd2d0f153965cdb6feea2fc388b737f9bbcb8fca0aee7d9937",
+          "git_blob_sha1": "013d2d8a1911f87a80ee3c88c956fe7658c2d15e",
+          "face": "ny",
+          "generated_png_sha256": "2b66e11b246669110c2cd7ff29fc6267633017d7201a2bc22906680f802b48e8",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.6289046767515667,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 43,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/court/pz.avif",
+          "bytes": 590761,
+          "sha256": "926f9dea8970bb0a9e642957c2e072962f7de7b14285988db3cfe7c9f4685096",
+          "git_blob_sha1": "a981de99fbdf6173a9d2a4a850187d956bb2dac2",
+          "face": "pz",
+          "generated_png_sha256": "0c618605c38d3cad7fdeb49af83db32330a0ecbcb33f7b69ed34d3952907101e",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.664440086248195,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 49,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/court/nz.avif",
+          "bytes": 701628,
+          "sha256": "837846bdeed5c4408d7e8c64d29309296bff1d21f4752e3a1aee15bbaa837c96",
+          "git_blob_sha1": "bcd6538e4989be6f982ea872d5c7638ef30a5bc4",
+          "face": "nz",
+          "generated_png_sha256": "079d8e6ec7b32bb9c42106f895704f1a3269a0e2624ecbd1b0ce49f99db26b3c",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 3.006382129021263,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 55,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "ac48810ddabd63ed78f75f809e271f72fb27372b35db6b8b2f81f5c8eba2fbdf"
+    },
+    {
+      "id": "bridge",
+      "source_png_sha256": "d548fec28e1a2f26a1700023cfa6e5590bf30309627fc78b624a68b823f52aab",
+      "source_second": 43.0,
+      "camera_estimate": {
+        "yaw": 31.890793552552765,
+        "pitch": -8.583622075354002,
+        "horizontal_fov": 85
+      },
+      "sphere": {
+        "path": "bridge/sphere.png",
+        "bytes": 3893615,
+        "sha256": "b485389f1618522e8987c951d677b2a4bd5b9c33fbea95b121e4dc7d65745cf2",
+        "git_blob_sha1": "1ae7f470c07e56f51719f555b00a1d9ea07b91a1"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "bridge/details/px.png",
+          "bytes": 3208867,
+          "sha256": "adc90677c9062df670af1f089c64b3eaa324ecc74cd91e8ec7007d3214c0a648",
+          "git_blob_sha1": "fbd7b916510bc3c6cb74c1cd12d6ba7d15c73380",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "904e05b6e0095cefd5a4516446cda6bf2d8715c4ae82f3f7ae789da27354f937",
+          "generation_receipt_sha256": "c2370f0df57ba522cacb19159ee1188a443d8df2b3d619710238f1ff6d31cc6a"
+        },
+        {
+          "path": "bridge/details/nx.png",
+          "bytes": 3910369,
+          "sha256": "05eebda01f1348b33cb44af4c35b273a86c02ea823cc9c79332306cb834121a9",
+          "git_blob_sha1": "a4d6791daa625f56ceb3edca71e225c5a4b63850",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "904e05b6e0095cefd5a4516446cda6bf2d8715c4ae82f3f7ae789da27354f937",
+          "generation_receipt_sha256": "eadd49678af91dc90b592127929b0cd5de46e928cadf5df81fe6a177374486cd"
+        },
+        {
+          "path": "bridge/details/py.png",
+          "bytes": 3044500,
+          "sha256": "ab7a16cbd0d361ac942cdf38b5ec4ae7a3bda2989e57e89c78543a68a4af4e66",
+          "git_blob_sha1": "f21cf0316fda8f86686156ed4265fe946d2c17d6",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "539c48d6a2e0b83f0b00d5bdb2e10004c0d0d993609531037b90de2f6886e244",
+          "generation_receipt_sha256": "68864029e0b5288d3c1d43f1fdcbaca18f8aae468e1e4d8b8233295c6e9562c3"
+        },
+        {
+          "path": "bridge/details/ny.png",
+          "bytes": 3645126,
+          "sha256": "dc2f85c53a58743689eb8c59ecf2e8d6f61f2e2d9dd42e9ba9b8852b2d4ac21f",
+          "git_blob_sha1": "4031cf381a47af09b9dcc3ff8fe86f0bc79f95b0",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "1c59d650dd129c030fa53175d9b260f2dc952f4eb6f3414b3f001f94ead5e658",
+          "generation_receipt_sha256": "e32355d8e3a35bc325042970b0f2ff1f30316a08c74d53e2cbc530fa00ca1e83"
+        },
+        {
+          "path": "bridge/details/pz.png",
+          "bytes": 3505655,
+          "sha256": "2671deab65d177fc0071b8a30698245327f95e059842a809a133d7178274efed",
+          "git_blob_sha1": "76aec8261172d05e6c29061f66468b51fa6ea485",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "904e05b6e0095cefd5a4516446cda6bf2d8715c4ae82f3f7ae789da27354f937",
+          "generation_receipt_sha256": "4acdd8f4cc3efccc8a987647e5ef4086bd30b9c01600e45cc5ddd326ac9d4869"
+        },
+        {
+          "path": "bridge/details/nz.png",
+          "bytes": 3785144,
+          "sha256": "e8b4ded7d1b8ee301502092581a02530db0173afc6b4cdc80512362ef82257b1",
+          "git_blob_sha1": "bc8d51281ac5112a9f06f36116d4d0b44706654c",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "904e05b6e0095cefd5a4516446cda6bf2d8715c4ae82f3f7ae789da27354f937",
+          "generation_receipt_sha256": "4dec45a199247fad6903da64279ec60c97516c1c665df3c0486bd12b8357b44a"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/bridge/px.avif",
+          "bytes": 477338,
+          "sha256": "8a5dad844616abe16f69b19903fda9a5e5ee49854925404f56b87851cc7e45fb",
+          "git_blob_sha1": "ebb3fae5d002c3f03b9f19e37d98d97b8a3964c2",
+          "face": "px",
+          "generated_png_sha256": "adc90677c9062df670af1f089c64b3eaa324ecc74cd91e8ec7007d3214c0a648",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.3006320232459743,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 49,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bridge/nx.avif",
+          "bytes": 619448,
+          "sha256": "eb28eb5f86000cec6d04dd0b1f2afb56953c1bbaff4c952c54dd4f01172c09f6",
+          "git_blob_sha1": "e75344e6c4e4c83698741ff463a1364942838ce5",
+          "face": "nx",
+          "generated_png_sha256": "05eebda01f1348b33cb44af4c35b273a86c02ea823cc9c79332306cb834121a9",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.755810009776265,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 48,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bridge/py.avif",
+          "bytes": 504969,
+          "sha256": "a31b99331c0c175e8e95a518257d8df0790f95bc3eaa7ef69ac7b13500e7601b",
+          "git_blob_sha1": "3b2fe85d7b0237f1df11d96ff58726225efc36c1",
+          "face": "py",
+          "generated_png_sha256": "ab7a16cbd0d361ac942cdf38b5ec4ae7a3bda2989e57e89c78543a68a4af4e66",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.448601476868916,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 67,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bridge/ny.avif",
+          "bytes": 547327,
+          "sha256": "b16412c29fe488dfa9b51c95d1a9808577611972129c0a212ef7be578211139f",
+          "git_blob_sha1": "1bca0ecd92b40685b76daf7367abb240f00c93bd",
+          "face": "ny",
+          "generated_png_sha256": "dc2f85c53a58743689eb8c59ecf2e8d6f61f2e2d9dd42e9ba9b8852b2d4ac21f",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.4416836882210844,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 44,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bridge/pz.avif",
+          "bytes": 532197,
+          "sha256": "818a8a2a9e4b088cf7880dd44bf54852007a461072bc92e77e6caec2fc8473b2",
+          "git_blob_sha1": "3e7ba3cc21cebae891b962d803f0e3d2fe65d429",
+          "face": "pz",
+          "generated_png_sha256": "2671deab65d177fc0071b8a30698245327f95e059842a809a133d7178274efed",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.4546654321270287,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 49,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bridge/nz.avif",
+          "bytes": 584975,
+          "sha256": "3bbf6f1b420b5392e2767a784566b6e2c1defc83863ddac50387ec92ec3c0d7b",
+          "git_blob_sha1": "49ad5649a1c561062645b16bb64e398bb81fb1c4",
+          "face": "nz",
+          "generated_png_sha256": "e8b4ded7d1b8ee301502092581a02530db0173afc6b4cdc80512362ef82257b1",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.640875726118738,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 40,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "c52d11f4aeeeef05ad423319da6d9147a73fecf0e5372f8716a6a86e2278372b"
+    },
+    {
+      "id": "bamboo",
+      "source_png_sha256": "8e3d36d62f08aedd83b08f5d896861748477898128df1ba747bf906507d4fd4d",
+      "source_second": 62.583333333333336,
+      "camera_estimate": {
+        "yaw": -35.53767779197438,
+        "pitch": 55,
+        "horizontal_fov": 75
+      },
+      "sphere": {
+        "path": "bamboo/sphere.png",
+        "bytes": 3909089,
+        "sha256": "cfe3ab294ae628273f227ee168637bd87dfd8a6b10893dd3acc637b31a9dbd05",
+        "git_blob_sha1": "06fd0d6a5a2755f916d7def1ab41873ca3a18f5e"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "bamboo/details/px.png",
+          "bytes": 3585406,
+          "sha256": "ea433a7dd319fa3f5c6e7fbd3bc8e3b912982708519f3b4a0dbc293eaca6ea93",
+          "git_blob_sha1": "e05c9884a7e41e11e074e7ded4ee7ddb28d19032",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "9b4b37cca4076f0210e6e69b71abf4c192f7877a47aefcdb747c5d4dc8bccafa",
+          "generation_receipt_sha256": "8477a5e512b5a8f22107b6fcc3360d02d0460c0700b724ca4882cb38260f7c22"
+        },
+        {
+          "path": "bamboo/details/nx.png",
+          "bytes": 3586550,
+          "sha256": "135c519a553a9a22f858c28e48f355aaae81d7ef504c0e4d5ad1668f02dc6699",
+          "git_blob_sha1": "f9121cd612c32072748cd79ab51665149ca63504",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "9b4b37cca4076f0210e6e69b71abf4c192f7877a47aefcdb747c5d4dc8bccafa",
+          "generation_receipt_sha256": "8864b2a7fcf52360f7cc781ce840e19512dc0f0cdb8f9b88ec9bee24fc865214"
+        },
+        {
+          "path": "bamboo/details/py.png",
+          "bytes": 3337320,
+          "sha256": "c99d9a1c327e21d61e15f8f865b8344c327b5ef31727520d26f63880baa22c96",
+          "git_blob_sha1": "ee4b53a38214b4093be4e72486288a68d93273a9",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "671c39221737ba91cefb9b9235c65d26c2f5197ee7eab31f9697eec0b8fbae98",
+          "generation_receipt_sha256": "02718788efdee15494bb54379945d58f59be6f5d77e27553b177320f1f09a260"
+        },
+        {
+          "path": "bamboo/details/ny.png",
+          "bytes": 3896434,
+          "sha256": "9c839de43cf54e295657086a38364331ffef1671989db0d174cc0755f37bf2d0",
+          "git_blob_sha1": "0bc8175f839c9b7ef0875b79c82217b66706e0c1",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "07fc9ff144493bce1bb4f5ce17a6b72a746b4502c7f43df52d06b4466a673422",
+          "generation_receipt_sha256": "74cf3cb7d30d4004f711eef96339fffb5ffdf5343a6a33e138b803e8eab3d580"
+        },
+        {
+          "path": "bamboo/details/pz.png",
+          "bytes": 3332651,
+          "sha256": "89460cdb709f6b36d7b910ca6ae4fdd2ab11310ac7069d9082950a72165680be",
+          "git_blob_sha1": "d1b85d3ffc6d40a90272299500cdef2045475b02",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "9b4b37cca4076f0210e6e69b71abf4c192f7877a47aefcdb747c5d4dc8bccafa",
+          "generation_receipt_sha256": "d49130bf5291d32e7d4020e541529be9a4593f43705fc6da4a4ba1431bb849a6"
+        },
+        {
+          "path": "bamboo/details/nz.png",
+          "bytes": 3692135,
+          "sha256": "8d076d9bbd1f6e84bc7937d0ebb35e66d1036cdde11cb81940ec8ebb564341f0",
+          "git_blob_sha1": "8287607e5caaa07b58d0ce67bb5147433db9042e",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "9b4b37cca4076f0210e6e69b71abf4c192f7877a47aefcdb747c5d4dc8bccafa",
+          "generation_receipt_sha256": "b957a44fb7c29b8115c96d321bb3303b2c1125c17298a32d5ec1f8c2b6209793"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/bamboo/px.avif",
+          "bytes": 618553,
+          "sha256": "29bd982e99add572e11801c6a1baa99aaccb443ae148f4d00ac879ca4dd1573d",
+          "git_blob_sha1": "0304f51ea0de24951e0b03e4c189d771d61f3681",
+          "face": "px",
+          "generated_png_sha256": "ea433a7dd319fa3f5c6e7fbd3bc8e3b912982708519f3b4a0dbc293eaca6ea93",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.6418160451149624,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 55,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/nx.avif",
+          "bytes": 597055,
+          "sha256": "a7373279e86424d7790c89db7e81f827ef4ebc36185dcf27f8179ea45eee3def",
+          "git_blob_sha1": "af6ef5f0ce87be5fa5d6171e918d6308af89b224",
+          "face": "nx",
+          "generated_png_sha256": "135c519a553a9a22f858c28e48f355aaae81d7ef504c0e4d5ad1668f02dc6699",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.5768842203619338,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 50,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/py.avif",
+          "bytes": 534117,
+          "sha256": "ae97ca071ef3b74f7c0315f3d0e4c766ba9416f842fbfc94265f3d45b9280b3a",
+          "git_blob_sha1": "8bbd7c851b54cb011bc425fbd42fd1e2b89d96f1",
+          "face": "py",
+          "generated_png_sha256": "c99d9a1c327e21d61e15f8f865b8344c327b5ef31727520d26f63880baa22c96",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.4591688309265747,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 60,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/ny.avif",
+          "bytes": 622441,
+          "sha256": "cbebdeb2630a9a1518168138ae76bf9ac69b503bbec81b4ed9f9bed9c46a9e64",
+          "git_blob_sha1": "ce54cccec5fc028807c8ea33da79d58b6b4fff14",
+          "face": "ny",
+          "generated_png_sha256": "9c839de43cf54e295657086a38364331ffef1671989db0d174cc0755f37bf2d0",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.691350676241132,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 62,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/pz.avif",
+          "bytes": 544053,
+          "sha256": "39e0dc52e3a91a36808944cd46b210f05936b027cc9f77f77762c4996d8011ba",
+          "git_blob_sha1": "36e3afa1539d8a0fc0771d262b18ef895b68781a",
+          "face": "pz",
+          "generated_png_sha256": "89460cdb709f6b36d7b910ca6ae4fdd2ab11310ac7069d9082950a72165680be",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.477157201156194,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 56,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/nz.avif",
+          "bytes": 621238,
+          "sha256": "a7f5df8c3266a26c57ad85afab32881b93a4438d2b6e023a4f6b75c7e7f1d432",
+          "git_blob_sha1": "67aa56a7d494eb11c0f1047745bc9fc7d18f19dc",
+          "face": "nz",
+          "generated_png_sha256": "8d076d9bbd1f6e84bc7937d0ebb35e66d1036cdde11cb81940ec8ebb564341f0",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.696954646778369,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 54,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "098eda768e4869a196bf38996d3dc188eae7a7bfde87fc66474baee542fb45c9"
+    },
+    {
+      "id": "gallery",
+      "source_png_sha256": "c662ba6c36dd7d71fd8c1c9b1da1387f7304754ada02f896565152ce5d6dc669",
+      "source_second": 91.28333333333333,
+      "camera_estimate": {
+        "yaw": 52.30575953331083,
+        "pitch": -0.6182118185914868,
+        "horizontal_fov": 88
+      },
+      "sphere": {
+        "path": "gallery/sphere.png",
+        "bytes": 3397883,
+        "sha256": "87727a22caf9ff5004e2e480e6c9f3b5b39226d424416890b29f43f3459cb3b1",
+        "git_blob_sha1": "24ad5b824294afb625d69afc88b2bad9c89dc5d6"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "gallery/details/px.png",
+          "bytes": 3509941,
+          "sha256": "917caef2bdea239937966766c841b943d62d7f0c83aa227dac0480a0c5de3a2e",
+          "git_blob_sha1": "36404ca2a5c1e564565c904e883d236b27166de5",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "10ccf773764862c7494f38556792a0dc8b48af3d6e86539c1d67ecd7157c2e71",
+          "generation_receipt_sha256": "ed6905514dc976e7588cac285a17d5bcbfc608f7df3b8abd4f52437954351729"
+        },
+        {
+          "path": "gallery/details/nx.png",
+          "bytes": 3406002,
+          "sha256": "b7b4acc725045f1991078723a8bff52f3fce2ead84e63ea85e36643fdfd3de35",
+          "git_blob_sha1": "801b103dee3e204f087e361aa4d487980478db0e",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "10ccf773764862c7494f38556792a0dc8b48af3d6e86539c1d67ecd7157c2e71",
+          "generation_receipt_sha256": "fdbf14788bb793765d4dd9f3f5b9157831370c2e93fd9c7833b9308766fab9d6"
+        },
+        {
+          "path": "gallery/details/py.png",
+          "bytes": 2425203,
+          "sha256": "90f08183254902703c87846d1707c5c259caf057f38b3df0f61f9b9c2db587ac",
+          "git_blob_sha1": "70ba11e16db925eb3f024864acf20e4afb880ec7",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "82546629b03da55fcde4dc5c4f0af933cb0c7afc61c5d02abf42d487ad5685d3",
+          "generation_receipt_sha256": "b17d0b5902b10d5506cbc2f8c07f2959b7ec309a3ff3308840f9c81b8d36c18d"
+        },
+        {
+          "path": "gallery/details/ny.png",
+          "bytes": 3806135,
+          "sha256": "0ee68f19cd0c9e29986e5ced1644248435a15a0702d5e0269b080c410f482968",
+          "git_blob_sha1": "b43bab823ce3f44d4824438963bd5200e122e8d3",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "78a2dbee568a8b19b260eebe59f82a972f6a5445aeb4fed82fd2473e9c76c8e4",
+          "generation_receipt_sha256": "95a573a4acfcc70986316cc7d798639657fdc1eefec0a29be76fe6278dd82639"
+        },
+        {
+          "path": "gallery/details/pz.png",
+          "bytes": 3210531,
+          "sha256": "a07887ecb65aaa9dcb4335313336d20dcfe2381b5cf67ea75b9d2e8c61172af3",
+          "git_blob_sha1": "52dbc60fb5234ef819e60cf0b3799a69532c2255",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "10ccf773764862c7494f38556792a0dc8b48af3d6e86539c1d67ecd7157c2e71",
+          "generation_receipt_sha256": "b248566041b0a9a2a85801adc27100b1f035c93efac0f4a77c1f9d175061ecbe"
+        },
+        {
+          "path": "gallery/details/nz.png",
+          "bytes": 3318193,
+          "sha256": "02e5e2c6996e50821fabb8d99e7b0a576af2a0e1b5567ad345d2f6bb5349b42e",
+          "git_blob_sha1": "b7c6fe96b9cf73b8bd7d04c9d94600412e31ea36",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "10ccf773764862c7494f38556792a0dc8b48af3d6e86539c1d67ecd7157c2e71",
+          "generation_receipt_sha256": "5fd03cdbf6a61b69ed8302071a2666a1f787be77308eca5b2c6f2eca596fa26e"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/gallery/px.avif",
+          "bytes": 571198,
+          "sha256": "f1a154442c48d661459cdd789ea719ad294d2293ed3570d605416c455d185659",
+          "git_blob_sha1": "29d02f1d5604d2a60a20249ab482c8011d0f3606",
+          "face": "px",
+          "generated_png_sha256": "917caef2bdea239937966766c841b943d62d7f0c83aa227dac0480a0c5de3a2e",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.6584181019461806,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 52,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/gallery/nx.avif",
+          "bytes": 520444,
+          "sha256": "cd413a571bf64dfb52b95185479503e97994033e0245160a29e18791113c9642",
+          "git_blob_sha1": "e43cad9daf61c501d2c7d63bb27cce7592c7c91d",
+          "face": "nx",
+          "generated_png_sha256": "b7b4acc725045f1991078723a8bff52f3fce2ead84e63ea85e36643fdfd3de35",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.423358702444575,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 46,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/gallery/py.avif",
+          "bytes": 285172,
+          "sha256": "06ebcdfaf2113d2c61ac1e208a3ceffaa01d3be67fc34fa397f3a89103ca9be2",
+          "git_blob_sha1": "e00a81e27b95a3d90a1368f0ea95a4377304e9e6",
+          "face": "py",
+          "generated_png_sha256": "90f08183254902703c87846d1707c5c259caf057f38b3df0f61f9b9c2db587ac",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 1.6373406269528152,
+          "p95_rgb_error": 4.0,
+          "max_rgb_error": 38,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/gallery/ny.avif",
+          "bytes": 575975,
+          "sha256": "016a5cac05c0908a1d3c2bfb5876aeb9d8142df988b775ed109830035adadb93",
+          "git_blob_sha1": "974c2f9658fdb8177f9ef01d3adabbd0641f9f56",
+          "face": "ny",
+          "generated_png_sha256": "0ee68f19cd0c9e29986e5ced1644248435a15a0702d5e0269b080c410f482968",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.5206113430112422,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 45,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/gallery/pz.avif",
+          "bytes": 446475,
+          "sha256": "930ed24ffd78b230c54167add093636b9b23ecc7334429390ac026e2077eeebe",
+          "git_blob_sha1": "b79edbeaa181500371e1094e3863096286734385",
+          "face": "pz",
+          "generated_png_sha256": "a07887ecb65aaa9dcb4335313336d20dcfe2381b5cf67ea75b9d2e8c61172af3",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.1760885103871757,
+          "p95_rgb_error": 6.0,
+          "max_rgb_error": 44,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/gallery/nz.avif",
+          "bytes": 476590,
+          "sha256": "f7950b15e1e548894a043c528da5b59c7efafa42909cda4db938007240e5effc",
+          "git_blob_sha1": "3cf4891419989b99be446341e479cba08303550b",
+          "face": "nz",
+          "generated_png_sha256": "02e5e2c6996e50821fabb8d99e7b0a576af2a0e1b5567ad345d2f6bb5349b42e",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.271093585057322,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 47,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "497ac96718aaad03fa96bdd4a66a8e56f289d070192606938cf3753ad562c4d3"
+    },
+    {
+      "id": "pavilion",
+      "source_png_sha256": "7ff8599621213f86f4355548df68d36c37f842824bf3f48d6dc68090b7c31bc5",
+      "source_second": 104.0,
+      "camera_estimate": {
+        "yaw": -153.9626829990746,
+        "pitch": -5.1830639957655675,
+        "horizontal_fov": 83.328139
+      },
+      "sphere": {
+        "path": "pavilion/sphere.png",
+        "bytes": 3144471,
+        "sha256": "a0d01d9a1976eb71fa75df62ba9da638aebba2c80f9d846580ad5a51fdfe0144",
+        "git_blob_sha1": "f542e076fe04c695cf54c3a577bafc2b290afce3"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "pavilion/details/px.png",
+          "bytes": 3359117,
+          "sha256": "7fc42467b491fc82b944a65cfea9dd9dc4118e57d85dbfd385e7d2e2f69abe44",
+          "git_blob_sha1": "60d7831db951ce6f01deb06fae9a41f2f502d62d",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "b16ea1ad42ee6d8739fb2e62fc7f472c592a68817969ba5b45eb8fb83d11caf4"
+        },
+        {
+          "path": "pavilion/details/nx.png",
+          "bytes": 3391014,
+          "sha256": "1965e41e47fe3bd09e98f087898ea8d733d45124f30f08e7b990be9a2108d616",
+          "git_blob_sha1": "1a819e056cad6e68c7c9abf10782dded4d58966d",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "c8469dc18b70d3f5aef7cd80884aed9f98dedbcf1116e88d8acd8cbfec3f8f48"
+        },
+        {
+          "path": "pavilion/details/py.png",
+          "bytes": 3053917,
+          "sha256": "00240013ceefda95521f11c1a096ba7ef757585d723c9ff5a8f82306845d6717",
+          "git_blob_sha1": "675ac6b49223bdaade0bf5a9b7fe238513733d4b",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "c48dc77a997c9c7d52996fd5ab764eb1565e4b1769242d8c1655276f45002daa"
+        },
+        {
+          "path": "pavilion/details/ny.png",
+          "bytes": 4167870,
+          "sha256": "d4818ce693edded3ede1d697ae15b76fe65d8d9d8c2c3620394f81f9ff290bd2",
+          "git_blob_sha1": "cef8d316aae8e32d265a16cbf57736fba38237fb",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "8775fe56207e7d0016e698f5cecbbdd4f7d53deb9ee3986b181c43eb028503e7"
+        },
+        {
+          "path": "pavilion/details/pz.png",
+          "bytes": 3621595,
+          "sha256": "406be4e44af7bba549e1372d09f86f8201e5b73636df2aec872868a8865f9a40",
+          "git_blob_sha1": "1f227b37d704cc84d9c39a40c4c61139dc836d10",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "91874468e9be5d6e03bd4fc9fa0be00431cfbfac88bd3e99047ff006dcf0e4f6"
+        },
+        {
+          "path": "pavilion/details/nz.png",
+          "bytes": 3641148,
+          "sha256": "a01bdacdd236e64080f05aea05ac09b5f950663042fb5093939ef18b307357d7",
+          "git_blob_sha1": "d56fabb24dacf202d7d3e6ec7b67ec18ed11e08c",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "6998bf8cb62d76552eb21d6b8281ad1ab2a7ae8247f434fca392b486cdc5c997"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/pavilion/px.avif",
+          "bytes": 464400,
+          "sha256": "2b9cefd13e0f591470d90b02ec17e4181191d9a7686eb2531c35b35a9136a26d",
+          "git_blob_sha1": "0bdd87ecbe796d61494de4c6361e56117d5c7101",
+          "face": "px",
+          "generated_png_sha256": "7fc42467b491fc82b944a65cfea9dd9dc4118e57d85dbfd385e7d2e2f69abe44",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.210298443174293,
+          "p95_rgb_error": 6.0,
+          "max_rgb_error": 41,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/nx.avif",
+          "bytes": 476047,
+          "sha256": "8dd19ad0b99fa414bd4a251175b659c155bdd53475422e16b33d489107a052b7",
+          "git_blob_sha1": "7ca22674eec28a3891e51ce8feb394560322a2f4",
+          "face": "nx",
+          "generated_png_sha256": "1965e41e47fe3bd09e98f087898ea8d733d45124f30f08e7b990be9a2108d616",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.232066319198024,
+          "p95_rgb_error": 6.0,
+          "max_rgb_error": 49,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/py.avif",
+          "bytes": 310426,
+          "sha256": "7d369b7c73e87390b09d8dd1a321999152dae03338b52d5437ab4db85638989f",
+          "git_blob_sha1": "9a7714cc0e33c34aaabaaa8a9175aed3d070bf85",
+          "face": "py",
+          "generated_png_sha256": "00240013ceefda95521f11c1a096ba7ef757585d723c9ff5a8f82306845d6717",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 1.6100342805203043,
+          "p95_rgb_error": 4.0,
+          "max_rgb_error": 16,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/ny.avif",
+          "bytes": 627263,
+          "sha256": "aa4bd3c6b443f7c361c0d18ecf781aaca550a1cc660cbc5d3ce9e84b9096c5fe",
+          "git_blob_sha1": "876e68bcc101c10b69937c5d8b141ea7c9790df1",
+          "face": "ny",
+          "generated_png_sha256": "d4818ce693edded3ede1d697ae15b76fe65d8d9d8c2c3620394f81f9ff290bd2",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.8188982920788512,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 35,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/pz.avif",
+          "bytes": 508434,
+          "sha256": "5274e802c94225d045c642b0796ebd3b35944acc42847138d7ccd89daaa726af",
+          "git_blob_sha1": "cbc00b2709ddca1d29607006d6a60811df800076",
+          "face": "pz",
+          "generated_png_sha256": "406be4e44af7bba549e1372d09f86f8201e5b73636df2aec872868a8865f9a40",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.380862473471388,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 45,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/nz.avif",
+          "bytes": 510427,
+          "sha256": "1b7dc0b368ba1d67552e56873d5a1bfcda669e4786e945113a1a3a0e85aedc02",
+          "git_blob_sha1": "759eca198c618f4c68bb3a3a57c72731721678fd",
+          "face": "nz",
+          "generated_png_sha256": "a01bdacdd236e64080f05aea05ac09b5f950663042fb5093939ef18b307357d7",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.35937970318479,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 43,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "b1d607722766bc38b6819c0eb4873d9f947c6b02d4d21380063801d58de6597e"
+    },
+    {
+      "id": "lotus",
+      "source_png_sha256": "a11474a02593474e72cbd14cba340057ee639463d5710eab210d20817321d1c7",
+      "source_second": 140.5,
+      "camera_estimate": {
+        "yaw": -39.03551193547651,
+        "pitch": -3.2042106852638885,
+        "horizontal_fov": 84
+      },
+      "sphere": {
+        "path": "lotus/sphere.png",
+        "bytes": 3930861,
+        "sha256": "961b62453ccb0f50e3d903570222f329ea581f626aa179902298e71d5b4d30e1",
+        "git_blob_sha1": "fa3eba13079a2d98ddce50e3c9375c22afdbfc20"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "lotus/details/px.png",
+          "bytes": 3944463,
+          "sha256": "5b7dfff87ae2a656e8aeca7538e0f68700d888eaeb2e5d4ee5fca7622ef43b9e",
+          "git_blob_sha1": "d097261c9520da8e5fd2839b1c822dc645efeb98",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "b620885e320020fafba29bb54656d4998e95d16846eff311ec255780726572db",
+          "generation_receipt_sha256": "63851529ace1fb097f6f8ca71ac17a0f4c5c8e4d598f66b6899fd3d98442f928"
+        },
+        {
+          "path": "lotus/details/nx.png",
+          "bytes": 3679960,
+          "sha256": "ecd405642695dceaf68692a439758b36229a4748716764cffebcffa0ce0fdc3a",
+          "git_blob_sha1": "41ea774cdd49cc02ce266ada8b0d394a44c97244",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "b620885e320020fafba29bb54656d4998e95d16846eff311ec255780726572db",
+          "generation_receipt_sha256": "f7ac3b82f153ca5ea11aee5a5cb8ab2a9e34738981a76dbe0164ee45339c8637"
+        },
+        {
+          "path": "lotus/details/py.png",
+          "bytes": 3157397,
+          "sha256": "f60afe72ef01e0c37ce4c9d825948686625d92e28a0143768c656af914b7b820",
+          "git_blob_sha1": "4c1660588abd7859ce7e7101117e9c1944fa20f6",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "0d565b88a73bfe5d8750dc23a96c48725e5554202fc5bf21586e30321f1a9fc0",
+          "generation_receipt_sha256": "4c4c6a66c46118600d1a2c0d2ec2e665d3c60297e4d8dee6bcccaf460e9fd07a"
+        },
+        {
+          "path": "lotus/details/ny.png",
+          "bytes": 3632837,
+          "sha256": "947c2d99533d3e0a2794116da6b4cd3c03e783e310d987e76a6271f5beb2cc85",
+          "git_blob_sha1": "e71c122a0a002d8ebb731944aa62c8453e8dfcb3",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "3c9a63e083e4a73c53f0a2ded0bc3fc317d96a3032b828d9d0d5d6755b087039",
+          "generation_receipt_sha256": "6c1a49bf82874a5ab1ffbc1bd404946c0f60a143abd199f0c95709e09e8d7f51"
+        },
+        {
+          "path": "lotus/details/pz.png",
+          "bytes": 3255585,
+          "sha256": "f91a41f0ddf871228624e0747321301af78931a2f24aed3fca7301bf7008314b",
+          "git_blob_sha1": "b8637e2a639efe7d666146adac259541d56710f2",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "b620885e320020fafba29bb54656d4998e95d16846eff311ec255780726572db",
+          "generation_receipt_sha256": "5753ee80cdd9dd2ce8a90f2cfec0304b5a5d654e31eeb7fa7aaf028b8365cb82"
+        },
+        {
+          "path": "lotus/details/nz.png",
+          "bytes": 3827318,
+          "sha256": "2104637e5c7fd9806e1c958fc7e20346c1c59b459dc0a2a56b90ded2abfb7927",
+          "git_blob_sha1": "225a8ab637cbe03dbd2d39ad2e5c5071d9e7d146",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "b620885e320020fafba29bb54656d4998e95d16846eff311ec255780726572db",
+          "generation_receipt_sha256": "69b6e2085973567526b8a19a751fb83983fbe4180191e8126f09d748feec551b"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/lotus/px.avif",
+          "bytes": 666194,
+          "sha256": "3154a17fc65c72208531e9cc06ccecc1e69d8b0664de4d00505129ee03fbdda9",
+          "git_blob_sha1": "b3b8636524acf6fea3578e57d15fdc5cdd671f42",
+          "face": "px",
+          "generated_png_sha256": "5b7dfff87ae2a656e8aeca7538e0f68700d888eaeb2e5d4ee5fca7622ef43b9e",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.9516096073638254,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 53,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/lotus/nx.avif",
+          "bytes": 593601,
+          "sha256": "e20f2d8b6aa76d6182d7544cebcc100afc560348acaeec724682a4c0529eed81",
+          "git_blob_sha1": "a854e227f5ff4ca59fb3db5de9b67ce293fd242f",
+          "face": "nx",
+          "generated_png_sha256": "ecd405642695dceaf68692a439758b36229a4748716764cffebcffa0ce0fdc3a",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.6571950089326064,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 49,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/lotus/py.avif",
+          "bytes": 536781,
+          "sha256": "b10e3aad1f4e9a1031ba072aae1f7c2182215bafc3753fef20a95a7dbe3ba6f6",
+          "git_blob_sha1": "73a31d144acb186187adb285ade8fe26b892cb26",
+          "face": "py",
+          "generated_png_sha256": "f60afe72ef01e0c37ce4c9d825948686625d92e28a0143768c656af914b7b820",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.601959958859984,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 60,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/lotus/ny.avif",
+          "bytes": 533940,
+          "sha256": "60c5aa653b8f83954a57e5acea59f7175a15d8ddaf15859cfd7209a1ac85d7c4",
+          "git_blob_sha1": "8968a6f132b05dcf1744236867ee1980e5e54e69",
+          "face": "ny",
+          "generated_png_sha256": "947c2d99533d3e0a2794116da6b4cd3c03e783e310d987e76a6271f5beb2cc85",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.3661009914472517,
+          "p95_rgb_error": 6.0,
+          "max_rgb_error": 53,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/lotus/pz.avif",
+          "bytes": 497216,
+          "sha256": "b92794e1f6581f60a45a0e656d46afe4237b8d46d015a1b8713fa058be12c090",
+          "git_blob_sha1": "aa8a4ee8121273ff582c79cdfe4d27af783ce754",
+          "face": "pz",
+          "generated_png_sha256": "f91a41f0ddf871228624e0747321301af78931a2f24aed3fca7301bf7008314b",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.3789845911477743,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 70,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/lotus/nz.avif",
+          "bytes": 614500,
+          "sha256": "dcd053e45dd548c163219818dcf3bc247b36a7a6d5d0cb4990ebc382e4740801",
+          "git_blob_sha1": "06447c69cc2d49b24257b264b83ca97500518c10",
+          "face": "nz",
+          "generated_png_sha256": "2104637e5c7fd9806e1c958fc7e20346c1c59b459dc0a2a56b90ded2abfb7927",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.718452467256295,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 48,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "253b456598eca5343e825e712a06330a51156db80fa9cb6142b59ee3479e813f"
+    },
+    {
+      "id": "grove",
+      "source_png_sha256": "0b19e4c82e5dc22b861c688e6272ae9090368762085d34c021213546357b3fe0",
+      "source_second": 166.0,
+      "camera_estimate": {
+        "yaw": 70.32417670405131,
+        "pitch": -2.1243460657931053,
+        "horizontal_fov": 82
+      },
+      "sphere": {
+        "path": "grove/sphere.png",
+        "bytes": 4129924,
+        "sha256": "f9f134809850c3e834f57334aeb8657044808c878f89c843a863beb1c637c94b",
+        "git_blob_sha1": "4d27812f5cef8ffdfaea61ab1ecded803964182f"
+      },
+      "generated_detail_inputs": [
+        {
+          "path": "grove/details/px.png",
+          "bytes": 3699192,
+          "sha256": "456280f3d7094c7578a47c19f083daf4621b724d66c2e46ebc92a448048a85c4",
+          "git_blob_sha1": "1be8f8b39036f21c8125bd1108cc1a78e4306ba3",
+          "face": "px",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "959280751d4d7e78908f84ec03a76ebc94fb5a158e974395062d27c5183378c1",
+          "generation_receipt_sha256": "38673bfd40ac83381ff9c3e2c59726e1448aec53bd272d34b529d64d14fdf886"
+        },
+        {
+          "path": "grove/details/nx.png",
+          "bytes": 3831760,
+          "sha256": "beb501c83b5cc7f94a65cbed8f2f793639a3e1bd51a7aa4bc32d4f0029738ab3",
+          "git_blob_sha1": "44c28ac9dc54151ea3a1f113cb3c8dad16f960d3",
+          "face": "nx",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "959280751d4d7e78908f84ec03a76ebc94fb5a158e974395062d27c5183378c1",
+          "generation_receipt_sha256": "b5f81a8d72466c67f929a8dab6341ab7c84a7e5548e80e24287a3cbb45e4102e"
+        },
+        {
+          "path": "grove/details/py.png",
+          "bytes": 3702174,
+          "sha256": "2c544d9f19e16e85210d459c548b1eba35857277d7cbc1352c0d169dbe554582",
+          "git_blob_sha1": "150257c247c25189079ef5a024b7b5c164094460",
+          "face": "py",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "338711b0d5d4f31e4fcd38707de029b645a949b10180f99aed4ce515097c77b4",
+          "generation_receipt_sha256": "52187e5f585608d58988661aaf5120e81f25fe926a5fa96d4c151ca854ef798b"
+        },
+        {
+          "path": "grove/details/ny.png",
+          "bytes": 3671284,
+          "sha256": "1178b99eb36d0a7e559cc470f715e8ea9c542b539b7a046ef7b180ce11deffa0",
+          "git_blob_sha1": "4d7ef5a3277842359f76ed88a4e697c0ffc3605c",
+          "face": "ny",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "cc73b9330781b06676abefe7cd6db79d97b315d8ae4c537f900f010483c5b825",
+          "generation_receipt_sha256": "e33b967c1f7f53575eb174b437b0806668b5ac03802ac56e1a62522918080c0e"
+        },
+        {
+          "path": "grove/details/pz.png",
+          "bytes": 3735497,
+          "sha256": "c9ff68eb27a55e549a0281b033e7fe36abc1bc6077d1e0ce45a710d50e2da7fe",
+          "git_blob_sha1": "8bc29210fb1271eaecd7da4fd7aca017db4cb273",
+          "face": "pz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "959280751d4d7e78908f84ec03a76ebc94fb5a158e974395062d27c5183378c1",
+          "generation_receipt_sha256": "04554d5f98c41dcf5f6c4ed059b5f3f2118c8d1e7144315cd4f77d28ebefbe4b"
+        },
+        {
+          "path": "grove/details/nz.png",
+          "bytes": 3758960,
+          "sha256": "86f6d8173d3ef76f22b42506974f630877f699eff39ec190f6c9c25b04d4586f",
+          "git_blob_sha1": "0131a741644faa4bf88ef4743b1b5306ce62bb59",
+          "face": "nz",
+          "actual_generated_size": [
+            1254,
+            1254
+          ],
+          "prompt_sha256": "959280751d4d7e78908f84ec03a76ebc94fb5a158e974395062d27c5183378c1",
+          "generation_receipt_sha256": "767e8887fee653958747fb41be70d05333aa0e8a7c49758df6324c92a3a39edf"
+        }
+      ],
+      "encoded_faces": [
+        {
+          "path": "assets/cubes-v5/grove/px.avif",
+          "bytes": 600808,
+          "sha256": "fdb9bd44954d1bb8e6e0ea793095028b8774efdf13dcc61d273d50a4a4cdcd27",
+          "git_blob_sha1": "892c51de33ec50bdb7431e3dc0e2b8426ece5ac7",
+          "face": "px",
+          "generated_png_sha256": "456280f3d7094c7578a47c19f083daf4621b724d66c2e46ebc92a448048a85c4",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.6555458471222764,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 59,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/grove/nx.avif",
+          "bytes": 657581,
+          "sha256": "dc4ac630cf43cb634c81e30beff32296272c3568e17c668a8bb6db95f9876b21",
+          "git_blob_sha1": "602bf9a4024f8d04792aefc7aa68df6dfa713264",
+          "face": "nx",
+          "generated_png_sha256": "beb501c83b5cc7f94a65cbed8f2f793639a3e1bd51a7aa4bc32d4f0029738ab3",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.878881359553734,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 57,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/grove/py.avif",
+          "bytes": 716671,
+          "sha256": "76cef8b1a04133545c523d66fe0de8d8d294d0d617a40415b11a0ec780836e4e",
+          "git_blob_sha1": "bcb1c2b1a2f4a6cb1ea072422fc269942eeac182",
+          "face": "py",
+          "generated_png_sha256": "2c544d9f19e16e85210d459c548b1eba35857277d7cbc1352c0d169dbe554582",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 3.1146322199583345,
+          "p95_rgb_error": 9.0,
+          "max_rgb_error": 66,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/grove/ny.avif",
+          "bytes": 540691,
+          "sha256": "c54230aa6f1f1d329cc25040e0e295b59a1ea564ec714664b3062d535de7b3b5",
+          "git_blob_sha1": "6e378ccb4b8e02e0bbc46b1a5f8876475117eba1",
+          "face": "ny",
+          "generated_png_sha256": "1178b99eb36d0a7e559cc470f715e8ea9c542b539b7a046ef7b180ce11deffa0",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.409662816361381,
+          "p95_rgb_error": 7.0,
+          "max_rgb_error": 45,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/grove/pz.avif",
+          "bytes": 639377,
+          "sha256": "d8b5ac4a0dd2363e160bb48b42d954b1723b60e6250cde049d5d17c759d97bdd",
+          "git_blob_sha1": "6332f1395dfe0e7fb98ff229df40fbf32b0318c8",
+          "face": "pz",
+          "generated_png_sha256": "c9ff68eb27a55e549a0281b033e7fe36abc1bc6077d1e0ce45a710d50e2da7fe",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.7874012092722746,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 64,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        },
+        {
+          "path": "assets/cubes-v5/grove/nz.avif",
+          "bytes": 644617,
+          "sha256": "19493b6ba19bc62a2754ab57504d7dcab103704afd4c6979bed9235a403fa11d",
+          "git_blob_sha1": "c659a92fc2bc3d83a8f1ba4e969ad32f3c44cb3b",
+          "face": "nz",
+          "generated_png_sha256": "86f6d8173d3ef76f22b42506974f630877f699eff39ec190f6c9c25b04d4586f",
+          "encoding": {
+            "format": "AVIF",
+            "quality": 85,
+            "speed": 6,
+            "subsampling": "4:4:4",
+            "max_threads": 2,
+            "range": "full"
+          },
+          "mean_rgb_error": 2.772006135390673,
+          "p95_rgb_error": 8.0,
+          "max_rgb_error": 66,
+          "decoded_size": [
+            1254,
+            1254
+          ],
+          "resized": false
+        }
+      ],
+      "completion_basis_sha256": "35f10211319b2740f2b7f2d3858bdd4fa1642187764e1baf4d1702cd27b8f615"
+    }
+  ],
+  "browser_tested": false,
+  "physical_phone_tested": false,
+  "paid_services_used_by_this_script": 0,
+  "runtime_modes": {
+    "default": "photo",
+    "photo": "complete unmodified selected originalPNG",
+    "surround": "six coherent inferred photographic-style faces only",
+    "source_photo_anchor": false,
+    "source_anchor_supported_but_not_adopted": true
+  }
+}

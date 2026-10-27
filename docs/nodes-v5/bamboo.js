@@ -1,0 +1,1 @@
+window.QINGT_HD_NODE({"cubeFaces":{"nx":"assets/cubes-v5/bamboo/nx.avif","ny":"assets/cubes-v5/bamboo/ny.avif","nz":"assets/cubes-v5/bamboo/nz.avif","px":"assets/cubes-v5/bamboo/px.avif","py":"assets/cubes-v5/bamboo/py.avif","pz":"assets/cubes-v5/bamboo/pz.avif"},"id":"bamboo","sourceUrl":"assets/source/bamboo.png"});
