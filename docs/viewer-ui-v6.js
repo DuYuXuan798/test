@@ -280,6 +280,12 @@
     sourceImage.style.width = `${p.width}px`; sourceImage.style.height = `${p.height}px`;
     sourceImage.style.transform = `translate(${photo.x}px, ${photo.y}px) scale(${photo.scale})`;
   }
+  function bringActiveSceneIntoView() {
+    const rail = $('scene-rail'), card = railButtons[index]; if (!rail || !card) return;
+    const box = card.getBoundingClientRect(), bounds = rail.getBoundingClientRect();
+    if (box.left < bounds.left) rail.scrollLeft += box.left - bounds.left;
+    else if (box.right > bounds.right) rail.scrollLeft += box.right - bounds.right;
+  }
   function controls() {
     const usable = mode === 'photo' ? sourceReady : modelReady;
     const p = mode === 'photo' ? photoMetrics() : null;
@@ -292,7 +298,8 @@
     ui.scope.textContent = mode === 'photo' ? '影片原帧' : modelLoading ? '原片 · 环视载入中' : usesPhotoAnchor() ? '原片影像＋环视补全' : '摄影环视补全';
     ui.scope.classList.toggle('is-supplement', mode !== 'photo' && !modelLoading);
     ui.hint.textContent = modelLoading ? '可先看原片' : mode === 'photo' ? '拖移查看 · 缩放细节' : usesPhotoAnchor() ? '原片方向保留 · 周围为推定景物' : '拖动环视 · 周围为推定影像';
-    ui.tour.dataset.mode = mode === 'model' && modelReady ? 'model' : 'photo';
+    const nextMode = mode === 'model' && modelReady ? 'model' : 'photo';
+    if (ui.tour.dataset.mode !== nextMode) { ui.tour.dataset.mode = nextMode; requestAnimationFrame(bringActiveSceneIntoView); }
     const faceSize = current()?.cubeSize, faceDescription = faceSize ? `每面${faceSize}×${faceSize}` : '尺寸尚未声明';
     ui.modelStatus.textContent = modelError || (modelReady ? usesPhotoAnchor() ? `1920×1080原片按补全方案推定的方向与水平视角投影；${faceDescription}，周围为推定景物，不是原始三维模型` : `摄影补全环视已载入，${faceDescription}；未叠加原片，不是原始三维模型` : modelLoading ? '正在载入六面环视影像' : payload && !payload.hasFaces ? '六面影像尚未备齐，原片可查看' : `环视影像按需载入，${faceDescription}`);
   }
@@ -492,8 +499,7 @@
     ui.modelSHA.textContent = node.modelSHA;
     [buttons, railButtons].forEach((group) => group.forEach((button, i) => { if (i === index) button.setAttribute('aria-current', 'location'); else button.removeAttribute('aria-current'); }));
     ['scene-intro', 'scene-intro-mobile'].forEach((id) => { const description = $(id); if (description) description.textContent = sceneDescriptions[node.id] || ''; });
-    const rail = $('scene-rail'), activeCard = railButtons[index];
-    if (rail && activeCard) { const left = activeCard.offsetLeft - rail.offsetLeft, right = left + activeCard.offsetWidth; if (left < rail.scrollLeft) rail.scrollLeft = left; else if (right > rail.scrollLeft + rail.clientWidth) rail.scrollLeft = right - rail.clientWidth; }
+    bringActiveSceneIntoView();
     status('正在走近这处风景', node.label);
     try {
       const loaded = await store.load(node.id); if (!gate.current(selected)) return;
@@ -604,7 +610,7 @@
   $('about-open').addEventListener('click', () => ui.about.showModal()); $('about-close').addEventListener('click', () => ui.about.close());
   ui.fullscreen.addEventListener('click', async () => { try { if (document.fullscreenElement) await document.exitFullscreen(); else if (ui.tour.requestFullscreen) await ui.tour.requestFullscreen(); else toast('此浏览器未提供全屏功能。'); } catch (error) { toast('浏览器未能进入全屏，可继续在当前窗口查看。'); } });
   document.addEventListener('fullscreenchange', () => { const active = Boolean(document.fullscreenElement); ui.fullscreen.setAttribute('aria-pressed', String(active)); ui.fullscreen.setAttribute('aria-label', active ? '退出全屏' : '进入全屏'); requestDraw(); });
-  window.addEventListener('resize', requestDraw); if (window.ResizeObserver) new ResizeObserver(requestDraw).observe(ui.area);
+  window.addEventListener('resize', () => { requestDraw(); requestAnimationFrame(bringActiveSceneIntoView); }); if (window.ResizeObserver) new ResizeObserver(requestDraw).observe(ui.area);
   ui.canvas.addEventListener('webglcontextlost', (event) => { event.preventDefault(); rendererReady = false; texture = null; sourceTexture = null; failModel('浏览器建模环视渲染已中断。'); });
   ui.canvas.addEventListener('webglcontextrestored', () => { rendererReady = false; program = null; uniforms = null; controls(); });
 
