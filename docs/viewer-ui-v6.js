@@ -491,7 +491,7 @@
     ui.sourceSHA.textContent = node.sourceSHA; ui.counter.textContent = `${String(index + 1).padStart(2, '0')} / 08`;
     ui.modelSHA.textContent = node.modelSHA;
     [buttons, railButtons].forEach((group) => group.forEach((button, i) => { if (i === index) button.setAttribute('aria-current', 'location'); else button.removeAttribute('aria-current'); }));
-    const description = $('scene-intro'); if (description) description.textContent = sceneDescriptions[node.id] || '';
+    ['scene-intro', 'scene-intro-mobile'].forEach((id) => { const description = $(id); if (description) description.textContent = sceneDescriptions[node.id] || ''; });
     const rail = $('scene-rail'), activeCard = railButtons[index];
     if (rail && activeCard) { const left = activeCard.offsetLeft - rail.offsetLeft, right = left + activeCard.offsetWidth; if (left < rail.scrollLeft) rail.scrollLeft = left; else if (right > rail.scrollLeft + rail.clientWidth) rail.scrollLeft = right - rail.clientWidth; }
     status('正在走近这处风景', node.label);

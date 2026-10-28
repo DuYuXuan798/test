@@ -7,7 +7,7 @@
   <meta name="description" content="循水入园，停步听风。用一册清景，走近晴汀园的八处风景。">
   <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'">
   <title>晴汀园 · 清景游册</title>
-  <link rel="stylesheet" href="style-fresh-v6.css">
+  <link rel="stylesheet" href="style-fresh-v6.css?v=2">
 </head>
 <body>
   <main id="tour" class="tour">
@@ -53,6 +53,7 @@
         <span class="frame-corner" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12c5-6 11-6 16 0M4 17c5-6 11-6 16 0"/></svg></span>
       </div>
       <div class="frame-footer"><p><span class="tiny-line" aria-hidden="true"></span>留一处风景，慢慢看。</p>      <div class="journey-steps"><button id="scene-prev" class="icon-button" type="button" aria-label="上一处景点" title="上一处" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button id="scene-next" class="icon-button" type="button" aria-label="下一处景点" title="下一处" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div>
+      <div class="mobile-story"><span aria-hidden="true">清<br>景</span><p id="scene-intro-mobile">坐看湖光，借一缕风，把远处的景色慢慢收进眼里。</p></div>
       <nav id="scene-rail" class="scene-rail" aria-label="八景快捷切换"></nav>
     </section>
     <dialog id="scene-dialog" class="scene-dialog" aria-labelledby="scene-dialog-title">
@@ -72,6 +73,6 @@
   </main>
   <noscript><p class="noscript-message">请启用 JavaScript 后查看园林。</p></noscript>
   <script src="photo-vr-index-v5.js"></script>
-  <script src="viewer-ui-v6.js"></script>
+  <script src="viewer-ui-v6.js?v=2"></script>
 </body>
 </html>
