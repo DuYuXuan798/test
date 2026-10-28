@@ -40,7 +40,7 @@
     <p id="toast" class="toast" role="status" aria-live="polite" hidden></p>
     <footer class="journey-bar" aria-label="游览控制">
       <div class="mode-switch" role="group" aria-label="查看方式">
-        <button id="mode-model" type="button" aria-label="建模环视" aria-pressed="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c4-4 14-4 18 0v8c-4 4-14 4-18 0zM3 8c4 4 14 4 18 0M12 5v14"/></svg><span>环视</span></button>
+        <button id="mode-model" type="button" aria-label="摄影补全环视" aria-pressed="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c4-4 14-4 18 0v8c-4 4-14 4-18 0zM3 8c4 4 14 4 18 0M12 5v14"/></svg><span>环视</span></button>
         <button id="mode-photo" type="button" aria-label="原片画面" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 17 5-5 4 4 3-3 5 4"/><circle cx="16" cy="9" r="1"/></svg><span>原片</span></button>
       </div>
       <span class="dock-divider" aria-hidden="true"></span>
@@ -55,15 +55,15 @@
     <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title">
       <button id="about-close" class="icon-button dialog-close" type="button" aria-label="关闭取景说明"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
       <p class="eyebrow">关于这次云游</p><h2 id="about-title">从影片，走近园林</h2>
-      <p><strong>原片画面</strong>直接取自最终 v14 影片，可拖移、缩放，也可保存原始画面。</p>
-      <p><strong>建模环视</strong>根据原片补建，可在固定位置转动视角。未拍到的方向与部分细节为推定，可能与影片不同；不支持自由行走。</p>
+      <p><strong>原片取景</strong>在独立原片模式完整显示最终v14影片所选原始PNG，不修改原片像素，可拖移、缩放或保存。</p>
+      <p><strong>摄影环视补全</strong>环视模式仅使用同一补全全景引导的六面摄影风格影像，不叠加原片。未拍方向与生成细节为推定，可在固定位置拖动看四周；不是恢复的原始三维模型，也不能保证完整360°与影片相同。</p>
       <p class="about-help">拖动看四周，双指或滚轮缩放。键盘方向键移动视角，Home 复位。</p>
       <a id="download-source" class="download-source" download hidden><span>保存当前原片</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg></a>
-      <details class="source-identity"><summary>影像来源与标识</summary><dl><dt>影片 SHA-256</dt><dd id="movie-sha">未提供</dd><dt>原帧 SHA-256</dt><dd id="source-sha">未提供</dd><dt>取景时间</dt><dd id="about-time">未提供</dd><dt>补建模型 SHA-256</dt><dd id="model-sha">未提供</dd><dt>建模环视</dt><dd id="model-status">尚未载入</dd></dl></details>
+      <details class="source-identity"><summary>影像来源与标识</summary><dl><dt>影片 SHA-256</dt><dd id="movie-sha">未提供</dd><dt>原帧 SHA-256</dt><dd id="source-sha">未提供</dd><dt>取景时间</dt><dd id="about-time">未提供</dd><dt>环视补全依据 SHA-256</dt><dd id="model-sha">未提供</dd><dt>环视补全</dt><dd id="model-status">尚未载入</dd></dl></details>
     </dialog>
   </main>
   <noscript><p class="noscript-message">请启用 JavaScript 后查看园林。</p></noscript>
-  <script src="photo-vr-index.js"></script>
-  <script src="viewer.js?v=ui-20261027"></script>
+  <script src="photo-vr-index-v5.js"></script>
+  <script src="viewer-source-v5.js"></script>
 </body>
 </html>
