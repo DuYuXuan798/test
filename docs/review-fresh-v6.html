@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f5fafc">
+  <meta name="description" content="循水入园，停步听风。用一册清景，走近晴汀园的八处风景。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'">
+  <title>晴汀园 · 清景游册</title>
+  <link rel="stylesheet" href="style-fresh-v6.css">
+</head>
+<body>
+  <main id="tour" class="tour">
+    <aside class="garden-guide" aria-label="晴汀园游册">
+      <header class="brand">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 29C10 29 9 19 10 8c12 0 20 6 20 16M17 15c8 5 10 12 7 20M29 24c0-9 6-13 13-13 0 10-4 16-13 16M8 35c5-3 11-3 16 0s11 3 16 0M13 41c6-2 16-2 22 0"/></svg></span>
+        <div><p id="tour-title" class="brand-name">晴汀园</p><p class="brand-caption">QINGTING GARDEN</p></div>
+      </header>
+      <section class="scene-heading" aria-label="当前景点">
+        <div class="scene-eyebrow"><span id="scene-counter">06 / 08</span><span class="eyebrow-line" aria-hidden="true"></span><span>一园清景</span></div>
+        <h1 id="scene-title">平亭望湖</h1>
+        <p id="scene-intro" class="scene-intro">坐看湖光，借一缕风，把远处的景色慢慢收进眼里。</p>
+        <span id="source-time" class="source-time">原片 01:44</span>
+      </section>
+      <div class="garden-sketch" aria-hidden="true">
+        <svg viewBox="0 0 220 170"><path class="pond" d="M70 62c17-29 66-42 94-19s35 51 8 70-43 9-67 20-67-10-60-32 15-20 25-39Z"/><path class="ripple" d="M94 72c17-9 37-9 52-2m-59 18c20-9 43-8 63-1m-51 18c14-4 31-4 43 0"/><path class="route" d="M16 123c39 6 15-69 58-85s78-13 106 15 21 69-3 94"/><path class="twig" d="M23 63V27m0 20c-13-3-15-12-14-20 9 0 15 8 14 20Zm0-10c14 0 17-8 17-17-11 0-17 6-17 17ZM179 27V8m0 14c-8-2-10-7-9-13 6 0 10 6 9 13Z"/><path class="pavilion" d="m149 131 15-10 15 10m-27 0h24m-21 0v14m18-14v14m-22 0h26"/><circle class="route-stop" cx="74" cy="38" r="4"/><circle class="route-stop" cx="16" cy="123" r="4"/><circle class="route-stop" cx="187" cy="69" r="4"/></svg>
+        <p>循水入园，停步听风。</p>
+      </div>
+      <button id="scenes-open" class="scene-launcher" type="button" aria-label="打开八处景点目录" aria-expanded="false" aria-haspopup="dialog" aria-controls="scene-dialog"><span>展开八景游册</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h11M4 12h8M4 18h11m2-10 4 4-4 4"/></svg></button>
+      <div class="guide-foot"><span>云游 · 八处固定取景</span><span class="little-flower" aria-hidden="true">✳</span></div>
+    </aside>
+    <section class="viewer-panel" aria-label="园林影像与游览控制">
+      <header class="masthead"><p class="page-note"><span class="note-dot" aria-hidden="true"></span>把一园风景，装进片刻闲暇。</p>      <div class="header-actions">
+        <button id="tools-toggle" class="icon-button" type="button" aria-label="画面工具" aria-expanded="false" aria-controls="view-tools" title="画面工具"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9m4 0h3M4 17h3m4 0h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+        <button id="about-open" class="icon-button" type="button" aria-label="取景说明" aria-haspopup="dialog" aria-controls="about-dialog" title="取景说明"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 10.5v6M12 7.5h.01"/></svg></button>
+      </div></header>
+      <div class="view-topbar">      <div class="mode-switch" role="group" aria-label="查看方式">
+        <button id="mode-model" type="button" aria-label="摄影补全环视" aria-pressed="false" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8c4-4 14-4 18 0v8c-4 4-14 4-18 0zM3 8c4 4 14 4 18 0M12 5v14"/></svg><span>环视</span></button>
+        <button id="mode-photo" type="button" aria-label="原片画面" aria-pressed="true"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 17 5-5 4 4 3-3 5 4"/><circle cx="16" cy="9" r="1"/></svg><span>原片</span></button>
+      </div><div class="view-caption"><span id="scope-label" class="scope-label" role="status" aria-live="polite">影片原帧</span><span id="view-hint">拖移查看 · 缩放细节</span></div></div>
+      <div class="picture-frame">
+        <section id="view-area" class="view-area" tabindex="0" role="region" aria-label="园林画面，可拖动环视或缩放，Home 复位"><div id="photo-stage" class="photo-stage"><div id="photo-slot" class="photo-slot"></div></div><canvas id="model-canvas" class="panorama" aria-hidden="true" hidden></canvas></section>
+            <div id="view-tools" class="view-tools" role="toolbar" aria-label="画面控制" hidden>
+      <button id="zoom-in" class="icon-button" type="button" aria-label="放大画面" title="放大" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg></button>
+      <button id="zoom-out" class="icon-button" type="button" aria-label="缩小画面" title="缩小" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+      <output id="view-value" aria-label="画面缩放">100%</output>
+      <span class="tool-divider" aria-hidden="true"></span>
+      <button id="reset-view" class="icon-button" type="button" aria-label="复位画面" title="复位 / Home" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5"/></svg></button>
+      <button id="fullscreen" class="icon-button" type="button" aria-label="进入全屏" aria-pressed="false" title="全屏"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+    </div>
+            <div id="load-state" class="load-state" role="status" aria-live="polite" aria-atomic="true"><span class="load-orbit" aria-hidden="true"></span><p id="load-title">正在打开一园清景</p><p id="load-message">影像载入后，可拖动环视。</p><button id="retry" class="primary-button" type="button" hidden>重新载入</button></div>
+        <p id="toast" class="toast" role="status" aria-live="polite" hidden></p>
+        <span class="frame-corner" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12c5-6 11-6 16 0M4 17c5-6 11-6 16 0"/></svg></span>
+      </div>
+      <div class="frame-footer"><p><span class="tiny-line" aria-hidden="true"></span>留一处风景，慢慢看。</p>      <div class="journey-steps"><button id="scene-prev" class="icon-button" type="button" aria-label="上一处景点" title="上一处" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button id="scene-next" class="icon-button" type="button" aria-label="下一处景点" title="下一处" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button></div></div>
+      <nav id="scene-rail" class="scene-rail" aria-label="八景快捷切换"></nav>
+    </section>
+    <dialog id="scene-dialog" class="scene-dialog" aria-labelledby="scene-dialog-title">
+      <div class="sheet-heading"><div><p class="eyebrow">一园八景</p><h2 id="scene-dialog-title">换一处风景</h2></div><button id="scenes-close" class="icon-button dialog-close" type="button" aria-label="关闭景点目录"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <nav id="scene-nav" class="scene-nav" aria-label="选择景点"></nav>
+      <p class="sheet-note">八处固定取景，可切换环视与原片。</p>
+    </dialog>
+    <dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title">
+      <button id="about-close" class="icon-button dialog-close" type="button" aria-label="关闭取景说明"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+      <p class="eyebrow">关于这次云游</p><h2 id="about-title">从影片，走近园林</h2>
+      <p><strong>原片取景</strong>在独立原片模式完整显示最终v14影片所选原始PNG，不修改原片像素，可拖移、缩放或保存。</p>
+      <p><strong>摄影环视补全</strong>环视模式仅使用同一补全全景引导的六面摄影风格影像，不叠加原片。未拍方向与生成细节为推定，可在固定位置拖动看四周；不是恢复的原始三维模型，也不能保证完整360°与影片相同。</p>
+      <p class="about-help">拖动看四周，双指或滚轮缩放。键盘方向键移动视角，Home 复位。</p>
+      <a id="download-source" class="download-source" download hidden><span>保存当前原片</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 17v4h16v-4"/></svg></a>
+      <details class="source-identity"><summary>影像来源与标识</summary><dl><dt>影片 SHA-256</dt><dd id="movie-sha">未提供</dd><dt>原帧 SHA-256</dt><dd id="source-sha">未提供</dd><dt>取景时间</dt><dd id="about-time">未提供</dd><dt>环视补全依据 SHA-256</dt><dd id="model-sha">未提供</dd><dt>环视补全</dt><dd id="model-status">尚未载入</dd></dl></details>
+    </dialog>
+  </main>
+  <noscript><p class="noscript-message">请启用 JavaScript 后查看园林。</p></noscript>
+  <script src="photo-vr-index-v5.js"></script>
+  <script src="viewer-ui-v6.js"></script>
+</body>
+</html>
