@@ -1,0 +1,1 @@
+window.QINGT_HD_NODE({"id":"overview","sourceUrl":"assets/source-v17/overview.png","cubeFaces":{"px":"assets/cubes-v5/overview/px.avif","nx":"assets/cubes-v5/overview/nx.avif","py":"assets/cubes-v5/overview/py.avif","ny":"assets/cubes-v5/overview/ny.avif","pz":"assets/cubes-v5/overview/pz.avif","nz":"assets/cubes-v5/overview/nz.avif"}});

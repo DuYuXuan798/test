@@ -1,0 +1,699 @@
+{
+  "version": "v17-20261029",
+  "movie_sha256": "0580824acf162a8c9d1e1a2b62df834f1ec756be3ca1c0d8deb9a8584332a81b",
+  "movie_filename": "晴汀园_180秒_去重复与补景_1028v17_候选.mp4",
+  "source_frame_pixels_modified": false,
+  "source_png_extracted_losslessly": true,
+  "source_dimensions": [
+    1920,
+    1080
+  ],
+  "default_mode": "photo",
+  "unified_original_3d_model": false,
+  "full_360_pixel_identical_to_film": false,
+  "camera_parameters_are_reconstruction_hypotheses": true,
+  "completion_note": "八个同场景环视沿用v14摄影补全；竹石小院与花丛近景依据v17原帧新做。环视不是原片像素复制或原始统一三维模型。",
+  "nodes": [
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "42b753dfb9cf560a9057eb5a747a5f21c085df9ebc1969de78be5d67fef49978",
+      "prior_source_second": 4.0,
+      "completion_basis_sha256": "d2467f54634eba13315f614c3560ff3abe5e483ce3db77bd4b720d325aca167f",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/overview/px.avif",
+          "bytes": 395768,
+          "sha256": "18c356a87412ad4ea6961cff9cb09284b61ff1a8c89851aac42e8d38b976f2a5",
+          "git_blob_sha1": "73f4bd7b3d4a0e0b179181ce9a22d3e113bd7087"
+        },
+        {
+          "path": "assets/cubes-v5/overview/nx.avif",
+          "bytes": 388346,
+          "sha256": "171837a48bd55aa74e1537c1f031a5008793f1303e7d23d6d8572b15478e7e8d",
+          "git_blob_sha1": "5da6c25385600075dc71c35d985b23264b5ccd3f"
+        },
+        {
+          "path": "assets/cubes-v5/overview/py.avif",
+          "bytes": 139383,
+          "sha256": "311ded50b13c24a57b8a87ce200d9227a40b1be235a699926a75bb1039a24f85",
+          "git_blob_sha1": "f4143066927ba06d203ba96c4b15a844dc39b310"
+        },
+        {
+          "path": "assets/cubes-v5/overview/ny.avif",
+          "bytes": 603495,
+          "sha256": "db8fc5b0eeee9a6a20d395de8e1a7f523e75ab49935ced4d6b8e072ee0af8f5a",
+          "git_blob_sha1": "3e631a3a69358bd74c4bd1b72bc0b04c8615887a"
+        },
+        {
+          "path": "assets/cubes-v5/overview/pz.avif",
+          "bytes": 371971,
+          "sha256": "661fa9dfa8bae72dfb40a6f8d148f682984cdab7df05b39c99c88b9c86a9559b",
+          "git_blob_sha1": "4eb7f48342875a873e127f934f2da9510240fd7a"
+        },
+        {
+          "path": "assets/cubes-v5/overview/nz.avif",
+          "bytes": 416800,
+          "sha256": "da9cf25f7608f21f9bdc19d4d304fdd53aab35e2f31583db68a6aa86a17bbe09",
+          "git_blob_sha1": "ec198191715aec8eae53f9afdc3aea6ff9d7fcef"
+        }
+      ],
+      "id": "overview",
+      "label": "全园鸟瞰",
+      "v17_frame": 240,
+      "source_second": 4.0,
+      "source_png": {
+        "path": "assets/source-v17/overview.png",
+        "bytes": 3615617,
+        "sha256": "e13f1db137b714b6a9c9221ec30b614aec0afeaff708b670b6f65e9f8f4b0704",
+        "git_blob_sha1": "21089460517315f7943dd4a81b8826255e45e4a6"
+      }
+    },
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "f41a23417e870ed6f3782b183b3484815da37e39efaaea4fe578de26feb3c893",
+      "prior_source_second": 27.2,
+      "completion_basis_sha256": "ac48810ddabd63ed78f75f809e271f72fb27372b35db6b8b2f81f5c8eba2fbdf",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/court/px.avif",
+          "bytes": 504237,
+          "sha256": "f9bb8350aa656fd7df1a692deee1e1a19596f3134b6067a9a82d6828ecb715b0",
+          "git_blob_sha1": "e485d46c83c2e9788ce019a3528f3d70a20bdde9"
+        },
+        {
+          "path": "assets/cubes-v5/court/nx.avif",
+          "bytes": 666971,
+          "sha256": "5df23d457b0dd42e424ae36e71d72cce62b496ddb75cb5e2e8079e0b22bc841e",
+          "git_blob_sha1": "17de02bc0b42282587d8ebe94b3e10cf0166bdc3"
+        },
+        {
+          "path": "assets/cubes-v5/court/py.avif",
+          "bytes": 505731,
+          "sha256": "2e07c5c6b72c8522f28e7bc59cbe5ca67eb168b9871b014c913623ed5837d029",
+          "git_blob_sha1": "65f622541ad4108a5b9416a07eec4e7cdd6a5774"
+        },
+        {
+          "path": "assets/cubes-v5/court/ny.avif",
+          "bytes": 615293,
+          "sha256": "90acd0dcd4f80acd2d0f153965cdb6feea2fc388b737f9bbcb8fca0aee7d9937",
+          "git_blob_sha1": "013d2d8a1911f87a80ee3c88c956fe7658c2d15e"
+        },
+        {
+          "path": "assets/cubes-v5/court/pz.avif",
+          "bytes": 590761,
+          "sha256": "926f9dea8970bb0a9e642957c2e072962f7de7b14285988db3cfe7c9f4685096",
+          "git_blob_sha1": "a981de99fbdf6173a9d2a4a850187d956bb2dac2"
+        },
+        {
+          "path": "assets/cubes-v5/court/nz.avif",
+          "bytes": 701628,
+          "sha256": "837846bdeed5c4408d7e8c64d29309296bff1d21f4752e3a1aee15bbaa837c96",
+          "git_blob_sha1": "bcd6538e4989be6f982ea872d5c7638ef30a5bc4"
+        }
+      ],
+      "id": "court",
+      "label": "花廊雨庭",
+      "v17_frame": 1272,
+      "source_second": 21.2,
+      "source_png": {
+        "path": "assets/source-v17/court.png",
+        "bytes": 3293599,
+        "sha256": "7fa96573c5e5c78ebf189f99d7e2cfe0c05cfda104b80e72122d15e133cc0824",
+        "git_blob_sha1": "a4717a7bf6cbf5f2be287b22bcd0510c7ccb3f52"
+      }
+    },
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "d548fec28e1a2f26a1700023cfa6e5590bf30309627fc78b624a68b823f52aab",
+      "prior_source_second": 43.0,
+      "completion_basis_sha256": "c52d11f4aeeeef05ad423319da6d9147a73fecf0e5372f8716a6a86e2278372b",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/bridge/px.avif",
+          "bytes": 477338,
+          "sha256": "8a5dad844616abe16f69b19903fda9a5e5ee49854925404f56b87851cc7e45fb",
+          "git_blob_sha1": "ebb3fae5d002c3f03b9f19e37d98d97b8a3964c2"
+        },
+        {
+          "path": "assets/cubes-v5/bridge/nx.avif",
+          "bytes": 619448,
+          "sha256": "eb28eb5f86000cec6d04dd0b1f2afb56953c1bbaff4c952c54dd4f01172c09f6",
+          "git_blob_sha1": "e75344e6c4e4c83698741ff463a1364942838ce5"
+        },
+        {
+          "path": "assets/cubes-v5/bridge/py.avif",
+          "bytes": 504969,
+          "sha256": "a31b99331c0c175e8e95a518257d8df0790f95bc3eaa7ef69ac7b13500e7601b",
+          "git_blob_sha1": "3b2fe85d7b0237f1df11d96ff58726225efc36c1"
+        },
+        {
+          "path": "assets/cubes-v5/bridge/ny.avif",
+          "bytes": 547327,
+          "sha256": "b16412c29fe488dfa9b51c95d1a9808577611972129c0a212ef7be578211139f",
+          "git_blob_sha1": "1bca0ecd92b40685b76daf7367abb240f00c93bd"
+        },
+        {
+          "path": "assets/cubes-v5/bridge/pz.avif",
+          "bytes": 532197,
+          "sha256": "818a8a2a9e4b088cf7880dd44bf54852007a461072bc92e77e6caec2fc8473b2",
+          "git_blob_sha1": "3e7ba3cc21cebae891b962d803f0e3d2fe65d429"
+        },
+        {
+          "path": "assets/cubes-v5/bridge/nz.avif",
+          "bytes": 584975,
+          "sha256": "3bbf6f1b420b5392e2767a784566b6e2c1defc83863ddac50387ec92ec3c0d7b",
+          "git_blob_sha1": "49ad5649a1c561062645b16bb64e398bb81fb1c4"
+        }
+      ],
+      "id": "bridge",
+      "label": "叠水溪桥",
+      "v17_frame": 2160,
+      "source_second": 36.0,
+      "source_png": {
+        "path": "assets/source-v17/bridge.png",
+        "bytes": 3544405,
+        "sha256": "2115760a2138b9e3d1e771291ede7ce042d59e04ef22c586a7f2b7ffb748c435",
+        "git_blob_sha1": "b86397ef58ff7023b5332b7e0da526677655c6ad"
+      }
+    },
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "8e3d36d62f08aedd83b08f5d896861748477898128df1ba747bf906507d4fd4d",
+      "prior_source_second": 62.583333333333336,
+      "completion_basis_sha256": "098eda768e4869a196bf38996d3dc188eae7a7bfde87fc66474baee542fb45c9",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/bamboo/px.avif",
+          "bytes": 618553,
+          "sha256": "29bd982e99add572e11801c6a1baa99aaccb443ae148f4d00ac879ca4dd1573d",
+          "git_blob_sha1": "0304f51ea0de24951e0b03e4c189d771d61f3681"
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/nx.avif",
+          "bytes": 597055,
+          "sha256": "a7373279e86424d7790c89db7e81f827ef4ebc36185dcf27f8179ea45eee3def",
+          "git_blob_sha1": "af6ef5f0ce87be5fa5d6171e918d6308af89b224"
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/py.avif",
+          "bytes": 534117,
+          "sha256": "ae97ca071ef3b74f7c0315f3d0e4c766ba9416f842fbfc94265f3d45b9280b3a",
+          "git_blob_sha1": "8bbd7c851b54cb011bc425fbd42fd1e2b89d96f1"
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/ny.avif",
+          "bytes": 622441,
+          "sha256": "cbebdeb2630a9a1518168138ae76bf9ac69b503bbec81b4ed9f9bed9c46a9e64",
+          "git_blob_sha1": "ce54cccec5fc028807c8ea33da79d58b6b4fff14"
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/pz.avif",
+          "bytes": 544053,
+          "sha256": "39e0dc52e3a91a36808944cd46b210f05936b027cc9f77f77762c4996d8011ba",
+          "git_blob_sha1": "36e3afa1539d8a0fc0771d262b18ef895b68781a"
+        },
+        {
+          "path": "assets/cubes-v5/bamboo/nz.avif",
+          "bytes": 621238,
+          "sha256": "a7f5df8c3266a26c57ad85afab32881b93a4438d2b6e023a4f6b75c7e7f1d432",
+          "git_blob_sha1": "67aa56a7d494eb11c0f1047745bc9fc7d18f19dc"
+        }
+      ],
+      "id": "bamboo",
+      "label": "竹冠仰望",
+      "v17_frame": 3306,
+      "source_second": 55.1,
+      "source_png": {
+        "path": "assets/source-v17/bamboo.png",
+        "bytes": 3439519,
+        "sha256": "297913040de69a16909864d0cb2b16ee50d4e46c5f875ca52399aeafec29c1c1",
+        "git_blob_sha1": "7b23d835ecdb3b8e682a85637d6d63a6ed176cb0"
+      }
+    },
+    {
+      "completion_origin": "new-v17-reference-photographic-completion",
+      "reference_png_sha256": "42f2cb1da74b21192bdb6018ec7d23813b66fa4246d09350d870c9a43d7d2d7a",
+      "completion_basis_sha256": "22a40547641fe41ce4d4ece0e6c8df54fa6af2ea8205a14678ed0e9b746a5141",
+      "sphere_sha256": "a0c3c01bff7ca15bbbfed19e7df9583ecf5ee87fdb1c15fb933640e10232641f",
+      "sphere_size": [
+        1774,
+        887
+      ],
+      "spherical_projection_added_native_detail": false,
+      "face_generation_added_inferred_detail": true,
+      "face_files": [
+        {
+          "face": "px",
+          "generated_png_sha256": "6a0e3f52af80f9dafc314dd580865b552f3cec9739b33c99d3831cee8b0a8463",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/stonecourt/px.avif",
+            "bytes": 560424,
+            "sha256": "29eb54db6eed228776fe2d15bc70c485748d66d62caf21a1d8582f0ffffa0d87",
+            "git_blob_sha1": "8830cd214f96b8a7e805ffba04feb710534b1048"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the px face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same bamboo/rectangular gate/tall porous Taihu rock courtyard, no added moon gate. Treat this 90 degree rectilinear view as fixed. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        },
+        {
+          "face": "nx",
+          "generated_png_sha256": "a2c8aeb6ac2e9e71d503c876d8e48a7ce12e214034d42c416778def490419c7f",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/stonecourt/nx.avif",
+            "bytes": 584102,
+            "sha256": "eb6deb45f6b914d97e93ca771496f5572ef987ce93607dd3a864fd21e94e1647",
+            "git_blob_sha1": "05e3ea4fbb1e3fb7e1c67da7eb4eed25c5bf80a7"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the nx face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same bamboo/rectangular gate/tall porous Taihu rock courtyard, no added moon gate. Treat this 90 degree rectilinear view as fixed. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        },
+        {
+          "face": "py",
+          "generated_png_sha256": "7d886ca77c9a317757f5b7d4ce0542e3f6b280c03055f17f9c5ed96ec4150901",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/stonecourt/py.avif",
+            "bytes": 704497,
+            "sha256": "a90ab50b12e0d9eb5c08c13efdfbd0613eb134e01fa1a3e7389b49d49a170189",
+            "git_blob_sha1": "fc93046948749b386768f69c4ea47846da94b776"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the py face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same bamboo/rectangular gate/tall porous Taihu rock courtyard, no added moon gate. Treat the straight-up canopy view as a true zenith view, no horizon or ground. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        },
+        {
+          "face": "ny",
+          "generated_png_sha256": "b45b1d435de21013bb67c114e6f646ef9eddabbbc0f8a0b15ce7f0335f5625ee",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/stonecourt/ny.avif",
+            "bytes": 630417,
+            "sha256": "d7b3d0e11c1a7596dd4f74ced741f8858a79616a560457a3d6b789039a65b71d",
+            "git_blob_sha1": "505b6b4ddb2421847ad3bdbfb8a198afe3539d5d"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the ny face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same bamboo/rectangular gate/tall porous Taihu rock courtyard, no added moon gate. Treat the straight-down paving view as true nadir, no horizon or sky. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        },
+        {
+          "face": "pz",
+          "generated_png_sha256": "1b46642755925e7a8e69b7e0a60e4a72e9520a6b7bd3cafbc7d5bc31c10ecec0",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/stonecourt/pz.avif",
+            "bytes": 510876,
+            "sha256": "c6fc2ad78efb4053ec1fac3665266c401f879ef385d71d64e813809878b8bb84",
+            "git_blob_sha1": "c6b4e56231fc8864355c129f0336a1b505ea1cd3"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the pz face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same bamboo/rectangular gate/tall porous Taihu rock courtyard, no added moon gate. Treat this 90 degree rectilinear view as fixed. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        },
+        {
+          "face": "nz",
+          "generated_png_sha256": "23ac1b77af43bdfd19c751c1d2c75c84baff502501b46bd8556ca68298420dea",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/stonecourt/nz.avif",
+            "bytes": 642982,
+            "sha256": "bfd11470d1a0af771336edfdfc6a8634b987f50ce17a7ce1449d53cb243287da",
+            "git_blob_sha1": "98a6073b37b20701209b76c250c756619a6aa6bb"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the nz face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same bamboo/rectangular gate/tall porous Taihu rock courtyard, no added moon gate. Treat this 90 degree rectilinear view as fixed. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        }
+      ],
+      "id": "stonecourt",
+      "label": "竹石小院",
+      "v17_frame": 4008,
+      "source_second": 66.8,
+      "source_png": {
+        "path": "assets/source-v17/stonecourt.png",
+        "bytes": 3490169,
+        "sha256": "42f2cb1da74b21192bdb6018ec7d23813b66fa4246d09350d870c9a43d7d2d7a",
+        "git_blob_sha1": "b73489707e741b3321ea79cb2283670ef0230230"
+      }
+    },
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "c662ba6c36dd7d71fd8c1c9b1da1387f7304754ada02f896565152ce5d6dc669",
+      "prior_source_second": 91.28333333333333,
+      "completion_basis_sha256": "497ac96718aaad03fa96bdd4a66a8e56f289d070192606938cf3753ad562c4d3",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/gallery/px.avif",
+          "bytes": 571198,
+          "sha256": "f1a154442c48d661459cdd789ea719ad294d2293ed3570d605416c455d185659",
+          "git_blob_sha1": "29d02f1d5604d2a60a20249ab482c8011d0f3606"
+        },
+        {
+          "path": "assets/cubes-v5/gallery/nx.avif",
+          "bytes": 520444,
+          "sha256": "cd413a571bf64dfb52b95185479503e97994033e0245160a29e18791113c9642",
+          "git_blob_sha1": "e43cad9daf61c501d2c7d63bb27cce7592c7c91d"
+        },
+        {
+          "path": "assets/cubes-v5/gallery/py.avif",
+          "bytes": 285172,
+          "sha256": "06ebcdfaf2113d2c61ac1e208a3ceffaa01d3be67fc34fa397f3a89103ca9be2",
+          "git_blob_sha1": "e00a81e27b95a3d90a1368f0ea95a4377304e9e6"
+        },
+        {
+          "path": "assets/cubes-v5/gallery/ny.avif",
+          "bytes": 575975,
+          "sha256": "016a5cac05c0908a1d3c2bfb5876aeb9d8142df988b775ed109830035adadb93",
+          "git_blob_sha1": "974c2f9658fdb8177f9ef01d3adabbd0641f9f56"
+        },
+        {
+          "path": "assets/cubes-v5/gallery/pz.avif",
+          "bytes": 446475,
+          "sha256": "930ed24ffd78b230c54167add093636b9b23ecc7334429390ac026e2077eeebe",
+          "git_blob_sha1": "b79edbeaa181500371e1094e3863096286734385"
+        },
+        {
+          "path": "assets/cubes-v5/gallery/nz.avif",
+          "bytes": 476590,
+          "sha256": "f7950b15e1e548894a043c528da5b59c7efafa42909cda4db938007240e5effc",
+          "git_blob_sha1": "3cf4891419989b99be446341e479cba08303550b"
+        }
+      ],
+      "id": "gallery",
+      "label": "廊下望湖",
+      "v17_frame": 5444,
+      "source_second": 90.73333333333333,
+      "source_png": {
+        "path": "assets/source-v17/gallery.png",
+        "bytes": 3682671,
+        "sha256": "bd54d148f6b2d2d197163464ca3a1a0989f8c9fc09a1b6ad2d312e44dd884e74",
+        "git_blob_sha1": "f51cb314dd44e2e571f8e43e8a0e4d93fd5149f9"
+      }
+    },
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "7ff8599621213f86f4355548df68d36c37f842824bf3f48d6dc68090b7c31bc5",
+      "prior_source_second": 104.0,
+      "completion_basis_sha256": "b1d607722766bc38b6819c0eb4873d9f947c6b02d4d21380063801d58de6597e",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/pavilion/px.avif",
+          "bytes": 464400,
+          "sha256": "2b9cefd13e0f591470d90b02ec17e4181191d9a7686eb2531c35b35a9136a26d",
+          "git_blob_sha1": "0bdd87ecbe796d61494de4c6361e56117d5c7101"
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/nx.avif",
+          "bytes": 476047,
+          "sha256": "8dd19ad0b99fa414bd4a251175b659c155bdd53475422e16b33d489107a052b7",
+          "git_blob_sha1": "7ca22674eec28a3891e51ce8feb394560322a2f4"
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/py.avif",
+          "bytes": 310426,
+          "sha256": "7d369b7c73e87390b09d8dd1a321999152dae03338b52d5437ab4db85638989f",
+          "git_blob_sha1": "9a7714cc0e33c34aaabaaa8a9175aed3d070bf85"
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/ny.avif",
+          "bytes": 627263,
+          "sha256": "aa4bd3c6b443f7c361c0d18ecf781aaca550a1cc660cbc5d3ce9e84b9096c5fe",
+          "git_blob_sha1": "876e68bcc101c10b69937c5d8b141ea7c9790df1"
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/pz.avif",
+          "bytes": 508434,
+          "sha256": "5274e802c94225d045c642b0796ebd3b35944acc42847138d7ccd89daaa726af",
+          "git_blob_sha1": "cbc00b2709ddca1d29607006d6a60811df800076"
+        },
+        {
+          "path": "assets/cubes-v5/pavilion/nz.avif",
+          "bytes": 510427,
+          "sha256": "1b7dc0b368ba1d67552e56873d5a1bfcda669e4786e945113a1a3a0e85aedc02",
+          "git_blob_sha1": "759eca198c618f4c68bb3a3a57c72731721678fd"
+        }
+      ],
+      "id": "pavilion",
+      "label": "平亭望湖",
+      "v17_frame": 6240,
+      "source_second": 104.0,
+      "source_png": {
+        "path": "assets/source-v17/pavilion.png",
+        "bytes": 3145176,
+        "sha256": "cfd5e65a5987e711e0fc53247c5037db27be58823b51b28a2500f3803dba9e32",
+        "git_blob_sha1": "402cf428c062118a48965e18ae65514a203f20b0"
+      }
+    },
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "a11474a02593474e72cbd14cba340057ee639463d5710eab210d20817321d1c7",
+      "prior_source_second": 140.5,
+      "completion_basis_sha256": "253b456598eca5343e825e712a06330a51156db80fa9cb6142b59ee3479e813f",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/lotus/px.avif",
+          "bytes": 666194,
+          "sha256": "3154a17fc65c72208531e9cc06ccecc1e69d8b0664de4d00505129ee03fbdda9",
+          "git_blob_sha1": "b3b8636524acf6fea3578e57d15fdc5cdd671f42"
+        },
+        {
+          "path": "assets/cubes-v5/lotus/nx.avif",
+          "bytes": 593601,
+          "sha256": "e20f2d8b6aa76d6182d7544cebcc100afc560348acaeec724682a4c0529eed81",
+          "git_blob_sha1": "a854e227f5ff4ca59fb3db5de9b67ce293fd242f"
+        },
+        {
+          "path": "assets/cubes-v5/lotus/py.avif",
+          "bytes": 536781,
+          "sha256": "b10e3aad1f4e9a1031ba072aae1f7c2182215bafc3753fef20a95a7dbe3ba6f6",
+          "git_blob_sha1": "73a31d144acb186187adb285ade8fe26b892cb26"
+        },
+        {
+          "path": "assets/cubes-v5/lotus/ny.avif",
+          "bytes": 533940,
+          "sha256": "60c5aa653b8f83954a57e5acea59f7175a15d8ddaf15859cfd7209a1ac85d7c4",
+          "git_blob_sha1": "8968a6f132b05dcf1744236867ee1980e5e54e69"
+        },
+        {
+          "path": "assets/cubes-v5/lotus/pz.avif",
+          "bytes": 497216,
+          "sha256": "b92794e1f6581f60a45a0e656d46afe4237b8d46d015a1b8713fa058be12c090",
+          "git_blob_sha1": "aa8a4ee8121273ff582c79cdfe4d27af783ce754"
+        },
+        {
+          "path": "assets/cubes-v5/lotus/nz.avif",
+          "bytes": 614500,
+          "sha256": "dcd053e45dd548c163219818dcf3bc247b36a7a6d5d0cb4990ebc382e4740801",
+          "git_blob_sha1": "06447c69cc2d49b24257b264b83ca97500518c10"
+        }
+      ],
+      "id": "lotus",
+      "label": "荷湾石桥",
+      "v17_frame": 8400,
+      "source_second": 140.0,
+      "source_png": {
+        "path": "assets/source-v17/lotus.png",
+        "bytes": 3250117,
+        "sha256": "57f8090fe3297d739bcb8fad1013926bc2156699eb5e6677e0dc8eadb9b622c7",
+        "git_blob_sha1": "785b3da77196c3df752330371ba363766220b98c"
+      }
+    },
+    {
+      "completion_origin": "reused-same-scene-v14-photographic-completion",
+      "prior_movie_sha256": "0022434da1eab7f346282ffeedce6ab58168a500a8750975eda430301cd0ad46",
+      "prior_source_png_sha256": "0b19e4c82e5dc22b861c688e6272ae9090368762085d34c021213546357b3fe0",
+      "prior_source_second": 166.0,
+      "completion_basis_sha256": "35f10211319b2740f2b7f2d3858bdd4fa1642187764e1baf4d1702cd27b8f615",
+      "face_files": [
+        {
+          "path": "assets/cubes-v5/grove/px.avif",
+          "bytes": 600808,
+          "sha256": "fdb9bd44954d1bb8e6e0ea793095028b8774efdf13dcc61d273d50a4a4cdcd27",
+          "git_blob_sha1": "892c51de33ec50bdb7431e3dc0e2b8426ece5ac7"
+        },
+        {
+          "path": "assets/cubes-v5/grove/nx.avif",
+          "bytes": 657581,
+          "sha256": "dc4ac630cf43cb634c81e30beff32296272c3568e17c668a8bb6db95f9876b21",
+          "git_blob_sha1": "602bf9a4024f8d04792aefc7aa68df6dfa713264"
+        },
+        {
+          "path": "assets/cubes-v5/grove/py.avif",
+          "bytes": 716671,
+          "sha256": "76cef8b1a04133545c523d66fe0de8d8d294d0d617a40415b11a0ec780836e4e",
+          "git_blob_sha1": "bcb1c2b1a2f4a6cb1ea072422fc269942eeac182"
+        },
+        {
+          "path": "assets/cubes-v5/grove/ny.avif",
+          "bytes": 540691,
+          "sha256": "c54230aa6f1f1d329cc25040e0e295b59a1ea564ec714664b3062d535de7b3b5",
+          "git_blob_sha1": "6e378ccb4b8e02e0bbc46b1a5f8876475117eba1"
+        },
+        {
+          "path": "assets/cubes-v5/grove/pz.avif",
+          "bytes": 639377,
+          "sha256": "d8b5ac4a0dd2363e160bb48b42d954b1723b60e6250cde049d5d17c759d97bdd",
+          "git_blob_sha1": "6332f1395dfe0e7fb98ff229df40fbf32b0318c8"
+        },
+        {
+          "path": "assets/cubes-v5/grove/nz.avif",
+          "bytes": 644617,
+          "sha256": "19493b6ba19bc62a2754ab57504d7dcab103704afd4c6979bed9235a403fa11d",
+          "git_blob_sha1": "c659a92fc2bc3d83a8f1ba4e969ad32f3c44cb3b"
+        }
+      ],
+      "id": "grove",
+      "label": "林下小径",
+      "v17_frame": 9554,
+      "source_second": 159.23333333333332,
+      "source_png": {
+        "path": "assets/source-v17/grove.png",
+        "bytes": 3602239,
+        "sha256": "f1758d352b2ac09c15ef27343aaf15349b3c211d2bab81e39f8ca89cc1eb7e64",
+        "git_blob_sha1": "18290c25bdc41cf5e346f7ff3fc7a4d43c3caa33"
+      }
+    },
+    {
+      "completion_origin": "new-v17-reference-photographic-completion",
+      "reference_png_sha256": "b9afafa0af35a373bac7552455e37b676921f9e64a4ed67c1d38e34b572ec21e",
+      "completion_basis_sha256": "e14c687b86e73a3ae57b5e98d41e3d9e6ea947e0a16d7243c1b1f51308849851",
+      "sphere_sha256": "68ad6a78b43bb3be4fcdee6a467411537c271387236dc5cb64853a0b7b16ce87",
+      "sphere_size": [
+        1774,
+        887
+      ],
+      "spherical_projection_added_native_detail": false,
+      "face_generation_added_inferred_detail": true,
+      "face_files": [
+        {
+          "face": "px",
+          "generated_png_sha256": "d492596e4676c88bc8c511a14d2abb9b105719d51f1deda2a0d9af8d46239201",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/flowers/px.avif",
+            "bytes": 554409,
+            "sha256": "d82e4c1200a0f325ba53817bda0575b4ca30d412b5940f9f78e1dc25877507ad",
+            "git_blob_sha1": "0940c40f9db7730f50d83635ff0283aa4cfe6f34"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Output a single square 1536x1536 high-detail photographic garden cubemap face. Image 1 is the exact px perspective guide. Refine the photographic detail in Image 1 while preserving its precise camera angle, orientation, composition, silhouettes and object positions, especially every edge. Image 2 is the actual v17 film frame and Image 3 the coherent sphere to preserve this place's identity: pink flower border, wet irregular paving, lakeside wood pavilion and round moon gate. This is a fixed 90-degree rectilinear perspective, not panorama. Real stone/leaf/petal texture and neutral-green natural daylight, no plastic CGI or blur. Do not redesign, add gateways, move objects, or change edge geometry. No people, human shadows, text or watermark."
+        },
+        {
+          "face": "nx",
+          "generated_png_sha256": "2695b302c8d4a25d4751d1423f2f63784c97d0085fdff0a22ac6393ebca55819",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/flowers/nx.avif",
+            "bytes": 562927,
+            "sha256": "b63ef4f25fb17856d47ba0138d29621bd8c86b1d3a0d847b8ca789ee5e717025",
+            "git_blob_sha1": "ec1f73900cce198032079ae186872d03c7a4be11"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Output a single square 1536x1536 high-detail photographic garden cubemap face. Image 1 is the exact nx perspective guide. Refine the photographic detail in Image 1 while preserving its precise camera angle, orientation, composition, silhouettes and object positions, especially every edge. Image 2 is the actual v17 film frame and Image 3 the coherent sphere to preserve this place's identity: pink flower border, wet irregular paving, lakeside wood pavilion and round moon gate. This is a fixed 90-degree rectilinear perspective, not panorama. Real stone/leaf/petal texture and neutral-green natural daylight, no plastic CGI or blur. Do not redesign, add gateways, move objects, or change edge geometry. No people, human shadows, text or watermark."
+        },
+        {
+          "face": "py",
+          "generated_png_sha256": "29a7364f7b77fc1ad606c7ef32789da815d10513986e9568d3835d6a4afc6cea",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/flowers/py.avif",
+            "bytes": 680888,
+            "sha256": "8ce387e2d74a3b8bf57ef13161a7f4732b20ca2386df4e06866a4c9b096746a1",
+            "git_blob_sha1": "15be1b8081349e16e70ff0480d7de8aab53e3ec8"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Output a single square 1536x1536 high-detail photographic garden cubemap face. Image 1 is the exact py perspective guide. Refine the photographic detail in Image 1 while preserving its precise camera angle, orientation, composition, silhouettes and object positions, especially every edge. Image 2 is the actual v17 film frame and Image 3 the coherent sphere to preserve this place's identity: pink flower border, wet irregular paving, lakeside wood pavilion and round moon gate. This is a true straight-up canopy/sky zenith view; preserve orientation and no added ground/horizon. Real stone/leaf/petal texture and neutral-green natural daylight, no plastic CGI or blur. Do not redesign, add gateways, move objects, or change edge geometry. No people, human shadows, text or watermark."
+        },
+        {
+          "face": "ny",
+          "generated_png_sha256": "d98f9b6e35687a4f45846ebb7a104b5608d4fcd7591c8b2f9633482cf3c125f3",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/flowers/ny.avif",
+            "bytes": 550705,
+            "sha256": "12587f47f4d65384e7d99e289efe8bae925fc501a0b8e92a1e3045222b565818",
+            "git_blob_sha1": "0cab4d4101d311f9c57f849b02821d8b112793d8"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the ny face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same low pink flower border and wet lakeside path, round moon gate and wood pavilion. Treat the straight-down paving view as true nadir, no horizon or sky. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        },
+        {
+          "face": "pz",
+          "generated_png_sha256": "5e45a0530731aa6196a97d294cd09f1d1fc3f7d44dde01e83ae64ec3c1cd2873",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/flowers/pz.avif",
+            "bytes": 541150,
+            "sha256": "7f877a0a80235b8043347bfae69697ab7586fbbc9358d0fa47076e957a6f3b0a",
+            "git_blob_sha1": "fc37f7d4520ebcf542cd1150e42a912dd8beafc7"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the pz face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same low pink flower border and wet lakeside path, round moon gate and wood pavilion. Treat this 90 degree rectilinear view as fixed. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        },
+        {
+          "face": "nz",
+          "generated_png_sha256": "ae6517d270b4cf2380633d82cc436c038121be7a4bceea7412102cb8c4668973",
+          "native_generated_size": [
+            1254,
+            1254
+          ],
+          "encoding": "AVIF quality85 4:4:4",
+          "asset": {
+            "path": "assets/cubes-v17/flowers/nz.avif",
+            "bytes": 615742,
+            "sha256": "cf49207f382a87cf484fb8b200988eca53f928ea2dc8868acf9e05781d06b221",
+            "git_blob_sha1": "3b5cfd4e9445e88d5d0203c279ff0c968b4ccf35"
+          },
+          "generation_prompt": "Use case: precise-object-edit. Make ONE single square high-detail photographic cubemap face, 1536x1536 if supported, NOT a panorama or grid. Image 1 is the exact perspective/composition guide for the nz face of a coherent 360 garden view. Image 2 is the original v17 film frame that locks the garden identity, materials and light. Image 3 is the coherent surrounding panorama. Improve fine photographic detail in IMAGE 1 only: crisp real stone pores, wet paving, individual natural leaves, petals, wood grain. Preserve camera angle, face orientation including any rotated top/down view, composition, structure sizes and positions, silhouettes, boundaries and colors of Image 1. Do not move buildings, rocks, gateways, vegetation masses or path edges. Keep every edge's layout matching Image 1 so adjacent cubemap faces meet. Same low pink flower border and wet lakeside path, round moon gate and wood pavilion. Treat this 90 degree rectilinear view as fixed. Natural neutral green daylight, real photographic garden, no people or human shadows, no text/watermark. No fantasy architecture, repeated gateways, oversharpened halos, plastic CGI, or blur."
+        }
+      ],
+      "id": "flowers",
+      "label": "花丛近景",
+      "v17_frame": 9804,
+      "source_second": 163.4,
+      "source_png": {
+        "path": "assets/source-v17/flowers.png",
+        "bytes": 3359072,
+        "sha256": "b9afafa0af35a373bac7552455e37b676921f9e64a4ed67c1d38e34b572ec21e",
+        "git_blob_sha1": "5d1afa42342f882dc087c6eb91a2334e1c2a857b"
+      }
+    }
+  ],
+  "completion_set_sha256": "5a57b381259ad1db2373b69ad3a6f90338ba0370e8f66088889f8702f8e80776"
+}
