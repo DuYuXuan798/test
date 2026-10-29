@@ -1,592 +1,490 @@
 {
-  "version": "v17",
-  "movie_sha256": "0580824acf162a8c9d1e1a2b62df834f1ec756be3ca1c0d8deb9a8584332a81b",
-  "node_count": 10,
-  "source_count": 10,
-  "face_count": 60,
-  "timestamp": 1793283475.935196,
+  "title": "晴汀园 · 沉浸云游",
   "files": [
-    {
-      "path": "index.html",
-      "bytes": 10023,
-      "sha256": "3f6f60b0c359272bd86af885e5012a5f923c8a81ded244a8ba53a52966404a12",
-      "git_blob_sha1": "b1f5f398e99fdbf622b00ec1fc8446148525b429"
-    },
-    {
-      "path": "photo-vr-index-v17.js",
-      "bytes": 6123,
-      "sha256": "e3aeb54303fad9c846b537b6821d43284af750f538a8916da8737018bb6e1efa",
-      "git_blob_sha1": "f61540923e4de77412f49163e850325db35146e1"
-    },
-    {
-      "path": "provenance-source-v17.json",
-      "bytes": 42284,
-      "sha256": "c8d9d668495911e5a4402eae1acfe5a208940f929018e7c90b8cbf06e5260b28",
-      "git_blob_sha1": "cef00e520aa1dc9acf9c57f93d54c8bb9d44cfcc"
-    },
-    {
-      "path": "review-v17.html",
-      "bytes": 10023,
-      "sha256": "3f6f60b0c359272bd86af885e5012a5f923c8a81ded244a8ba53a52966404a12",
-      "git_blob_sha1": "b1f5f398e99fdbf622b00ec1fc8446148525b429"
-    },
-    {
-      "path": "style-fresh-v17.css",
-      "bytes": 22314,
-      "sha256": "32c89215c59ab06781d322f890bba1ae9034bda4732091f8ef62e94b4b066168",
-      "git_blob_sha1": "ce32a068bf3f8093cc0f6c27a2b31870902c305e"
-    },
-    {
-      "path": "viewer-ui-v17.js",
-      "bytes": 52158,
-      "sha256": "9726984d2aba87d0d1469979c5430602e5572f4b8057dc19245582d423c8bda8",
-      "git_blob_sha1": "c2e364c58d0d2205674ddeb975a7fd9583215237"
-    },
-    {
-      "path": "使用说明_v17.txt",
-      "bytes": 1104,
-      "sha256": "8529528a557a0027ae978d7a9e4d8b16568ae4bca847802206d6b849bcee7f6c",
-      "git_blob_sha1": "9fe5110a30a07d2a1cbeea6aae6facd58ce33612"
-    },
-    {
-      "path": "nodes-v17/bamboo.js",
-      "bytes": 325,
-      "sha256": "447d9b3507610f4907c8ab19017210bdbf16d624e36ccc3b5ef274fccae8c108",
-      "git_blob_sha1": "3c96257db0fd2767b3a3e9df2bc8cf5c3ecf4549"
-    },
-    {
-      "path": "nodes-v17/bridge.js",
-      "bytes": 325,
-      "sha256": "12c43521deef3ec9c71ba81ae8766d7207802c3fdce4944d6cdc4eda01356255",
-      "git_blob_sha1": "3a723b35b4a45cf2b7c7769720b6bbd3e64ee42c"
-    },
-    {
-      "path": "nodes-v17/court.js",
-      "bytes": 317,
-      "sha256": "740c2e4549badf30517e44d41c75cb076852787363139a3dfe596431b665d4e2",
-      "git_blob_sha1": "4fa782df9995d306b8878abf9d16f2bcb7a5d3b2"
-    },
-    {
-      "path": "nodes-v17/flowers.js",
-      "bytes": 339,
-      "sha256": "aa7fbf9884ce310d9aae0f1ee4e0e02b8d3c227ee39e91a00b0fab9d4b50556e",
-      "git_blob_sha1": "ef502c8ab63ae49d5929bb0b6019f3ba4dc643e5"
-    },
-    {
-      "path": "nodes-v17/gallery.js",
-      "bytes": 333,
-      "sha256": "b72cb82fbd8048b45c2ad970918630e769b24ee0cc4159b7e22667d9322efb7b",
-      "git_blob_sha1": "bd1264a5d6fe508c464cd9a05e343062fe366ba5"
-    },
-    {
-      "path": "nodes-v17/grove.js",
-      "bytes": 317,
-      "sha256": "99121c87848585a562075e92e202ec4561cd2aae18a67ba6988cc75d40f716a3",
-      "git_blob_sha1": "bac1486fc6674f09bff05694fe4853221af3cfd2"
-    },
-    {
-      "path": "nodes-v17/lotus.js",
-      "bytes": 317,
-      "sha256": "7c8058b60e7e5ab5552341486b6a2a5cfbdf07f2f671fee4a681111669017bb1",
-      "git_blob_sha1": "bb566f69ea12e36f1380a4e554e8df8be77dd6ef"
-    },
-    {
-      "path": "nodes-v17/overview.js",
-      "bytes": 341,
-      "sha256": "e610411923e81bfecaf6db692b50cc8aecb3372be3e8d43e8c216f0a63ea522e",
-      "git_blob_sha1": "c0398f46161c83b6fcf8b8c3b3b5fa38611d9c38"
-    },
-    {
-      "path": "nodes-v17/pavilion.js",
-      "bytes": 341,
-      "sha256": "0fc5cf93a636f532c3a72458bb214f01895526da1665f66376ffc24213da8cbd",
-      "git_blob_sha1": "396c13e7d45dd935c594a2f17aa6af13cf1d0952"
-    },
-    {
-      "path": "nodes-v17/stonecourt.js",
-      "bytes": 363,
-      "sha256": "739baff003b30a186f3ee8115e96d31c508a3afa9ac5effd5fbc8e60cf4f4bba",
-      "git_blob_sha1": "761d53979d2a0a483bd2d35f4b99c03070ce952e"
-    },
-    {
-      "path": "assets/source-v17/bamboo.png",
-      "bytes": 3439519,
-      "sha256": "297913040de69a16909864d0cb2b16ee50d4e46c5f875ca52399aeafec29c1c1",
-      "git_blob_sha1": "7b23d835ecdb3b8e682a85637d6d63a6ed176cb0"
-    },
-    {
-      "path": "assets/source-v17/bridge.png",
-      "bytes": 3544405,
-      "sha256": "2115760a2138b9e3d1e771291ede7ce042d59e04ef22c586a7f2b7ffb748c435",
-      "git_blob_sha1": "b86397ef58ff7023b5332b7e0da526677655c6ad"
-    },
-    {
-      "path": "assets/source-v17/court.png",
-      "bytes": 3293599,
-      "sha256": "7fa96573c5e5c78ebf189f99d7e2cfe0c05cfda104b80e72122d15e133cc0824",
-      "git_blob_sha1": "a4717a7bf6cbf5f2be287b22bcd0510c7ccb3f52"
-    },
-    {
-      "path": "assets/source-v17/flowers.png",
-      "bytes": 3359072,
-      "sha256": "b9afafa0af35a373bac7552455e37b676921f9e64a4ed67c1d38e34b572ec21e",
-      "git_blob_sha1": "5d1afa42342f882dc087c6eb91a2334e1c2a857b"
-    },
-    {
-      "path": "assets/source-v17/gallery.png",
-      "bytes": 3682671,
-      "sha256": "bd54d148f6b2d2d197163464ca3a1a0989f8c9fc09a1b6ad2d312e44dd884e74",
-      "git_blob_sha1": "f51cb314dd44e2e571f8e43e8a0e4d93fd5149f9"
-    },
-    {
-      "path": "assets/source-v17/grove.png",
-      "bytes": 3602239,
-      "sha256": "f1758d352b2ac09c15ef27343aaf15349b3c211d2bab81e39f8ca89cc1eb7e64",
-      "git_blob_sha1": "18290c25bdc41cf5e346f7ff3fc7a4d43c3caa33"
-    },
-    {
-      "path": "assets/source-v17/lotus.png",
-      "bytes": 3250117,
-      "sha256": "57f8090fe3297d739bcb8fad1013926bc2156699eb5e6677e0dc8eadb9b622c7",
-      "git_blob_sha1": "785b3da77196c3df752330371ba363766220b98c"
-    },
-    {
-      "path": "assets/source-v17/overview.png",
-      "bytes": 3615617,
-      "sha256": "e13f1db137b714b6a9c9221ec30b614aec0afeaff708b670b6f65e9f8f4b0704",
-      "git_blob_sha1": "21089460517315f7943dd4a81b8826255e45e4a6"
-    },
-    {
-      "path": "assets/source-v17/pavilion.png",
-      "bytes": 3145176,
-      "sha256": "cfd5e65a5987e711e0fc53247c5037db27be58823b51b28a2500f3803dba9e32",
-      "git_blob_sha1": "402cf428c062118a48965e18ae65514a203f20b0"
-    },
-    {
-      "path": "assets/source-v17/stonecourt.png",
-      "bytes": 3490169,
-      "sha256": "42f2cb1da74b21192bdb6018ec7d23813b66fa4246d09350d870c9a43d7d2d7a",
-      "git_blob_sha1": "b73489707e741b3321ea79cb2283670ef0230230"
-    },
-    {
-      "path": "assets/thumbs-v17/bamboo.jpg",
-      "bytes": 102779,
-      "sha256": "6a089e16d85749d864ac42da18a79f9a98786a1f26b16c0e2bc94c75decc67a8",
-      "git_blob_sha1": "cd9e4a5aa2aa3f11c72dd9d44d54be23601fcca9"
-    },
-    {
-      "path": "assets/thumbs-v17/bridge.jpg",
-      "bytes": 89794,
-      "sha256": "e46979a95f30b512fa0b7119243d0abd1a918bae64e7378be9057c2604a4766d",
-      "git_blob_sha1": "f9d83cae44227e2d598505bf069dee164e94245e"
-    },
-    {
-      "path": "assets/thumbs-v17/court.jpg",
-      "bytes": 89918,
-      "sha256": "a12f6ec48859dcce52fc19b0b67cbda4b4ab795b941639113456e99a4bf9ffe7",
-      "git_blob_sha1": "7a8a590b7d4e678e94b5d13a05a6389edb8bb3d9"
-    },
-    {
-      "path": "assets/thumbs-v17/flowers.jpg",
-      "bytes": 92729,
-      "sha256": "2b0b674aeb31accede3e8303e10243731163f53ec40302df0965e0563fea7f0c",
-      "git_blob_sha1": "b2c03c03b0406c50b3f2ec8ffcb37bfd93a0c030"
-    },
-    {
-      "path": "assets/thumbs-v17/gallery.jpg",
-      "bytes": 91800,
-      "sha256": "6a543d51b6d326e16c7487beb17b042bfc15d4fd86519a8073c992606a8f2c6d",
-      "git_blob_sha1": "ea68dea955b72e32eaffc2158238040950d7de40"
-    },
-    {
-      "path": "assets/thumbs-v17/grove.jpg",
-      "bytes": 92626,
-      "sha256": "cd8626dc22120b0e817b688a961f8fe4737ab22a4f345bad4a2a299571ce25f2",
-      "git_blob_sha1": "77989e6ef3111d8c120642014b6be26b901de6e9"
-    },
-    {
-      "path": "assets/thumbs-v17/lotus.jpg",
-      "bytes": 87055,
-      "sha256": "588272f2f170d956ead932ec01c945616e563d35e44211ee12c893e3358397be",
-      "git_blob_sha1": "61c8357c6c42efb4d65dada55819dd69bb739db1"
-    },
-    {
-      "path": "assets/thumbs-v17/overview.jpg",
-      "bytes": 88734,
-      "sha256": "ccff24ee9a38293e536019800fc003174344720e00de893ca48eee7bad6388a0",
-      "git_blob_sha1": "04dd67d141dc23aad5f913d4e4db15ee41ad04d5"
-    },
-    {
-      "path": "assets/thumbs-v17/pavilion.jpg",
-      "bytes": 78254,
-      "sha256": "6e131a529c82ed1e188c428f560aef4fb17bcd2f625a3c799d146d9c1510e4f1",
-      "git_blob_sha1": "0609e82984b3665f1021a612ed8244bce821ffa0"
-    },
-    {
-      "path": "assets/thumbs-v17/stonecourt.jpg",
-      "bytes": 87791,
-      "sha256": "9efc8e4b819b31bc8a1c562dbf976142df88129b59fc3936987d2c0c45949443",
-      "git_blob_sha1": "671265a67a55b3e2ef6bcdb1cc5bc8943c8c7212"
-    },
     {
       "path": "assets/cubes-v17/flowers/nx.avif",
       "bytes": 562927,
-      "sha256": "b63ef4f25fb17856d47ba0138d29621bd8c86b1d3a0d847b8ca789ee5e717025",
-      "git_blob_sha1": "ec1f73900cce198032079ae186872d03c7a4be11"
+      "sha256": "b63ef4f25fb17856d47ba0138d29621bd8c86b1d3a0d847b8ca789ee5e717025"
     },
     {
       "path": "assets/cubes-v17/flowers/ny.avif",
       "bytes": 550705,
-      "sha256": "12587f47f4d65384e7d99e289efe8bae925fc501a0b8e92a1e3045222b565818",
-      "git_blob_sha1": "0cab4d4101d311f9c57f849b02821d8b112793d8"
+      "sha256": "12587f47f4d65384e7d99e289efe8bae925fc501a0b8e92a1e3045222b565818"
     },
     {
       "path": "assets/cubes-v17/flowers/nz.avif",
       "bytes": 615742,
-      "sha256": "cf49207f382a87cf484fb8b200988eca53f928ea2dc8868acf9e05781d06b221",
-      "git_blob_sha1": "3b5cfd4e9445e88d5d0203c279ff0c968b4ccf35"
+      "sha256": "cf49207f382a87cf484fb8b200988eca53f928ea2dc8868acf9e05781d06b221"
     },
     {
       "path": "assets/cubes-v17/flowers/px.avif",
       "bytes": 554409,
-      "sha256": "d82e4c1200a0f325ba53817bda0575b4ca30d412b5940f9f78e1dc25877507ad",
-      "git_blob_sha1": "0940c40f9db7730f50d83635ff0283aa4cfe6f34"
+      "sha256": "d82e4c1200a0f325ba53817bda0575b4ca30d412b5940f9f78e1dc25877507ad"
     },
     {
       "path": "assets/cubes-v17/flowers/py.avif",
       "bytes": 680888,
-      "sha256": "8ce387e2d74a3b8bf57ef13161a7f4732b20ca2386df4e06866a4c9b096746a1",
-      "git_blob_sha1": "15be1b8081349e16e70ff0480d7de8aab53e3ec8"
+      "sha256": "8ce387e2d74a3b8bf57ef13161a7f4732b20ca2386df4e06866a4c9b096746a1"
     },
     {
       "path": "assets/cubes-v17/flowers/pz.avif",
       "bytes": 541150,
-      "sha256": "7f877a0a80235b8043347bfae69697ab7586fbbc9358d0fa47076e957a6f3b0a",
-      "git_blob_sha1": "fc37f7d4520ebcf542cd1150e42a912dd8beafc7"
+      "sha256": "7f877a0a80235b8043347bfae69697ab7586fbbc9358d0fa47076e957a6f3b0a"
     },
     {
       "path": "assets/cubes-v17/stonecourt/nx.avif",
       "bytes": 584102,
-      "sha256": "eb6deb45f6b914d97e93ca771496f5572ef987ce93607dd3a864fd21e94e1647",
-      "git_blob_sha1": "05e3ea4fbb1e3fb7e1c67da7eb4eed25c5bf80a7"
+      "sha256": "eb6deb45f6b914d97e93ca771496f5572ef987ce93607dd3a864fd21e94e1647"
     },
     {
       "path": "assets/cubes-v17/stonecourt/ny.avif",
       "bytes": 630417,
-      "sha256": "d7b3d0e11c1a7596dd4f74ced741f8858a79616a560457a3d6b789039a65b71d",
-      "git_blob_sha1": "505b6b4ddb2421847ad3bdbfb8a198afe3539d5d"
+      "sha256": "d7b3d0e11c1a7596dd4f74ced741f8858a79616a560457a3d6b789039a65b71d"
     },
     {
       "path": "assets/cubes-v17/stonecourt/nz.avif",
       "bytes": 642982,
-      "sha256": "bfd11470d1a0af771336edfdfc6a8634b987f50ce17a7ce1449d53cb243287da",
-      "git_blob_sha1": "98a6073b37b20701209b76c250c756619a6aa6bb"
+      "sha256": "bfd11470d1a0af771336edfdfc6a8634b987f50ce17a7ce1449d53cb243287da"
     },
     {
       "path": "assets/cubes-v17/stonecourt/px.avif",
       "bytes": 560424,
-      "sha256": "29eb54db6eed228776fe2d15bc70c485748d66d62caf21a1d8582f0ffffa0d87",
-      "git_blob_sha1": "8830cd214f96b8a7e805ffba04feb710534b1048"
+      "sha256": "29eb54db6eed228776fe2d15bc70c485748d66d62caf21a1d8582f0ffffa0d87"
     },
     {
       "path": "assets/cubes-v17/stonecourt/py.avif",
       "bytes": 704497,
-      "sha256": "a90ab50b12e0d9eb5c08c13efdfbd0613eb134e01fa1a3e7389b49d49a170189",
-      "git_blob_sha1": "fc93046948749b386768f69c4ea47846da94b776"
+      "sha256": "a90ab50b12e0d9eb5c08c13efdfbd0613eb134e01fa1a3e7389b49d49a170189"
     },
     {
       "path": "assets/cubes-v17/stonecourt/pz.avif",
       "bytes": 510876,
-      "sha256": "c6fc2ad78efb4053ec1fac3665266c401f879ef385d71d64e813809878b8bb84",
-      "git_blob_sha1": "c6b4e56231fc8864355c129f0336a1b505ea1cd3"
+      "sha256": "c6fc2ad78efb4053ec1fac3665266c401f879ef385d71d64e813809878b8bb84"
     },
     {
       "path": "assets/cubes-v5/bamboo/nx.avif",
       "bytes": 597055,
-      "sha256": "a7373279e86424d7790c89db7e81f827ef4ebc36185dcf27f8179ea45eee3def",
-      "git_blob_sha1": "af6ef5f0ce87be5fa5d6171e918d6308af89b224"
+      "sha256": "a7373279e86424d7790c89db7e81f827ef4ebc36185dcf27f8179ea45eee3def"
     },
     {
       "path": "assets/cubes-v5/bamboo/ny.avif",
       "bytes": 622441,
-      "sha256": "cbebdeb2630a9a1518168138ae76bf9ac69b503bbec81b4ed9f9bed9c46a9e64",
-      "git_blob_sha1": "ce54cccec5fc028807c8ea33da79d58b6b4fff14"
+      "sha256": "cbebdeb2630a9a1518168138ae76bf9ac69b503bbec81b4ed9f9bed9c46a9e64"
     },
     {
       "path": "assets/cubes-v5/bamboo/nz.avif",
       "bytes": 621238,
-      "sha256": "a7f5df8c3266a26c57ad85afab32881b93a4438d2b6e023a4f6b75c7e7f1d432",
-      "git_blob_sha1": "67aa56a7d494eb11c0f1047745bc9fc7d18f19dc"
+      "sha256": "a7f5df8c3266a26c57ad85afab32881b93a4438d2b6e023a4f6b75c7e7f1d432"
     },
     {
       "path": "assets/cubes-v5/bamboo/px.avif",
       "bytes": 618553,
-      "sha256": "29bd982e99add572e11801c6a1baa99aaccb443ae148f4d00ac879ca4dd1573d",
-      "git_blob_sha1": "0304f51ea0de24951e0b03e4c189d771d61f3681"
+      "sha256": "29bd982e99add572e11801c6a1baa99aaccb443ae148f4d00ac879ca4dd1573d"
     },
     {
       "path": "assets/cubes-v5/bamboo/py.avif",
       "bytes": 534117,
-      "sha256": "ae97ca071ef3b74f7c0315f3d0e4c766ba9416f842fbfc94265f3d45b9280b3a",
-      "git_blob_sha1": "8bbd7c851b54cb011bc425fbd42fd1e2b89d96f1"
+      "sha256": "ae97ca071ef3b74f7c0315f3d0e4c766ba9416f842fbfc94265f3d45b9280b3a"
     },
     {
       "path": "assets/cubes-v5/bamboo/pz.avif",
       "bytes": 544053,
-      "sha256": "39e0dc52e3a91a36808944cd46b210f05936b027cc9f77f77762c4996d8011ba",
-      "git_blob_sha1": "36e3afa1539d8a0fc0771d262b18ef895b68781a"
+      "sha256": "39e0dc52e3a91a36808944cd46b210f05936b027cc9f77f77762c4996d8011ba"
     },
     {
       "path": "assets/cubes-v5/bridge/nx.avif",
       "bytes": 619448,
-      "sha256": "eb28eb5f86000cec6d04dd0b1f2afb56953c1bbaff4c952c54dd4f01172c09f6",
-      "git_blob_sha1": "e75344e6c4e4c83698741ff463a1364942838ce5"
+      "sha256": "eb28eb5f86000cec6d04dd0b1f2afb56953c1bbaff4c952c54dd4f01172c09f6"
     },
     {
       "path": "assets/cubes-v5/bridge/ny.avif",
       "bytes": 547327,
-      "sha256": "b16412c29fe488dfa9b51c95d1a9808577611972129c0a212ef7be578211139f",
-      "git_blob_sha1": "1bca0ecd92b40685b76daf7367abb240f00c93bd"
+      "sha256": "b16412c29fe488dfa9b51c95d1a9808577611972129c0a212ef7be578211139f"
     },
     {
       "path": "assets/cubes-v5/bridge/nz.avif",
       "bytes": 584975,
-      "sha256": "3bbf6f1b420b5392e2767a784566b6e2c1defc83863ddac50387ec92ec3c0d7b",
-      "git_blob_sha1": "49ad5649a1c561062645b16bb64e398bb81fb1c4"
+      "sha256": "3bbf6f1b420b5392e2767a784566b6e2c1defc83863ddac50387ec92ec3c0d7b"
     },
     {
       "path": "assets/cubes-v5/bridge/px.avif",
       "bytes": 477338,
-      "sha256": "8a5dad844616abe16f69b19903fda9a5e5ee49854925404f56b87851cc7e45fb",
-      "git_blob_sha1": "ebb3fae5d002c3f03b9f19e37d98d97b8a3964c2"
+      "sha256": "8a5dad844616abe16f69b19903fda9a5e5ee49854925404f56b87851cc7e45fb"
     },
     {
       "path": "assets/cubes-v5/bridge/py.avif",
       "bytes": 504969,
-      "sha256": "a31b99331c0c175e8e95a518257d8df0790f95bc3eaa7ef69ac7b13500e7601b",
-      "git_blob_sha1": "3b2fe85d7b0237f1df11d96ff58726225efc36c1"
+      "sha256": "a31b99331c0c175e8e95a518257d8df0790f95bc3eaa7ef69ac7b13500e7601b"
     },
     {
       "path": "assets/cubes-v5/bridge/pz.avif",
       "bytes": 532197,
-      "sha256": "818a8a2a9e4b088cf7880dd44bf54852007a461072bc92e77e6caec2fc8473b2",
-      "git_blob_sha1": "3e7ba3cc21cebae891b962d803f0e3d2fe65d429"
+      "sha256": "818a8a2a9e4b088cf7880dd44bf54852007a461072bc92e77e6caec2fc8473b2"
     },
     {
       "path": "assets/cubes-v5/court/nx.avif",
       "bytes": 666971,
-      "sha256": "5df23d457b0dd42e424ae36e71d72cce62b496ddb75cb5e2e8079e0b22bc841e",
-      "git_blob_sha1": "17de02bc0b42282587d8ebe94b3e10cf0166bdc3"
+      "sha256": "5df23d457b0dd42e424ae36e71d72cce62b496ddb75cb5e2e8079e0b22bc841e"
     },
     {
       "path": "assets/cubes-v5/court/ny.avif",
       "bytes": 615293,
-      "sha256": "90acd0dcd4f80acd2d0f153965cdb6feea2fc388b737f9bbcb8fca0aee7d9937",
-      "git_blob_sha1": "013d2d8a1911f87a80ee3c88c956fe7658c2d15e"
+      "sha256": "90acd0dcd4f80acd2d0f153965cdb6feea2fc388b737f9bbcb8fca0aee7d9937"
     },
     {
       "path": "assets/cubes-v5/court/nz.avif",
       "bytes": 701628,
-      "sha256": "837846bdeed5c4408d7e8c64d29309296bff1d21f4752e3a1aee15bbaa837c96",
-      "git_blob_sha1": "bcd6538e4989be6f982ea872d5c7638ef30a5bc4"
+      "sha256": "837846bdeed5c4408d7e8c64d29309296bff1d21f4752e3a1aee15bbaa837c96"
     },
     {
       "path": "assets/cubes-v5/court/px.avif",
       "bytes": 504237,
-      "sha256": "f9bb8350aa656fd7df1a692deee1e1a19596f3134b6067a9a82d6828ecb715b0",
-      "git_blob_sha1": "e485d46c83c2e9788ce019a3528f3d70a20bdde9"
+      "sha256": "f9bb8350aa656fd7df1a692deee1e1a19596f3134b6067a9a82d6828ecb715b0"
     },
     {
       "path": "assets/cubes-v5/court/py.avif",
       "bytes": 505731,
-      "sha256": "2e07c5c6b72c8522f28e7bc59cbe5ca67eb168b9871b014c913623ed5837d029",
-      "git_blob_sha1": "65f622541ad4108a5b9416a07eec4e7cdd6a5774"
+      "sha256": "2e07c5c6b72c8522f28e7bc59cbe5ca67eb168b9871b014c913623ed5837d029"
     },
     {
       "path": "assets/cubes-v5/court/pz.avif",
       "bytes": 590761,
-      "sha256": "926f9dea8970bb0a9e642957c2e072962f7de7b14285988db3cfe7c9f4685096",
-      "git_blob_sha1": "a981de99fbdf6173a9d2a4a850187d956bb2dac2"
+      "sha256": "926f9dea8970bb0a9e642957c2e072962f7de7b14285988db3cfe7c9f4685096"
     },
     {
       "path": "assets/cubes-v5/gallery/nx.avif",
       "bytes": 520444,
-      "sha256": "cd413a571bf64dfb52b95185479503e97994033e0245160a29e18791113c9642",
-      "git_blob_sha1": "e43cad9daf61c501d2c7d63bb27cce7592c7c91d"
+      "sha256": "cd413a571bf64dfb52b95185479503e97994033e0245160a29e18791113c9642"
     },
     {
       "path": "assets/cubes-v5/gallery/ny.avif",
       "bytes": 575975,
-      "sha256": "016a5cac05c0908a1d3c2bfb5876aeb9d8142df988b775ed109830035adadb93",
-      "git_blob_sha1": "974c2f9658fdb8177f9ef01d3adabbd0641f9f56"
+      "sha256": "016a5cac05c0908a1d3c2bfb5876aeb9d8142df988b775ed109830035adadb93"
     },
     {
       "path": "assets/cubes-v5/gallery/nz.avif",
       "bytes": 476590,
-      "sha256": "f7950b15e1e548894a043c528da5b59c7efafa42909cda4db938007240e5effc",
-      "git_blob_sha1": "3cf4891419989b99be446341e479cba08303550b"
+      "sha256": "f7950b15e1e548894a043c528da5b59c7efafa42909cda4db938007240e5effc"
     },
     {
       "path": "assets/cubes-v5/gallery/px.avif",
       "bytes": 571198,
-      "sha256": "f1a154442c48d661459cdd789ea719ad294d2293ed3570d605416c455d185659",
-      "git_blob_sha1": "29d02f1d5604d2a60a20249ab482c8011d0f3606"
+      "sha256": "f1a154442c48d661459cdd789ea719ad294d2293ed3570d605416c455d185659"
     },
     {
       "path": "assets/cubes-v5/gallery/py.avif",
       "bytes": 285172,
-      "sha256": "06ebcdfaf2113d2c61ac1e208a3ceffaa01d3be67fc34fa397f3a89103ca9be2",
-      "git_blob_sha1": "e00a81e27b95a3d90a1368f0ea95a4377304e9e6"
+      "sha256": "06ebcdfaf2113d2c61ac1e208a3ceffaa01d3be67fc34fa397f3a89103ca9be2"
     },
     {
       "path": "assets/cubes-v5/gallery/pz.avif",
       "bytes": 446475,
-      "sha256": "930ed24ffd78b230c54167add093636b9b23ecc7334429390ac026e2077eeebe",
-      "git_blob_sha1": "b79edbeaa181500371e1094e3863096286734385"
+      "sha256": "930ed24ffd78b230c54167add093636b9b23ecc7334429390ac026e2077eeebe"
     },
     {
       "path": "assets/cubes-v5/grove/nx.avif",
       "bytes": 657581,
-      "sha256": "dc4ac630cf43cb634c81e30beff32296272c3568e17c668a8bb6db95f9876b21",
-      "git_blob_sha1": "602bf9a4024f8d04792aefc7aa68df6dfa713264"
+      "sha256": "dc4ac630cf43cb634c81e30beff32296272c3568e17c668a8bb6db95f9876b21"
     },
     {
       "path": "assets/cubes-v5/grove/ny.avif",
       "bytes": 540691,
-      "sha256": "c54230aa6f1f1d329cc25040e0e295b59a1ea564ec714664b3062d535de7b3b5",
-      "git_blob_sha1": "6e378ccb4b8e02e0bbc46b1a5f8876475117eba1"
+      "sha256": "c54230aa6f1f1d329cc25040e0e295b59a1ea564ec714664b3062d535de7b3b5"
     },
     {
       "path": "assets/cubes-v5/grove/nz.avif",
       "bytes": 644617,
-      "sha256": "19493b6ba19bc62a2754ab57504d7dcab103704afd4c6979bed9235a403fa11d",
-      "git_blob_sha1": "c659a92fc2bc3d83a8f1ba4e969ad32f3c44cb3b"
+      "sha256": "19493b6ba19bc62a2754ab57504d7dcab103704afd4c6979bed9235a403fa11d"
     },
     {
       "path": "assets/cubes-v5/grove/px.avif",
       "bytes": 600808,
-      "sha256": "fdb9bd44954d1bb8e6e0ea793095028b8774efdf13dcc61d273d50a4a4cdcd27",
-      "git_blob_sha1": "892c51de33ec50bdb7431e3dc0e2b8426ece5ac7"
+      "sha256": "fdb9bd44954d1bb8e6e0ea793095028b8774efdf13dcc61d273d50a4a4cdcd27"
     },
     {
       "path": "assets/cubes-v5/grove/py.avif",
       "bytes": 716671,
-      "sha256": "76cef8b1a04133545c523d66fe0de8d8d294d0d617a40415b11a0ec780836e4e",
-      "git_blob_sha1": "bcb1c2b1a2f4a6cb1ea072422fc269942eeac182"
+      "sha256": "76cef8b1a04133545c523d66fe0de8d8d294d0d617a40415b11a0ec780836e4e"
     },
     {
       "path": "assets/cubes-v5/grove/pz.avif",
       "bytes": 639377,
-      "sha256": "d8b5ac4a0dd2363e160bb48b42d954b1723b60e6250cde049d5d17c759d97bdd",
-      "git_blob_sha1": "6332f1395dfe0e7fb98ff229df40fbf32b0318c8"
+      "sha256": "d8b5ac4a0dd2363e160bb48b42d954b1723b60e6250cde049d5d17c759d97bdd"
     },
     {
       "path": "assets/cubes-v5/lotus/nx.avif",
       "bytes": 593601,
-      "sha256": "e20f2d8b6aa76d6182d7544cebcc100afc560348acaeec724682a4c0529eed81",
-      "git_blob_sha1": "a854e227f5ff4ca59fb3db5de9b67ce293fd242f"
+      "sha256": "e20f2d8b6aa76d6182d7544cebcc100afc560348acaeec724682a4c0529eed81"
     },
     {
       "path": "assets/cubes-v5/lotus/ny.avif",
       "bytes": 533940,
-      "sha256": "60c5aa653b8f83954a57e5acea59f7175a15d8ddaf15859cfd7209a1ac85d7c4",
-      "git_blob_sha1": "8968a6f132b05dcf1744236867ee1980e5e54e69"
+      "sha256": "60c5aa653b8f83954a57e5acea59f7175a15d8ddaf15859cfd7209a1ac85d7c4"
     },
     {
       "path": "assets/cubes-v5/lotus/nz.avif",
       "bytes": 614500,
-      "sha256": "dcd053e45dd548c163219818dcf3bc247b36a7a6d5d0cb4990ebc382e4740801",
-      "git_blob_sha1": "06447c69cc2d49b24257b264b83ca97500518c10"
+      "sha256": "dcd053e45dd548c163219818dcf3bc247b36a7a6d5d0cb4990ebc382e4740801"
     },
     {
       "path": "assets/cubes-v5/lotus/px.avif",
       "bytes": 666194,
-      "sha256": "3154a17fc65c72208531e9cc06ccecc1e69d8b0664de4d00505129ee03fbdda9",
-      "git_blob_sha1": "b3b8636524acf6fea3578e57d15fdc5cdd671f42"
+      "sha256": "3154a17fc65c72208531e9cc06ccecc1e69d8b0664de4d00505129ee03fbdda9"
     },
     {
       "path": "assets/cubes-v5/lotus/py.avif",
       "bytes": 536781,
-      "sha256": "b10e3aad1f4e9a1031ba072aae1f7c2182215bafc3753fef20a95a7dbe3ba6f6",
-      "git_blob_sha1": "73a31d144acb186187adb285ade8fe26b892cb26"
+      "sha256": "b10e3aad1f4e9a1031ba072aae1f7c2182215bafc3753fef20a95a7dbe3ba6f6"
     },
     {
       "path": "assets/cubes-v5/lotus/pz.avif",
       "bytes": 497216,
-      "sha256": "b92794e1f6581f60a45a0e656d46afe4237b8d46d015a1b8713fa058be12c090",
-      "git_blob_sha1": "aa8a4ee8121273ff582c79cdfe4d27af783ce754"
+      "sha256": "b92794e1f6581f60a45a0e656d46afe4237b8d46d015a1b8713fa058be12c090"
     },
     {
       "path": "assets/cubes-v5/overview/nx.avif",
       "bytes": 388346,
-      "sha256": "171837a48bd55aa74e1537c1f031a5008793f1303e7d23d6d8572b15478e7e8d",
-      "git_blob_sha1": "5da6c25385600075dc71c35d985b23264b5ccd3f"
+      "sha256": "171837a48bd55aa74e1537c1f031a5008793f1303e7d23d6d8572b15478e7e8d"
     },
     {
       "path": "assets/cubes-v5/overview/ny.avif",
       "bytes": 603495,
-      "sha256": "db8fc5b0eeee9a6a20d395de8e1a7f523e75ab49935ced4d6b8e072ee0af8f5a",
-      "git_blob_sha1": "3e631a3a69358bd74c4bd1b72bc0b04c8615887a"
+      "sha256": "db8fc5b0eeee9a6a20d395de8e1a7f523e75ab49935ced4d6b8e072ee0af8f5a"
     },
     {
       "path": "assets/cubes-v5/overview/nz.avif",
       "bytes": 416800,
-      "sha256": "da9cf25f7608f21f9bdc19d4d304fdd53aab35e2f31583db68a6aa86a17bbe09",
-      "git_blob_sha1": "ec198191715aec8eae53f9afdc3aea6ff9d7fcef"
+      "sha256": "da9cf25f7608f21f9bdc19d4d304fdd53aab35e2f31583db68a6aa86a17bbe09"
     },
     {
       "path": "assets/cubes-v5/overview/px.avif",
       "bytes": 395768,
-      "sha256": "18c356a87412ad4ea6961cff9cb09284b61ff1a8c89851aac42e8d38b976f2a5",
-      "git_blob_sha1": "73f4bd7b3d4a0e0b179181ce9a22d3e113bd7087"
+      "sha256": "18c356a87412ad4ea6961cff9cb09284b61ff1a8c89851aac42e8d38b976f2a5"
     },
     {
       "path": "assets/cubes-v5/overview/py.avif",
       "bytes": 139383,
-      "sha256": "311ded50b13c24a57b8a87ce200d9227a40b1be235a699926a75bb1039a24f85",
-      "git_blob_sha1": "f4143066927ba06d203ba96c4b15a844dc39b310"
+      "sha256": "311ded50b13c24a57b8a87ce200d9227a40b1be235a699926a75bb1039a24f85"
     },
     {
       "path": "assets/cubes-v5/overview/pz.avif",
       "bytes": 371971,
-      "sha256": "661fa9dfa8bae72dfb40a6f8d148f682984cdab7df05b39c99c88b9c86a9559b",
-      "git_blob_sha1": "4eb7f48342875a873e127f934f2da9510240fd7a"
+      "sha256": "661fa9dfa8bae72dfb40a6f8d148f682984cdab7df05b39c99c88b9c86a9559b"
     },
     {
       "path": "assets/cubes-v5/pavilion/nx.avif",
       "bytes": 476047,
-      "sha256": "8dd19ad0b99fa414bd4a251175b659c155bdd53475422e16b33d489107a052b7",
-      "git_blob_sha1": "7ca22674eec28a3891e51ce8feb394560322a2f4"
+      "sha256": "8dd19ad0b99fa414bd4a251175b659c155bdd53475422e16b33d489107a052b7"
     },
     {
       "path": "assets/cubes-v5/pavilion/ny.avif",
       "bytes": 627263,
-      "sha256": "aa4bd3c6b443f7c361c0d18ecf781aaca550a1cc660cbc5d3ce9e84b9096c5fe",
-      "git_blob_sha1": "876e68bcc101c10b69937c5d8b141ea7c9790df1"
+      "sha256": "aa4bd3c6b443f7c361c0d18ecf781aaca550a1cc660cbc5d3ce9e84b9096c5fe"
     },
     {
       "path": "assets/cubes-v5/pavilion/nz.avif",
       "bytes": 510427,
-      "sha256": "1b7dc0b368ba1d67552e56873d5a1bfcda669e4786e945113a1a3a0e85aedc02",
-      "git_blob_sha1": "759eca198c618f4c68bb3a3a57c72731721678fd"
+      "sha256": "1b7dc0b368ba1d67552e56873d5a1bfcda669e4786e945113a1a3a0e85aedc02"
     },
     {
       "path": "assets/cubes-v5/pavilion/px.avif",
       "bytes": 464400,
-      "sha256": "2b9cefd13e0f591470d90b02ec17e4181191d9a7686eb2531c35b35a9136a26d",
-      "git_blob_sha1": "0bdd87ecbe796d61494de4c6361e56117d5c7101"
+      "sha256": "2b9cefd13e0f591470d90b02ec17e4181191d9a7686eb2531c35b35a9136a26d"
     },
     {
       "path": "assets/cubes-v5/pavilion/py.avif",
       "bytes": 310426,
-      "sha256": "7d369b7c73e87390b09d8dd1a321999152dae03338b52d5437ab4db85638989f",
-      "git_blob_sha1": "9a7714cc0e33c34aaabaaa8a9175aed3d070bf85"
+      "sha256": "7d369b7c73e87390b09d8dd1a321999152dae03338b52d5437ab4db85638989f"
     },
     {
       "path": "assets/cubes-v5/pavilion/pz.avif",
       "bytes": 508434,
-      "sha256": "5274e802c94225d045c642b0796ebd3b35944acc42847138d7ccd89daaa726af",
-      "git_blob_sha1": "cbc00b2709ddca1d29607006d6a60811df800076"
+      "sha256": "5274e802c94225d045c642b0796ebd3b35944acc42847138d7ccd89daaa726af"
+    },
+    {
+      "path": "assets/source-v17/bamboo.png",
+      "bytes": 3439519,
+      "sha256": "297913040de69a16909864d0cb2b16ee50d4e46c5f875ca52399aeafec29c1c1"
+    },
+    {
+      "path": "assets/source-v17/bridge.png",
+      "bytes": 3544405,
+      "sha256": "2115760a2138b9e3d1e771291ede7ce042d59e04ef22c586a7f2b7ffb748c435"
+    },
+    {
+      "path": "assets/source-v17/court.png",
+      "bytes": 3293599,
+      "sha256": "7fa96573c5e5c78ebf189f99d7e2cfe0c05cfda104b80e72122d15e133cc0824"
+    },
+    {
+      "path": "assets/source-v17/flowers.png",
+      "bytes": 3359072,
+      "sha256": "b9afafa0af35a373bac7552455e37b676921f9e64a4ed67c1d38e34b572ec21e"
+    },
+    {
+      "path": "assets/source-v17/gallery.png",
+      "bytes": 3682671,
+      "sha256": "bd54d148f6b2d2d197163464ca3a1a0989f8c9fc09a1b6ad2d312e44dd884e74"
+    },
+    {
+      "path": "assets/source-v17/grove.png",
+      "bytes": 3602239,
+      "sha256": "f1758d352b2ac09c15ef27343aaf15349b3c211d2bab81e39f8ca89cc1eb7e64"
+    },
+    {
+      "path": "assets/source-v17/lotus.png",
+      "bytes": 3250117,
+      "sha256": "57f8090fe3297d739bcb8fad1013926bc2156699eb5e6677e0dc8eadb9b622c7"
+    },
+    {
+      "path": "assets/source-v17/overview.png",
+      "bytes": 3615617,
+      "sha256": "e13f1db137b714b6a9c9221ec30b614aec0afeaff708b670b6f65e9f8f4b0704"
+    },
+    {
+      "path": "assets/source-v17/pavilion.png",
+      "bytes": 3145176,
+      "sha256": "cfd5e65a5987e711e0fc53247c5037db27be58823b51b28a2500f3803dba9e32"
+    },
+    {
+      "path": "assets/source-v17/stonecourt.png",
+      "bytes": 3490169,
+      "sha256": "42f2cb1da74b21192bdb6018ec7d23813b66fa4246d09350d870c9a43d7d2d7a"
+    },
+    {
+      "path": "assets/thumbs-v17/bamboo.jpg",
+      "bytes": 102779,
+      "sha256": "6a089e16d85749d864ac42da18a79f9a98786a1f26b16c0e2bc94c75decc67a8"
+    },
+    {
+      "path": "assets/thumbs-v17/bridge.jpg",
+      "bytes": 89794,
+      "sha256": "e46979a95f30b512fa0b7119243d0abd1a918bae64e7378be9057c2604a4766d"
+    },
+    {
+      "path": "assets/thumbs-v17/court.jpg",
+      "bytes": 89918,
+      "sha256": "a12f6ec48859dcce52fc19b0b67cbda4b4ab795b941639113456e99a4bf9ffe7"
+    },
+    {
+      "path": "assets/thumbs-v17/flowers.jpg",
+      "bytes": 92729,
+      "sha256": "2b0b674aeb31accede3e8303e10243731163f53ec40302df0965e0563fea7f0c"
+    },
+    {
+      "path": "assets/thumbs-v17/gallery.jpg",
+      "bytes": 91800,
+      "sha256": "6a543d51b6d326e16c7487beb17b042bfc15d4fd86519a8073c992606a8f2c6d"
+    },
+    {
+      "path": "assets/thumbs-v17/grove.jpg",
+      "bytes": 92626,
+      "sha256": "cd8626dc22120b0e817b688a961f8fe4737ab22a4f345bad4a2a299571ce25f2"
+    },
+    {
+      "path": "assets/thumbs-v17/lotus.jpg",
+      "bytes": 87055,
+      "sha256": "588272f2f170d956ead932ec01c945616e563d35e44211ee12c893e3358397be"
+    },
+    {
+      "path": "assets/thumbs-v17/overview.jpg",
+      "bytes": 88734,
+      "sha256": "ccff24ee9a38293e536019800fc003174344720e00de893ca48eee7bad6388a0"
+    },
+    {
+      "path": "assets/thumbs-v17/pavilion.jpg",
+      "bytes": 78254,
+      "sha256": "6e131a529c82ed1e188c428f560aef4fb17bcd2f625a3c799d146d9c1510e4f1"
+    },
+    {
+      "path": "assets/thumbs-v17/stonecourt.jpg",
+      "bytes": 87791,
+      "sha256": "9efc8e4b819b31bc8a1c562dbf976142df88129b59fc3936987d2c0c45949443"
+    },
+    {
+      "path": "index.html",
+      "bytes": 6986,
+      "sha256": "de36bfdacb46e74732b564e5bb26c73e07a6fec5cfc199777c6f66d3c33c9c38"
+    },
+    {
+      "path": "nodes-v17/bamboo.js",
+      "bytes": 325,
+      "sha256": "447d9b3507610f4907c8ab19017210bdbf16d624e36ccc3b5ef274fccae8c108"
+    },
+    {
+      "path": "nodes-v17/bridge.js",
+      "bytes": 325,
+      "sha256": "12c43521deef3ec9c71ba81ae8766d7207802c3fdce4944d6cdc4eda01356255"
+    },
+    {
+      "path": "nodes-v17/court.js",
+      "bytes": 317,
+      "sha256": "740c2e4549badf30517e44d41c75cb076852787363139a3dfe596431b665d4e2"
+    },
+    {
+      "path": "nodes-v17/flowers.js",
+      "bytes": 339,
+      "sha256": "aa7fbf9884ce310d9aae0f1ee4e0e02b8d3c227ee39e91a00b0fab9d4b50556e"
+    },
+    {
+      "path": "nodes-v17/gallery.js",
+      "bytes": 333,
+      "sha256": "b72cb82fbd8048b45c2ad970918630e769b24ee0cc4159b7e22667d9322efb7b"
+    },
+    {
+      "path": "nodes-v17/grove.js",
+      "bytes": 317,
+      "sha256": "99121c87848585a562075e92e202ec4561cd2aae18a67ba6988cc75d40f716a3"
+    },
+    {
+      "path": "nodes-v17/lotus.js",
+      "bytes": 317,
+      "sha256": "7c8058b60e7e5ab5552341486b6a2a5cfbdf07f2f671fee4a681111669017bb1"
+    },
+    {
+      "path": "nodes-v17/overview.js",
+      "bytes": 341,
+      "sha256": "e610411923e81bfecaf6db692b50cc8aecb3372be3e8d43e8c216f0a63ea522e"
+    },
+    {
+      "path": "nodes-v17/pavilion.js",
+      "bytes": 341,
+      "sha256": "0fc5cf93a636f532c3a72458bb214f01895526da1665f66376ffc24213da8cbd"
+    },
+    {
+      "path": "nodes-v17/stonecourt.js",
+      "bytes": 363,
+      "sha256": "739baff003b30a186f3ee8115e96d31c508a3afa9ac5effd5fbc8e60cf4f4bba"
+    },
+    {
+      "path": "photo-vr-index-v17.js",
+      "bytes": 5966,
+      "sha256": "fb241718ae9e64f0a15c1239ddeee69ea0204c7b38cd7f53e3bc81a92f2e2724"
+    },
+    {
+      "path": "provenance-source-v17.json",
+      "bytes": 42284,
+      "sha256": "c8d9d668495911e5a4402eae1acfe5a208940f929018e7c90b8cbf06e5260b28"
+    },
+    {
+      "path": "review-v17.html",
+      "bytes": 6986,
+      "sha256": "de36bfdacb46e74732b564e5bb26c73e07a6fec5cfc199777c6f66d3c33c9c38"
+    },
+    {
+      "path": "style-fresh-v17.css",
+      "bytes": 9106,
+      "sha256": "187577337a2d44607417380f8fc6d1b87bd8e004c6c464d25ffd4ddb136f944f"
+    },
+    {
+      "path": "viewer-ui-v17.js",
+      "bytes": 53159,
+      "sha256": "a2d8f4f09c161a8a544a1bec4d63498440c8649084145e7b312c4bf25f50e0b6"
+    },
+    {
+      "path": "使用说明.txt",
+      "bytes": 489,
+      "sha256": "47fbb50c86aadbca89417368add068f0f0e448987cdb5d57710d720da69d8af5"
     }
   ]
 }

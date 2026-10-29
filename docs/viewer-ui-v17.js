@@ -54,7 +54,7 @@
   function validateIndex(input) {
     if (!input || input.movieSHA !== MOVIE_SHA) throw new Error('影片来源标识缺失或不匹配。');
     if (!isSHA(input.modelSHA)) throw new Error('缺少有效的补建模型 SHA-256。');
-    if (!Array.isArray(input.nodes) || input.nodes.length !== DEFINITIONS.length) throw new Error('须提供十个v17原片取景节点。');
+    if (!Array.isArray(input.nodes) || input.nodes.length !== DEFINITIONS.length) throw new Error('景点目录未能完整载入。');
     const nodes = input.nodes.map((node, i) => {
       const [id, label] = DEFINITIONS[i];
       if (!node || node.id !== id || node.label !== label) throw new Error('节点 ID、名称或顺序不匹配。');
@@ -64,7 +64,7 @@
       const cubeSize = node.cubeSize === undefined ? CUBE_SIZE : node.cubeSize;
       if (![1024, 1254, 1536, 2048, 3072].includes(cubeSize)) throw new Error(label + '须声明实际六面尺寸，支持1024、1254、1536、2048或3072像素。');
       const sourcePhotoAnchor = node.sourcePhotoAnchor === undefined ? input.sourcePhotoAnchor === true : node.sourcePhotoAnchor === true;
-      if (sourcePhotoAnchor && (typeof node.sourceFov !== 'number' || !Number.isFinite(node.sourceFov) || node.sourceFov <= 0 || node.sourceFov >= 179)) throw new Error(label + '须提供取景计划中有效的原片水平视角 sourceFov。');
+      if (sourcePhotoAnchor && (typeof node.sourceFov !== 'number' || !Number.isFinite(node.sourceFov) || node.sourceFov <= 0 || node.sourceFov >= 179)) throw new Error(label + '须提供取景计划中有效的画面水平视角 sourceFov。');
       if (node.modelSHA !== undefined && !isSHA(node.modelSHA)) throw new Error(label + '的补全依据标识无效。');
       if (node.cubeEdgeBlend !== undefined && (![0, .05].includes(node.cubeEdgeBlend))) throw new Error(label + '的六面边缘过渡设置无效。');
       return { id, label, sourceSecond: node.sourceSecond, sourceSHA: node.sourceSHA, nodeScript, cubeSize, modelSHA: node.modelSHA || input.modelSHA, completionNote: typeof node.completionNote === 'string' ? node.completionNote : '', cubeEdgeBlend: node.cubeEdgeBlend || 0,
@@ -73,7 +73,7 @@
         sourceYaw: wrapYaw(finite(node.sourceYaw, finite(node.modelYaw, 0))), sourcePitch: clamp(finite(node.sourcePitch, finite(node.modelPitch, 0)), -90, 90) };
     });
     return { movieSHA: input.movieSHA, modelSHA: input.modelSHA,
-      title: typeof input.title === 'string' && input.title.trim() ? input.title : '晴汀园 · 原片与建模环视',
+      title: typeof input.title === 'string' && input.title.trim() ? input.title : '晴汀园 · 沉浸云游',
       defaultNode: nodes.some((node) => node.id === input.defaultNode) ? input.defaultNode : 'pavilion',
       defaultMode: input.defaultMode === 'model' ? 'model' : 'photo', sourcePhotoAnchor: input.sourcePhotoAnchor === true, nodes };
   }
@@ -83,7 +83,7 @@
     const png = dataImageInfo(payload.sourceDataUrl, 'png');
     const sourceDataUrl = png && png.width === 1920 && png.height === 1080 ? payload.sourceDataUrl : '';
     const sourceUrl = payload.sourceUrl !== undefined ? safeImagePath(payload.sourceUrl, node.id, 'source') : sourceDataUrl;
-    if (!sourceUrl) throw new Error('当前节点缺少有效的原片 PNG 路径或完整的 1920×1080 原片。');
+    if (!sourceUrl) throw new Error('当前节点缺少有效的画面 PNG 路径或完整的 1920×1080 画面。');
     const cubeFaces = {};
     for (const key of FACE_KEYS) {
       const face = payload.cubeFaces?.[key];
@@ -93,7 +93,7 @@
   }
 
   function validateSourceDimensions(width, height) {
-    if (width !== 1920 || height !== 1080) throw new Error('原片影像须为原始 1920×1080 PNG，未缩小替代。');
+    if (width !== 1920 || height !== 1080) throw new Error('画面影像须为原始 1920×1080 PNG，未缩小替代。');
     return true;
   }
 
@@ -170,6 +170,11 @@
     return true;
   }
 
+  function nextSceneIndex(index, step, count) {
+    if (!Number.isInteger(count) || count < 1) throw new Error('Invalid scene count');
+    return ((index + step) % count + count) % count;
+  }
+
   function createSelectionGate() {
     let sequence = 0, selected = '';
     return { select(id) { selected = id; return { id, sequence: ++sequence }; },
@@ -225,7 +230,7 @@
 
   if (typeof module === 'object' && module.exports) {
     module.exports = { MOVIE_SHA, DEFINITIONS, FACE_KEYS, safeNodeScript, safeImagePath, validateIndex, validateNodePayload, validateSourceDimensions,
-      photoLayout, canvasSize, clarityFovMin, sourceClarityFovMin, cubeDensity, cubeEdgeWeights, validateFaceDimensions, createSelectionGate, createModeIntent, createNodeStore, wrapYaw,
+      photoLayout, canvasSize, nextSceneIndex, clarityFovMin, sourceClarityFovMin, cubeDensity, cubeEdgeWeights, validateFaceDimensions, createSelectionGate, createModeIntent, createNodeStore, wrapYaw,
       SOURCE_PHOTO_ASPECT, SOURCE_PHOTO_FEATHER, sourcePhotoRay, projectSourcePhoto };
     return;
   }
@@ -290,30 +295,30 @@
     const usable = mode === 'photo' ? sourceReady : modelReady;
     const p = mode === 'photo' ? photoMetrics() : null;
     ui.photoMode.disabled = !data; ui.modelMode.disabled = !sourceReady || !payload?.hasFaces;
-    ui.modelMode.title = payload?.hasFaces ? usesPhotoAnchor() ? '原片影像＋环视补全，周围为推定景物；不是原始三维模型' : '摄影风格环视补全，方向与细节为推定；不是原始三维模型' : '当前节点环视补全尚未备齐';
-    ui.modelMode.setAttribute('aria-label', usesPhotoAnchor() ? '原片影像加环视补全' : '摄影补全环视');
+    ui.modelMode.title = payload?.hasFaces ? '环顾四周' : '环视正在准备';
+    ui.modelMode.setAttribute('aria-label', '环视');
     ui.zoomIn.disabled = !usable || (mode === 'photo' ? photo.scale >= (p?.maxScale || 1) - 1e-8 : view.fov <= modelMin() + 1e-8);
     ui.zoomOut.disabled = !usable || (mode === 'photo' ? photo.scale <= 1 + 1e-8 : view.fov >= MAX_FOV - 1e-8);
     ui.reset.disabled = !usable; ui.value.value = mode === 'photo' ? `${Math.round(photo.scale * 100)}%` : `${Math.round(view.fov)}°`; ui.value.textContent = ui.value.value;
-    ui.scope.textContent = mode === 'photo' ? '影片原帧' : modelLoading ? '原片 · 环视载入中' : usesPhotoAnchor() ? '原片影像＋环视补全' : '摄影环视补全';
+    ui.scope.textContent = mode === 'photo' ? '画面' : '环视';
     ui.scope.classList.toggle('is-supplement', mode !== 'photo' && !modelLoading);
-    ui.hint.textContent = modelLoading ? '可先看原片' : mode === 'photo' ? '拖移查看 · 缩放细节' : usesPhotoAnchor() ? '原片方向保留 · 周围为推定景物' : '拖动环视 · 周围为推定影像';
+    ui.hint.textContent = '拖动查看，滚轮或双指缩放';
     const nextMode = mode === 'model' && modelReady ? 'model' : 'photo';
     if (ui.tour.dataset.mode !== nextMode) { ui.tour.dataset.mode = nextMode; requestAnimationFrame(bringActiveSceneIntoView); }
     const faceSize = current()?.cubeSize, faceDescription = faceSize ? `每面${faceSize}×${faceSize}` : '尺寸尚未声明';
-    ui.modelStatus.textContent = (current()?.completionNote ? current().completionNote + ' ' : '') + (modelError || (modelReady ? usesPhotoAnchor() ? `1920×1080原片按补全方案推定的方向与水平视角投影；${faceDescription}，周围为推定景物，不是原始三维模型` : `摄影补全环视已载入，${faceDescription}；未叠加原片，不是原始三维模型` : modelLoading ? '正在载入六面环视影像' : payload && !payload.hasFaces ? '六面影像尚未备齐，原片可查看' : `环视影像按需载入，${faceDescription}`));
+    ui.modelStatus.textContent = (current()?.completionNote ? current().completionNote + ' ' : '') + (modelError || (modelReady ? usesPhotoAnchor() ? `1920×1080画面按补全方案推定的方向与水平视角投影；${faceDescription}，周围为推定景物，不是原始三维模型` : `摄影补全环视已载入，${faceDescription}；未叠加画面，不是原始三维模型` : modelLoading ? '正在载入六面环视影像' : payload && !payload.hasFaces ? '六面影像尚未备齐，画面可查看' : `环视影像按需载入，${faceDescription}`));
   }
 
   function usePhoto(focus = false) {
     cancelFaces(); mode = 'photo'; clearGesture(); ui.photo.hidden = false; ui.canvas.hidden = true;
     ui.photoMode.setAttribute('aria-pressed', 'true'); ui.modelMode.setAttribute('aria-pressed', 'false');
-    ui.area.setAttribute('aria-label', `${current()?.label || '原片'}画面，按原始像素约束缩放，Home 复位`);
+    ui.area.setAttribute('aria-label', `${current()?.label || '园景'}画面，可拖动和缩放`);
     if (sourceReady) clearStatus(); renderPhoto(); controls(); if (focus) ui.area.focus({ preventScroll: true });
   }
   function failModel(message) {
     modeIntent.failed(); releaseModel();
     modelError = message.replaceAll('建模环视', '环视补全').replaceAll('模型六面', '环视六面');
-    usePhoto(); toast(modelError + ' 已返回原片，可手动重试环视补全。');
+    usePhoto(); toast('环视暂时无法打开，先为你显示园景。可点“环视”重试。');
   }
 
   function imageLoad(url) {
@@ -342,7 +347,7 @@
     const sourceLimit = gl.getParameter(gl.MAX_TEXTURE_SIZE);
     const limit = Math.min(sourceLimit, gl.getParameter(gl.MAX_CUBE_MAP_TEXTURE_SIZE));
     if (current().cubeSize > limit) throw new Error(`此设备纹理上限为${limit}像素，无法显示此节点${current().cubeSize}像素六面影像。`);
-    if (usesPhotoAnchor() && sourceLimit < 1920) throw new Error(`此设备纹理上限为${sourceLimit}像素，无法直接载入1920像素原片投影，可继续查看原片。`);
+    if (usesPhotoAnchor() && sourceLimit < 1920) throw new Error(`此设备纹理上限为${sourceLimit}像素，无法直接载入1920像素画面投影，可继续查看画面。`);
     const p = gl.getShaderPrecisionFormat(gl.FRAGMENT_SHADER, gl.HIGH_FLOAT), precision = p && p.precision > 0 ? 'highp' : 'mediump';
     const vertex = compile(gl.VERTEX_SHADER, `attribute vec2 aPosition; varying ${precision} vec2 vPosition; void main(){vPosition=aPosition;gl_Position=vec4(aPosition,0.0,1.0);}`);
     const anchored = data.nodes.some((node) => node.sourcePhotoAnchor === true); rendererUsesAnchor = anchored;
@@ -410,8 +415,8 @@
 
   function uploadSourcePhoto() {
     validateSourceDimensions(sourceImage?.naturalWidth, sourceImage?.naturalHeight);
-    if (usesPhotoAnchor() && gl.getParameter(gl.MAX_TEXTURE_SIZE) < 1920) throw new Error('此设备无法直接载入1920像素原片投影，可继续查看原片。');
-    const next = gl.createTexture(); if (!next) throw new Error('无法分配原片影像纹理。');
+    if (usesPhotoAnchor() && gl.getParameter(gl.MAX_TEXTURE_SIZE) < 1920) throw new Error('此设备无法直接载入1920像素画面投影，可继续查看画面。');
+    const next = gl.createTexture(); if (!next) throw new Error('无法分配画面影像纹理。');
     const oldFlip = gl.getParameter(gl.UNPACK_FLIP_Y_WEBGL);
     const oldPremultiply = gl.getParameter(gl.UNPACK_PREMULTIPLY_ALPHA_WEBGL);
     const oldColorConversion = gl.getParameter(gl.UNPACK_COLORSPACE_CONVERSION_WEBGL);
@@ -428,7 +433,7 @@
       // The original PNG is uploaded directly; no canvas, resize, or regenerated source image.
       if (usesPhotoAnchor()) gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, sourceImage);
       else gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, 1, 1, 0, gl.RGBA, gl.UNSIGNED_BYTE, new Uint8Array([0, 0, 0, 255]));
-      if (gl.getError() !== gl.NO_ERROR) throw new Error('浏览器未能载入原片影像纹理。');
+      if (gl.getError() !== gl.NO_ERROR) throw new Error('浏览器未能载入画面影像纹理。');
     } catch (error) { gl.deleteTexture(next); throw error; }
     finally {
       gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, oldFlip);
@@ -442,17 +447,17 @@
   function resetModel() { const node = current(); view = { yaw: node.modelYaw, pitch: node.modelPitch, fov: clamp(node.modelFov, modelMin(), MAX_FOV) }; }
   function showReadyModel() {
     ui.photo.hidden = true; ui.canvas.hidden = false;
-    ui.area.setAttribute('aria-label', usesPhotoAnchor() ? `${current().label}原片影像加环视补全，原片方向保留，周围为推定景物，不支持自由行走` : `${current().label}摄影补全环视，依据原片推定，不是恢复的原始三维模型，不支持自由行走`);
+    ui.area.setAttribute('aria-label', `${current().label}环视，拖动环顾四周`);
     clearStatus(); controls(); requestDraw();
   }
   async function useModel() {
     if (!sourceReady || !payload?.hasFaces) return;
     mode = 'model'; clearGesture(); ui.photo.hidden = false; ui.canvas.hidden = true;
     ui.photoMode.setAttribute('aria-pressed', 'false'); ui.modelMode.setAttribute('aria-pressed', 'true');
-    ui.area.setAttribute('aria-label', `${current().label}原片画面，高清环视正在载入`); ui.area.focus({ preventScroll: true });
+    ui.area.setAttribute('aria-label', `${current().label}，环视正在载入`); ui.area.focus({ preventScroll: true });
     if (modelReady && rendererReady) { showReadyModel(); return; }
     cancelFaces(); const run = modelRun, selected = ticket; modelLoading = true; modelError = ''; resetModel();
-    status('环视正在载入', '先看原片，稍后进入环视。也可点“原片”停止载入。', false, true); controls();
+    status('正在走近这处风景', '环视即将打开，可先欣赏画面。', false, true); controls();
     let jobs = [];
     try {
       if (!rendererReady) initializeRenderer();
@@ -494,7 +499,7 @@
     store.cancelPendingExcept(node.id);
     payload = null; sourceImage = null; sourceReady = false; modelError = ''; photo = { scale: 1, x: 0, y: 0 };
     ui.photoSlot.replaceChildren(); ui.download.hidden = true; ui.download.removeAttribute('href'); usePhoto();
-    ui.title.textContent = node.label; ui.time.textContent = `原片 ${clock(node.sourceSecond)}`; ui.aboutTime.textContent = seconds(node.sourceSecond);
+    ui.title.textContent = node.label; ui.time.textContent = ''; ui.aboutTime.textContent = '';
     ui.sourceSHA.textContent = node.sourceSHA; ui.counter.textContent = `${String(index + 1).padStart(2, '0')} / ${String(data.nodes.length).padStart(2, '0')}`;
     ui.modelSHA.textContent = node.modelSHA;
     [buttons, railButtons].forEach((group) => group.forEach((button, i) => { if (i === index) button.setAttribute('aria-current', 'location'); else button.removeAttribute('aria-current'); }));
@@ -504,13 +509,13 @@
     try {
       const loaded = await store.load(node.id); if (!gate.current(selected)) return;
       payload = loaded;
-      status('正在载入原片画面', node.label);
+      status('正在打开园景', node.label);
       const job = imageLoad(loaded.sourceUrl); sourceJob = job; const image = await job.promise;
       if (!gate.current(selected)) { job.release(); return; }
       validateSourceDimensions(image.naturalWidth, image.naturalHeight);
-      image.alt = `${node.label}，最终 v17 原片 ${seconds(node.sourceSecond)}`; image.draggable = false;
+      image.alt = `${node.label}园景`; image.draggable = false;
       sourceImage = image; sourceReady = true; ui.photoSlot.replaceChildren(image);
-      ui.download.href = loaded.sourceUrl; ui.download.download = `晴汀园_${node.label}_${Number(node.sourceSecond.toFixed(3))}s_v17原片.png`; ui.download.hidden = false;
+      ui.download.href = loaded.sourceUrl; ui.download.download = `晴汀园_${node.label}.png`; ui.download.hidden = false;
       clearStatus(); renderPhoto(); controls();
       if (modeIntent.wantsModel()) {
         if (loaded.hasFaces) useModel();
@@ -574,7 +579,7 @@
 
   ui.photoMode.addEventListener('click', () => { modeIntent.choose('photo'); usePhoto(true); });
   ui.modelMode.addEventListener('click', () => { modeIntent.choose('model'); useModel(); });
-  ui.previous.addEventListener('click', () => selectNode((index + 7) % 8)); ui.next.addEventListener('click', () => selectNode((index + 1) % 8));
+  ui.previous.addEventListener('click', () => selectNode(nextSceneIndex(index, -1, data.nodes.length))); ui.next.addEventListener('click', () => selectNode(nextSceneIndex(index, 1, data.nodes.length)));
   ui.zoomIn.addEventListener('click', () => zoom(-1)); ui.zoomOut.addEventListener('click', () => zoom(1)); ui.reset.addEventListener('click', resetView);
   ui.retry.addEventListener('click', () => { if (data) { store.evict(current().id); selectNode(index); } else window.location.reload(); });
   function closeTools(focus = false) {
@@ -614,9 +619,40 @@
   ui.canvas.addEventListener('webglcontextlost', (event) => { event.preventDefault(); rendererReady = false; texture = null; sourceTexture = null; failModel('浏览器建模环视渲染已中断。'); });
   ui.canvas.addEventListener('webglcontextrestored', () => { rendererReady = false; program = null; uniforms = null; controls(); });
 
+
+  const chromeElements = [...document.querySelectorAll('.chrome')], reveal = $('show-ui');
+  let chromeVisible = true, tapStart = null;
+  function setChromeVisible(visible) {
+    chromeVisible = Boolean(visible);
+    if (!chromeVisible) closeTools();
+    ui.tour.classList.toggle('is-ui-hidden', !chromeVisible);
+    for (const item of chromeElements) { item.inert = !chromeVisible; item.setAttribute('aria-hidden', String(!chromeVisible)); }
+    reveal.hidden = chromeVisible;
+    ui.area.focus({preventScroll:true});
+  }
+  $('hide-ui').addEventListener('click', () => setChromeVisible(false));
+  reveal.addEventListener('click', () => setChromeVisible(true));
+  ui.area.addEventListener('pointerdown', event => {
+    if (event.target.closest('button,a,input') || (event.pointerType === 'mouse' && event.button !== 0)) return;
+    if (tapStart || pointers.size > 1) { tapStart = null; return; }
+    tapStart = {id:event.pointerId,x:event.clientX,y:event.clientY,time:performance.now(),dragged:false};
+  });
+  ui.area.addEventListener('pointermove', event => {
+    if (tapStart?.id === event.pointerId && Math.hypot(event.clientX-tapStart.x,event.clientY-tapStart.y) > 8) tapStart.dragged = true;
+  });
+  ui.area.addEventListener('pointerup', event => {
+    if (tapStart?.id !== event.pointerId) return;
+    const tap = tapStart; tapStart = null;
+    if (!tap.dragged && performance.now()-tap.time < 500 && !ui.sceneDialog.open && !ui.about.open) setChromeVisible(!chromeVisible);
+  });
+  ui.area.addEventListener('pointercancel', () => {tapStart=null;});
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && !ui.about.open && !ui.sceneDialog.open) {closeTools();setChromeVisible(true);}
+  });
+
   try {
     data = validateIndex(window.QINGT_HD_VR); modeIntent = createModeIntent(data.defaultMode);
-    ui.tourTitle.textContent = '晴汀园'; document.title = '晴汀园 · 清景游册'; ui.movieSHA.textContent = data.movieSHA; ui.modelSHA.textContent = data.modelSHA;
+    ui.tourTitle.textContent = '晴汀园'; document.title = '晴汀园 · 沉浸云游'; ui.movieSHA.textContent = data.movieSHA; ui.modelSHA.textContent = data.modelSHA;
     store = createNodeStore(data.nodes, { loadScript(path, loaded, failed) {
       const script = document.createElement('script'); script.async = true; script.src = path; script.onload = loaded; script.onerror = failed; document.head.appendChild(script);
       return () => { script.onload = null; script.onerror = null; script.remove(); };
@@ -627,11 +663,11 @@
       image.loading = 'lazy'; image.decoding = 'async'; image.src = `assets/thumbs-v17/${node.id}.jpg`;
       const number = document.createElement('span'); number.className = 'node-number'; number.textContent = String(i + 1).padStart(2, '0');
       const label = document.createElement('span'); label.className = 'node-label'; label.textContent = node.label;
-      const time = document.createElement('span'); time.className = 'node-time'; time.textContent = `原片 ${clock(node.sourceSecond)}`;
+      const time = document.createElement('span'); time.className = 'node-time'; time.textContent = '';
       const info = document.createElement('span'); info.className = 'card-info'; info.append(number, label, time);
       const check = document.createElement('span'); check.className = 'scene-check'; check.setAttribute('aria-hidden', 'true'); check.textContent = '✓';
       button.append(image, info, check);
-      button.setAttribute('aria-label', `查看${node.label}，原片${seconds(node.sourceSecond)}`);
+      button.setAttribute('aria-label', `查看${node.label}`);
       button.addEventListener('click', () => { ui.sceneDialog.close(); selectNode(i); }); ui.nav.appendChild(button); buttons.push(button);
       const rail = $('scene-rail'); if (rail) { const card = button.cloneNode(true); card.className = 'rail-card'; card.addEventListener('click', () => selectNode(i)); rail.appendChild(card); railButtons.push(card); } });
     ui.previous.disabled = false; ui.next.disabled = false; selectNode(data.nodes.findIndex((node) => node.id === data.defaultNode));
