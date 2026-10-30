@@ -403,8 +403,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 6986,
-      "sha256": "de36bfdacb46e74732b564e5bb26c73e07a6fec5cfc199777c6f66d3c33c9c38"
+      "bytes": 7001,
+      "sha256": "a7739f9b1f20dc817a0f3d94f6c44b99d588b49fcd3d7ce3a8bbe8364f6486c7"
     },
     {
       "path": "nodes-v17/bamboo.js",
@@ -468,8 +468,8 @@
     },
     {
       "path": "review-v17.html",
-      "bytes": 6986,
-      "sha256": "de36bfdacb46e74732b564e5bb26c73e07a6fec5cfc199777c6f66d3c33c9c38"
+      "bytes": 7001,
+      "sha256": "a7739f9b1f20dc817a0f3d94f6c44b99d588b49fcd3d7ce3a8bbe8364f6486c7"
     },
     {
       "path": "style-fresh-v17.css",
@@ -478,8 +478,8 @@
     },
     {
       "path": "viewer-ui-v17.js",
-      "bytes": 53159,
-      "sha256": "a2d8f4f09c161a8a544a1bec4d63498440c8649084145e7b312c4bf25f50e0b6"
+      "bytes": 57846,
+      "sha256": "1376572f490c6890c122fbc678e9f252f3b9a2d4edd6ef13e847262334839159"
     },
     {
       "path": "使用说明.txt",

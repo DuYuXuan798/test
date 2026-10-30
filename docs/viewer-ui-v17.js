@@ -228,10 +228,51 @@
     };
   }
 
+  function sceneLoadPlan(node, loaded, wantsModel) {
+    const model = wantsModel && loaded.hasFaces;
+    return { mode: model ? 'model' : 'photo', needsSource: !model || node.sourcePhotoAnchor === true };
+  }
+
+  function shouldPrefetch(connection, visible = true) {
+    return visible && !connection?.saveData && !['2g', 'slow-2g'].includes(connection?.effectiveType);
+  }
+
+  // Retain decoded pixels, not just node metadata. Leases keep visible images alive.
+  function createImagePool(load, { maxEntries = 14 } = {}) {
+    const entries = new Map();
+    function trim() {
+      for (const [url, entry] of entries) {
+        if (entries.size <= maxEntries) break;
+        if (entry.ready && !entry.users) { entries.delete(url); entry.job.release(); }
+      }
+    }
+    return {
+      load(url, options = {}) {
+        let entry = entries.get(url);
+        if (!entry) {
+          const job = load(url, options); entry = { job, users: 0, ready: false };
+          entries.set(url, entry);
+          entry.promise = job.promise.then(image => { entry.ready = true; trim(); return image; }, error => {
+            if (entries.get(url) === entry) entries.delete(url); job.release(); throw error;
+          });
+        } else { entries.delete(url); entries.set(url, entry); }
+        if (options.priority !== 'low') entry.job.promote?.();
+        ++entry.users; let released = false;
+        function release() {
+          if (released) return; released = true; --entry.users;
+          if (!entry.ready && !entry.users && entries.get(url) === entry) { entries.delete(url); entry.job.cancel(); }
+          trim();
+        }
+        return { promise: entry.promise, cancel: release, release };
+      },
+      cachedUrls() { return [...entries.keys()]; }
+    };
+  }
+
   if (typeof module === 'object' && module.exports) {
     module.exports = { MOVIE_SHA, DEFINITIONS, FACE_KEYS, safeNodeScript, safeImagePath, validateIndex, validateNodePayload, validateSourceDimensions,
       photoLayout, canvasSize, nextSceneIndex, clarityFovMin, sourceClarityFovMin, cubeDensity, cubeEdgeWeights, validateFaceDimensions, createSelectionGate, createModeIntent, createNodeStore, wrapYaw,
-      SOURCE_PHOTO_ASPECT, SOURCE_PHOTO_FEATHER, sourcePhotoRay, projectSourcePhoto };
+      SOURCE_PHOTO_ASPECT, SOURCE_PHOTO_FEATHER, sourcePhotoRay, projectSourcePhoto, sceneLoadPlan, shouldPrefetch, createImagePool };
     return;
   }
 
@@ -254,6 +295,8 @@
   let photo = { scale: 1, x: 0, y: 0 }, view = { yaw: 0, pitch: 0, fov: 75 }, gesture = null;
   let gl = null, program = null, uniforms = null, texture = null, sourceTexture = null, rendererReady = false, rendererUsesAnchor = false, activeFaces = [], modelRun = 0;
   let framePending = false, toastTimer = 0, lastLimitToast = 0;
+  const imagePool = createImagePool(loadImageRequest);
+  let prefetchTimer = 0, prefetchEpoch = 0, prefetchTask = null;
   const current = () => data?.nodes[index];
   const usesPhotoAnchor = () => current()?.sourcePhotoAnchor === true;
   const size = () => { const r = ui.area.getBoundingClientRect(); return { width: Math.max(1, r.width), height: Math.max(1, r.height) }; };
@@ -294,7 +337,7 @@
   function controls() {
     const usable = mode === 'photo' ? sourceReady : modelReady;
     const p = mode === 'photo' ? photoMetrics() : null;
-    ui.photoMode.disabled = !data; ui.modelMode.disabled = !sourceReady || !payload?.hasFaces;
+    ui.photoMode.disabled = !data; ui.modelMode.disabled = !payload?.hasFaces;
     ui.modelMode.title = payload?.hasFaces ? '环顾四周' : '环视正在准备';
     ui.modelMode.setAttribute('aria-label', '环视');
     ui.zoomIn.disabled = !usable || (mode === 'photo' ? photo.scale >= (p?.maxScale || 1) - 1e-8 : view.fov <= modelMin() + 1e-8);
@@ -310,10 +353,14 @@
   }
 
   function usePhoto(focus = false) {
+    if (payload) stopPrefetch();
     cancelFaces(); mode = 'photo'; clearGesture(); ui.photo.hidden = false; ui.canvas.hidden = true;
     ui.photoMode.setAttribute('aria-pressed', 'true'); ui.modelMode.setAttribute('aria-pressed', 'false');
     ui.area.setAttribute('aria-label', `${current()?.label || '园景'}画面，可拖动和缩放`);
     if (sourceReady) clearStatus(); renderPhoto(); controls(); if (focus) ui.area.focus({ preventScroll: true });
+    if (payload && !sourceReady) ensureSourcePhoto().catch(error => {
+      if (mode === 'photo' && error.message !== 'stale') status('此画面暂未就绪', error.message + ' 可重试或切换其他景点。', true);
+    });
   }
   function failModel(message) {
     modeIntent.failed(); releaseModel();
@@ -321,8 +368,8 @@
     usePhoto(); toast('环视暂时无法打开，先为你显示园景。可点“环视”重试。');
   }
 
-  function imageLoad(url) {
-    const image = new Image(); image.decoding = 'async'; let finished = false, rejectJob;
+  function loadImageRequest(url, { priority = 'high' } = {}) {
+    const image = new Image(); image.decoding = 'async'; image.fetchPriority = priority; let finished = false, rejectJob;
     const promise = new Promise((resolve, reject) => {
       rejectJob = reject;
       image.onload = () => { if (!finished) { finished = true; clearTimeout(timer); resolve(image); } };
@@ -331,7 +378,56 @@
     const timer = setTimeout(() => { if (!finished) { finished = true; rejectJob(new Error('影像载入超时，请检查网络后重试。')); } }, 90000);
     image.src = url;
     return { promise, cancel() { if (!finished) { finished = true; clearTimeout(timer); rejectJob(new Error('影像载入已取消。')); } image.onload = null; image.onerror = null; image.src = ''; },
-      release() { clearTimeout(timer); image.onload = null; image.onerror = null; image.src = ''; } };
+      release() { clearTimeout(timer); image.onload = null; image.onerror = null; image.src = ''; },
+      promote() { image.fetchPriority = 'high'; } };
+  }
+
+  function imageLoad(url, options) { return imagePool.load(url, options); }
+
+  async function ensureSourcePhoto() {
+    if (sourceReady) return sourceImage;
+    const selected = ticket, node = current(), loaded = payload;
+    if (!loaded) throw new Error('stale');
+    if (mode === 'photo') status('正在打开园景', node.label);
+    const job = sourceJob || imageLoad(loaded.sourceUrl); sourceJob = job;
+    try {
+      const image = await job.promise;
+      if (!gate.current(selected)) throw new Error('stale');
+      validateSourceDimensions(image.naturalWidth, image.naturalHeight);
+      image.alt = `${node.label}园景`; image.draggable = false;
+      sourceImage = image; sourceReady = true; ui.photoSlot.replaceChildren(image);
+      if (mode === 'photo') { clearStatus(); renderPhoto(); }
+      controls(); return image;
+    } catch (error) {
+      if (!gate.current(selected)) throw new Error('stale');
+      if (sourceJob === job) { job.release(); sourceJob = null; }
+      throw error;
+    }
+  }
+
+  function stopPrefetch(nextId) {
+    ++prefetchEpoch; clearTimeout(prefetchTimer);
+    if (prefetchTask && prefetchTask.id !== nextId) { prefetchTask.job.cancel(); prefetchTask = null; }
+  }
+
+  function queueNextScene() {
+    stopPrefetch();
+    if (!shouldPrefetch(navigator.connection, document.visibilityState === 'visible')) return;
+    const epoch = prefetchEpoch, selected = ticket;
+    prefetchTimer = setTimeout(async () => {
+      const neighbor = data.nodes[nextSceneIndex(index, 1, data.nodes.length)];
+      try {
+        const loaded = await store.load(neighbor.id);
+        if (!loaded.hasFaces) return;
+        for (const key of FACE_KEYS) {
+          if (epoch !== prefetchEpoch || !gate.current(selected) || mode !== 'model' || !modelReady || !shouldPrefetch(navigator.connection, document.visibilityState === 'visible')) break;
+          // Only one low-priority request at a time, after the current panorama is ready.
+          const job = imageLoad(loaded.cubeFaces[key], { priority: 'low' });
+          const task = { id: neighbor.id, job }; prefetchTask = task;
+          try { await job.promise; } finally { job.release(); if (prefetchTask === task) prefetchTask = null; }
+        }
+      } catch (_) { /* A speculative request must not disturb the visible scene. */ }
+    }, 900);
   }
 
   function compile(type, source) {
@@ -448,18 +544,23 @@
   function showReadyModel() {
     ui.photo.hidden = true; ui.canvas.hidden = false;
     ui.area.setAttribute('aria-label', `${current().label}环视，拖动环顾四周`);
-    clearStatus(); controls(); requestDraw();
+    clearStatus(); controls(); requestDraw(); queueNextScene();
   }
   async function useModel() {
-    if (!sourceReady || !payload?.hasFaces) return;
+    if (!payload?.hasFaces) return;
+    stopPrefetch(current().id);
     mode = 'model'; clearGesture(); ui.photo.hidden = false; ui.canvas.hidden = true;
     ui.photoMode.setAttribute('aria-pressed', 'false'); ui.modelMode.setAttribute('aria-pressed', 'true');
     ui.area.setAttribute('aria-label', `${current().label}，环视正在载入`); ui.area.focus({ preventScroll: true });
     if (modelReady && rendererReady) { showReadyModel(); return; }
     cancelFaces(); const run = modelRun, selected = ticket; modelLoading = true; modelError = ''; resetModel();
-    status('正在走近这处风景', '环视即将打开，可先欣赏画面。', false, true); controls();
+    status('正在走近这处风景', '正在打开环视。', false, sourceReady); controls();
     let jobs = [];
     try {
+      if (sceneLoadPlan(current(), payload, true).needsSource) {
+        await ensureSourcePhoto();
+        if (!gate.current(selected) || run !== modelRun || mode !== 'model') return;
+      }
       if (!rendererReady) initializeRenderer();
       jobs = FACE_KEYS.map((key) => imageLoad(payload.cubeFaces[key])); activeFaces = jobs;
       const images = await Promise.all(jobs.map((job) => job.promise));
@@ -494,6 +595,7 @@
 
   async function selectNode(nextIndex) {
     if (!data || !data.nodes[nextIndex]) return;
+    stopPrefetch(data.nodes[nextIndex].id);
     sourceJob?.cancel(); sourceJob = null; releaseModel(); clearGesture(); index = nextIndex;
     const node = current(), selected = gate.select(node.id); ticket = selected;
     store.cancelPendingExcept(node.id);
@@ -509,18 +611,11 @@
     try {
       const loaded = await store.load(node.id); if (!gate.current(selected)) return;
       payload = loaded;
-      status('正在打开园景', node.label);
-      const job = imageLoad(loaded.sourceUrl); sourceJob = job; const image = await job.promise;
-      if (!gate.current(selected)) { job.release(); return; }
-      validateSourceDimensions(image.naturalWidth, image.naturalHeight);
-      image.alt = `${node.label}园景`; image.draggable = false;
-      sourceImage = image; sourceReady = true; ui.photoSlot.replaceChildren(image);
       ui.download.href = loaded.sourceUrl; ui.download.download = `晴汀园_${node.label}.png`; ui.download.hidden = false;
-      clearStatus(); renderPhoto(); controls();
-      if (modeIntent.wantsModel()) {
-        if (loaded.hasFaces) useModel();
-        else failModel('当前节点的高清六面影像尚未备齐。');
-      }
+      controls();
+      const plan = sceneLoadPlan(node, loaded, modeIntent.wantsModel());
+      if (plan.mode === 'model') await useModel();
+      else usePhoto();
     } catch (error) { if (gate.current(selected)) { sourceReady = false; status('此节点暂未就绪', error.message + ' 可重试或切换其他节点。', true); controls(); } }
   }
 
@@ -616,6 +711,10 @@
   ui.fullscreen.addEventListener('click', async () => { try { if (document.fullscreenElement) await document.exitFullscreen(); else if (ui.tour.requestFullscreen) await ui.tour.requestFullscreen(); else toast('此浏览器未提供全屏功能。'); } catch (error) { toast('浏览器未能进入全屏，可继续在当前窗口查看。'); } });
   document.addEventListener('fullscreenchange', () => { const active = Boolean(document.fullscreenElement); ui.fullscreen.setAttribute('aria-pressed', String(active)); ui.fullscreen.setAttribute('aria-label', active ? '退出全屏' : '进入全屏'); requestDraw(); });
   window.addEventListener('resize', () => { requestDraw(); requestAnimationFrame(bringActiveSceneIntoView); }); if (window.ResizeObserver) new ResizeObserver(requestDraw).observe(ui.area);
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') stopPrefetch();
+    else if (mode === 'model' && modelReady) queueNextScene();
+  });
   ui.canvas.addEventListener('webglcontextlost', (event) => { event.preventDefault(); rendererReady = false; texture = null; sourceTexture = null; failModel('浏览器建模环视渲染已中断。'); });
   ui.canvas.addEventListener('webglcontextrestored', () => { rendererReady = false; program = null; uniforms = null; controls(); });
 
