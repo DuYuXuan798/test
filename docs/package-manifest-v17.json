@@ -404,57 +404,57 @@
     {
       "path": "index.html",
       "bytes": 7001,
-      "sha256": "49e559be61c49cc590a8a30b6f6976d08ead4756d0a546af20b1c42708f1289d"
+      "sha256": "ca0676426ce25fe03bba41d2f9cda287901c1556ccda5f262ce1f5d3f85116c0"
     },
     {
       "path": "nodes-v17/bamboo.js",
-      "bytes": 325,
-      "sha256": "447d9b3507610f4907c8ab19017210bdbf16d624e36ccc3b5ef274fccae8c108"
+      "bytes": 373,
+      "sha256": "18b6737b144ae303c28854ff92e7ded1d616cc32568030fec64127d916d5fa4c"
     },
     {
       "path": "nodes-v17/bridge.js",
-      "bytes": 325,
-      "sha256": "12c43521deef3ec9c71ba81ae8766d7207802c3fdce4944d6cdc4eda01356255"
+      "bytes": 373,
+      "sha256": "49164eafc9a675e4c7ce55b98efc98c0c99b17929e8251bd0a2a4a772a7fc8fc"
     },
     {
       "path": "nodes-v17/court.js",
-      "bytes": 317,
-      "sha256": "740c2e4549badf30517e44d41c75cb076852787363139a3dfe596431b665d4e2"
+      "bytes": 364,
+      "sha256": "080ce407ad9ef8239a016eab8c2d87a0120da2969bb5a0acabd9fdd2c7303414"
     },
     {
       "path": "nodes-v17/flowers.js",
-      "bytes": 339,
-      "sha256": "aa7fbf9884ce310d9aae0f1ee4e0e02b8d3c227ee39e91a00b0fab9d4b50556e"
+      "bytes": 388,
+      "sha256": "4bb36462145c798e7141b82629f8fba6d5436f3ebdf13519df517293fb79befe"
     },
     {
       "path": "nodes-v17/gallery.js",
-      "bytes": 333,
-      "sha256": "b72cb82fbd8048b45c2ad970918630e769b24ee0cc4159b7e22667d9322efb7b"
+      "bytes": 382,
+      "sha256": "acadb08d26204a7e9c6969e05bdadaf9bc1141d153946bf6443172d873921786"
     },
     {
       "path": "nodes-v17/grove.js",
-      "bytes": 317,
-      "sha256": "99121c87848585a562075e92e202ec4561cd2aae18a67ba6988cc75d40f716a3"
+      "bytes": 364,
+      "sha256": "88cbe80ab5616ae7d515612e60872867169d601376217e24142f04a33310fa29"
     },
     {
       "path": "nodes-v17/lotus.js",
-      "bytes": 317,
-      "sha256": "7c8058b60e7e5ab5552341486b6a2a5cfbdf07f2f671fee4a681111669017bb1"
+      "bytes": 364,
+      "sha256": "759f438798b1b4df70fe66050fe4de4728577552d0d9434f4db45f804ece7a0f"
     },
     {
       "path": "nodes-v17/overview.js",
-      "bytes": 341,
-      "sha256": "e610411923e81bfecaf6db692b50cc8aecb3372be3e8d43e8c216f0a63ea522e"
+      "bytes": 391,
+      "sha256": "1f8c8a57368d83f758242163d187ace867d1a19c117c00c6e7ffe3e1cbdb43f9"
     },
     {
       "path": "nodes-v17/pavilion.js",
-      "bytes": 341,
-      "sha256": "0fc5cf93a636f532c3a72458bb214f01895526da1665f66376ffc24213da8cbd"
+      "bytes": 391,
+      "sha256": "afff44fd6e0c55d23fbd91930fe28a2eed96d7796899f1a82fcf4d86f67da857"
     },
     {
       "path": "nodes-v17/stonecourt.js",
-      "bytes": 363,
-      "sha256": "739baff003b30a186f3ee8115e96d31c508a3afa9ac5effd5fbc8e60cf4f4bba"
+      "bytes": 415,
+      "sha256": "5e58f15017c28fd045079f3d2e921ed9523c85169c8d75aad664b2de95d47e98"
     },
     {
       "path": "photo-vr-index-v17.js",
@@ -469,7 +469,7 @@
     {
       "path": "review-v17.html",
       "bytes": 7001,
-      "sha256": "49e559be61c49cc590a8a30b6f6976d08ead4756d0a546af20b1c42708f1289d"
+      "sha256": "ca0676426ce25fe03bba41d2f9cda287901c1556ccda5f262ce1f5d3f85116c0"
     },
     {
       "path": "style-fresh-v17.css",
@@ -478,13 +478,63 @@
     },
     {
       "path": "viewer-ui-v17.js",
-      "bytes": 57853,
-      "sha256": "3f3090e64e72eb55dd7cb9b7fbd199a8629770aa8dd25232ce9facf7b2eaba37"
+      "bytes": 60249,
+      "sha256": "3141400bd5106741e3bcfbbd60e8c04a1c9ca28a61d394734010e4d5576ca363"
     },
     {
       "path": "使用说明.txt",
       "bytes": 489,
       "sha256": "47fbb50c86aadbca89417368add068f0f0e448987cdb5d57710d720da69d8af5"
+    },
+    {
+      "path": "assets/preview-mobile/bamboo.jpg",
+      "bytes": 208236,
+      "sha256": "bd45aa5e69c329337b03913866198a6dc1991fb37ca239a8ebe86ed9ff357d48"
+    },
+    {
+      "path": "assets/preview-mobile/bridge.jpg",
+      "bytes": 204761,
+      "sha256": "b8009c5ca635d2482e66a35c5cfc749fa5510c2e63689c833314044f5f383eac"
+    },
+    {
+      "path": "assets/preview-mobile/court.jpg",
+      "bytes": 198016,
+      "sha256": "ea98e44f96f9b25323808e4c63a5d1593143dc1e86d6eabdf42e3169de98ddda"
+    },
+    {
+      "path": "assets/preview-mobile/flowers.jpg",
+      "bytes": 215180,
+      "sha256": "bb531d5bf32e17281d3feb6db3f110c08de9115fc9dcb78dda4b3ea6c948db6d"
+    },
+    {
+      "path": "assets/preview-mobile/gallery.jpg",
+      "bytes": 178007,
+      "sha256": "4a9a280864ab9d1b75535230f33d90f704e4b2e631b763ec8abedb4353c4244c"
+    },
+    {
+      "path": "assets/preview-mobile/grove.jpg",
+      "bytes": 219147,
+      "sha256": "a6922ff2fc68253d5b1ece55051d6e7e994ebaed8d50abba39826a27e727083a"
+    },
+    {
+      "path": "assets/preview-mobile/lotus.jpg",
+      "bytes": 203289,
+      "sha256": "5308bd1f1b3cdbea676edf0dafe4dcbccdf704a76b59bc02db4a49257e6c6ccc"
+    },
+    {
+      "path": "assets/preview-mobile/overview.jpg",
+      "bytes": 148957,
+      "sha256": "33f17561ce39e6e7eec7bdd83cacf69650b25f321b789b04180acd7ca3d72e7c"
+    },
+    {
+      "path": "assets/preview-mobile/pavilion.jpg",
+      "bytes": 144085,
+      "sha256": "5b4ba174d3f3a773d427ea28aa95efca0784b9254b21372b754dca168e7d5788"
+    },
+    {
+      "path": "assets/preview-mobile/stonecourt.jpg",
+      "bytes": 203579,
+      "sha256": "ee16c92333386e2786a5794a5955b6813b2c612add18c2824fbb48c14931d383"
     }
   ]
 }

@@ -24,6 +24,10 @@
     return allowed.includes(value) ? value : '';
   }
 
+  function safePreviewPath(value, id) {
+    return DEFINITIONS.some(([known]) => known === id) && value === `assets/preview-mobile/${id}.jpg` ? value : '';
+  }
+
   function bytes64(text) {
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/', result = [];
     let value = 0, bits = 0;
@@ -89,7 +93,7 @@
       const face = payload.cubeFaces?.[key];
       cubeFaces[key] = safeImagePath(face, node.id, key) || (dataImageInfo(face, 'jpeg') ? face : '');
     }
-    return { id: node.id, sourceUrl, sourceDataUrl, cubeFaces, hasFaces: FACE_KEYS.every((key) => Boolean(cubeFaces[key])) };
+    return { id: node.id, sourceUrl, sourceDataUrl, cubeFaces, previewUrl: safePreviewPath(payload.previewUrl, node.id), hasFaces: FACE_KEYS.every((key) => Boolean(cubeFaces[key])) };
   }
 
   function validateSourceDimensions(width, height) {
@@ -238,6 +242,16 @@
     return false;
   }
 
+  async function loadProgressiveCube({ loadPreview, loadFull, applyPreview, applyFull, isCurrent }) {
+    try {
+      const preview = await loadPreview();
+      if (!isCurrent()) return;
+      applyPreview(preview);
+    } catch (_) { if (!isCurrent()) return; }
+    const full = await loadFull();
+    if (isCurrent()) applyFull(full);
+  }
+
   // Retain decoded pixels, not just node metadata. Leases keep visible images alive.
   function createImagePool(load, { maxEntries = 14 } = {}) {
     const entries = new Map();
@@ -273,7 +287,7 @@
   if (typeof module === 'object' && module.exports) {
     module.exports = { MOVIE_SHA, DEFINITIONS, FACE_KEYS, safeNodeScript, safeImagePath, validateIndex, validateNodePayload, validateSourceDimensions,
       photoLayout, canvasSize, nextSceneIndex, clarityFovMin, sourceClarityFovMin, cubeDensity, cubeEdgeWeights, validateFaceDimensions, createSelectionGate, createModeIntent, createNodeStore, wrapYaw,
-      SOURCE_PHOTO_ASPECT, SOURCE_PHOTO_FEATHER, sourcePhotoRay, projectSourcePhoto, sceneLoadPlan, shouldPrefetch, createImagePool };
+      SOURCE_PHOTO_ASPECT, SOURCE_PHOTO_FEATHER, sourcePhotoRay, projectSourcePhoto, sceneLoadPlan, shouldPrefetch, createImagePool, safePreviewPath, loadProgressiveCube };
     return;
   }
 
@@ -349,7 +363,7 @@
     ui.hint.textContent = '拖动查看，滚轮或双指缩放';
     const nextMode = mode === 'model' && modelReady ? 'model' : 'photo';
     if (ui.tour.dataset.mode !== nextMode) { ui.tour.dataset.mode = nextMode; requestAnimationFrame(bringActiveSceneIntoView); }
-    const faceSize = current()?.cubeSize, faceDescription = faceSize ? `每面${faceSize}×${faceSize}` : '尺寸尚未声明';
+    const faceSize = ui.canvas.dataset.detail === 'preview' && modelReady ? 256 : current()?.cubeSize, faceDescription = faceSize ? `每面${faceSize}×${faceSize}` : '尺寸尚未声明';
     ui.modelStatus.textContent = (current()?.completionNote ? current().completionNote + ' ' : '') + (modelError || (modelReady ? usesPhotoAnchor() ? `1920×1080画面按补全方案推定的方向与水平视角投影；${faceDescription}，周围为推定景物，不是原始三维模型` : `摄影补全环视已载入，${faceDescription}；未叠加画面，不是原始三维模型` : modelLoading ? '正在载入六面环视影像' : payload && !payload.hasFaces ? '六面影像尚未备齐，画面可查看' : `环视影像按需载入，${faceDescription}`));
   }
 
@@ -493,9 +507,8 @@
     if (anchored) gl.uniform1i(uniforms.uSourcePhoto, 1);
     gl.clearColor(22 / 255, 43 / 255, 36 / 255, 1); rendererReady = true;
   }
-  function uploadCube(images) {
-    const wanted = current().cubeSize;
-    validateFaceDimensions(images.map((image) => ({ width: image.naturalWidth, height: image.naturalHeight })), wanted);
+  function uploadCube(images, wanted = current().cubeSize) {
+    validateFaceDimensions(images.map((image) => ({ width: image.naturalWidth || image.width, height: image.naturalHeight || image.height })), wanted);
     const targets = [gl.TEXTURE_CUBE_MAP_POSITIVE_X, gl.TEXTURE_CUBE_MAP_NEGATIVE_X, gl.TEXTURE_CUBE_MAP_POSITIVE_Y, gl.TEXTURE_CUBE_MAP_NEGATIVE_Y, gl.TEXTURE_CUBE_MAP_POSITIVE_Z, gl.TEXTURE_CUBE_MAP_NEGATIVE_Z];
     const next = gl.createTexture(); if (!next) throw new Error('浏览器无法分配模型六面纹理。');
     gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_CUBE_MAP, next); gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, false);
@@ -542,10 +555,13 @@
   }
 
   function resetModel() { const node = current(); view = { yaw: node.modelYaw, pitch: node.modelPitch, fov: clamp(node.modelFov, modelMin(), MAX_FOV) }; }
-  function showReadyModel() {
+  function showReadyModel(preview = false) {
     ui.photo.hidden = true; ui.canvas.hidden = false;
     ui.area.setAttribute('aria-label', `${current().label}环视，拖动环顾四周`);
-    clearStatus(); controls(); requestDraw(); queueNextScene();
+    ui.canvas.dataset.detail = preview ? 'preview' : 'full';
+    if (preview) status('正在加载清晰画面', '已可拖动环顾四周。', false, true);
+    else clearStatus();
+    controls(); requestDraw(); if (!preview) queueNextScene();
   }
   async function useModel() {
     if (!payload?.hasFaces) return;
@@ -553,23 +569,50 @@
     mode = 'model'; clearGesture(); ui.photo.hidden = false; ui.canvas.hidden = true;
     ui.photoMode.setAttribute('aria-pressed', 'false'); ui.modelMode.setAttribute('aria-pressed', 'true');
     ui.area.setAttribute('aria-label', `${current().label}，环视正在载入`); ui.area.focus({ preventScroll: true });
-    if (modelReady && rendererReady) { showReadyModel(); return; }
+    if (modelReady && rendererReady && ui.canvas.dataset.detail === 'full') { showReadyModel(); return; }
     cancelFaces(); const run = modelRun, selected = ticket; modelLoading = true; modelError = ''; resetModel();
     status('正在走近这处风景', '正在打开环视。', false, sourceReady); controls();
-    let jobs = [];
+    let jobs = [], previewJob = null, previewShown = false;
     try {
       if (sceneLoadPlan(current(), payload, true).needsSource) {
         await ensureSourcePhoto();
         if (!gate.current(selected) || run !== modelRun || mode !== 'model') return;
       }
       if (!rendererReady) initializeRenderer();
-      jobs = FACE_KEYS.map((key) => imageLoad(payload.cubeFaces[key])); activeFaces = jobs;
-      const images = await Promise.all(jobs.map((job) => job.promise));
-      if (!gate.current(selected) || run !== modelRun || mode !== 'model') return;
-      uploadCube(images); if (rendererUsesAnchor) uploadSourcePhoto();
-      modelReady = true; modelLoading = false; showReadyModel();
-    } catch (error) { if (gate.current(selected) && run === modelRun) failModel(error.message); }
-    finally { jobs.forEach((job) => job.cancel()); if (activeFaces === jobs) activeFaces = []; }
+      await loadProgressiveCube({
+        isCurrent: () => gate.current(selected) && run === modelRun && mode === 'model',
+        loadPreview: async () => {
+          if (!payload.previewUrl || usesPhotoAnchor()) throw new Error('no preview');
+          previewJob = imageLoad(payload.previewUrl); activeFaces = [previewJob];
+          const image = await previewJob.promise;
+          if (image.naturalWidth !== 1536 || image.naturalHeight !== 256) throw new Error('preview size');
+          return image;
+        },
+        applyPreview: image => {
+          const faces = FACE_KEYS.map((key, i) => {
+            const face = document.createElement('canvas'); face.width = face.height = 256;
+            const context = face.getContext('2d'); if (!context) throw new Error('preview canvas');
+            context.drawImage(image, i * 256, 0, 256, 256, 0, 0, 256, 256); return face;
+          });
+          uploadCube(faces, 256); if (rendererUsesAnchor) uploadSourcePhoto();
+          previewShown = true; modelReady = true; showReadyModel(true);
+        },
+        loadFull: () => {
+          jobs = FACE_KEYS.map(key => imageLoad(payload.cubeFaces[key])); activeFaces = jobs;
+          return Promise.all(jobs.map(job => job.promise));
+        },
+        applyFull: images => {
+          uploadCube(images); if (rendererUsesAnchor) uploadSourcePhoto();
+          modelReady = true; modelLoading = false; showReadyModel();
+        }
+      });
+    } catch (error) {
+      if (gate.current(selected) && run === modelRun) {
+        if (previewShown) { modelLoading = false; modelError = error.message; status('清晰画面暂未载入', '可先环视，或点重新载入继续加载细节。', true, true); controls(); }
+        else failModel(error.message);
+      }
+    }
+    finally { previewJob?.release(); jobs.forEach(job => job.cancel()); if (activeFaces === jobs || (activeFaces.length === 1 && activeFaces[0] === previewJob)) activeFaces = []; }
   }
 
   function requestDraw() {
@@ -754,7 +797,7 @@
     data = validateIndex(window.QINGT_HD_VR); modeIntent = createModeIntent(data.defaultMode);
     ui.tourTitle.textContent = '晴汀园'; document.title = '晴汀园 · 沉浸云游'; ui.movieSHA.textContent = data.movieSHA; ui.modelSHA.textContent = data.modelSHA;
     store = createNodeStore(data.nodes, { loadScript(path, loaded, failed) {
-      const script = document.createElement('script'); script.async = true; script.src = path; script.onload = loaded; script.onerror = failed; document.head.appendChild(script);
+      const script = document.createElement('script'); script.async = true; script.src = path + '?load=20261030c'; script.onload = loaded; script.onerror = failed; document.head.appendChild(script);
       return () => { script.onload = null; script.onerror = null; script.remove(); };
     } });
     window.QINGT_HD_NODE = (value) => store.accept(value);
