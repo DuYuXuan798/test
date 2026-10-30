@@ -234,7 +234,8 @@
   }
 
   function shouldPrefetch(connection, visible = true) {
-    return visible && !connection?.saveData && !['2g', 'slow-2g'].includes(connection?.effectiveType);
+    // Phone feedback reports a regression. Do not spend bandwidth on an unselected scene.
+    return false;
   }
 
   // Retain decoded pixels, not just node metadata. Leases keep visible images alive.
