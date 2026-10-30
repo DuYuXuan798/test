@@ -535,6 +535,11 @@
       "path": "assets/preview-mobile/stonecourt.jpg",
       "bytes": 203579,
       "sha256": "ee16c92333386e2786a5794a5955b6813b2c612add18c2824fbb48c14931d383"
+    },
+    {
+      "path": "network-check.html",
+      "bytes": 6894,
+      "sha256": "27e204bd3e3171769de87320cc01402e86366c4b311e125ecf2d80468ad599ba"
     }
   ]
 }

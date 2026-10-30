@@ -1,0 +1,52 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#183d35"><meta name="robots" content="noindex"><title>晴汀园 · 手机加载检查</title>
+<meta http-equiv="Content-Security-Policy" content="default-src 'none';script-src 'sha256-U5b0/4ZyNyDZaMYfQa1wMtZg5rtWPB4eSV1tYkZRMug=';style-src 'sha256-iEsj3SV+hxE6Tm+OqIYpQWPdSUu4JCscrdeAADhmu1E=';connect-src 'self';img-src blob:;object-src 'none';base-uri 'none'">
+<style>
+:root{color-scheme:light;font-family:"Microsoft YaHei",system-ui,sans-serif;color:#183d35;background:#f1f6f3}*{box-sizing:border-box}body{margin:0;padding:32px 20px max(28px,env(safe-area-inset-bottom))}main{max-width:620px;margin:auto}header{border-bottom:1px solid #c3d4c8;padding:8px 0 22px}header p{letter-spacing:.18em;font:16px SimSun,serif;margin:0 0 15px}h1{font:30px/1.35 SimSun,serif;margin:0}p{line-height:1.8;font-size:14px}button,a{font:inherit;touch-action:manipulation}button{border:0;min-height:46px;padding:11px 20px;border-radius:12px;background:#183d35;color:white;cursor:pointer}button:disabled{opacity:.55}button:focus-visible,a:focus-visible,textarea:focus-visible{outline:3px solid #88b49c;outline-offset:4px}section{margin:24px 0;padding:20px;border:1px solid #d1dfd6;background:white;border-radius:16px}section h2{font-size:16px;font-weight:500;margin:0 0 13px}dl{margin:0}dl>div{padding:11px 0;border-top:1px solid #e3ece6}dt{font-size:13px;color:#587466}dd{margin:4px 0 0;font-size:14px;line-height:1.7;overflow-wrap:anywhere}#progress{min-height:26px;color:#587466}textarea{width:100%;min-height:190px;border:1px solid #c3d4c8;border-radius:8px;padding:12px;color:#183d35;background:#f8fbf9;font:13px/1.8 ui-monospace,monospace;resize:vertical}.quiet{font-size:12px;color:#587466}a{color:#183d35;text-underline-offset:4px}#results[hidden]{display:none}.secondary{margin-top:12px;background:#e2eee6;color:#183d35}footer{margin-top:28px;font-size:13px}
+</style></head><body><main><header><p>晴汀园</p><h1>手机加载检查</h1></header><p>依次检查连接、图片下载和解码。完成后，把结果发到聊天，帮助定位手机上慢在哪一段。</p><button id="start" type="button">开始检查</button><p id="progress" role="status" aria-live="polite">只读取本站三份小文件，约760KB。</p><section><h2>入口连接</h2><dl><div><dt>本页响应</dt><dd id="navigation">正在读取…</dd></div></dl></section><section id="results" hidden><h2>三次读取</h2><dl id="rows"></dl><p class="quiet">“等待”包含连接与服务器响应；“下载”是收到响应后的文件传输。“解码”是手机把图片变成画面的时间。</p></section><section><h2>可复制的结果</h2><textarea id="report" readonly aria-label="加载检查结果">点击“开始检查”后显示。</textarea><button id="select" class="secondary" type="button">选中结果</button><p class="quiet">长按复制后发到聊天。这些结果只保留在当前页面，不会自动上传；不读取IP、定位、手机号或账号。</p></section><footer><a href="./">返回园林漫游</a></footer></main>
+<script>
+(() => {
+'use strict';
+async function probeAsset(url, {fetcher,clock,timeoutMs=12000}={}) {
+  fetcher=fetcher||((...args)=>fetch(...args));clock=clock||(()=>performance.now());
+  const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeoutMs),start=clock();
+  try {
+    const response=await fetcher(url,{signal:controller.signal,cache:'no-store',credentials:'omit'}),headers=clock();
+    if(!response.ok)throw new Error('HTTP '+response.status);
+    const blob=await response.blob(),end=clock();
+    return {waitMs:headers-start,transferMs:end-headers,bytes:blob.size,status:response.status,blob};
+  } finally {clearTimeout(timer);}
+}
+function navigationSummary(entry) {
+  if(!entry||!Number.isFinite(entry.responseStart)||!Number.isFinite(entry.responseEnd))return null;
+  return {waitMs:Math.max(0,entry.responseStart-(entry.startTime||0)),transferMs:Math.max(0,entry.responseEnd-entry.responseStart)};
+}
+if(typeof module==='object'&&module.exports){module.exports={probeAsset,navigationSummary};return;}
+const $=id=>document.getElementById(id),seconds=n=>(n/1000).toFixed(2)+'秒';
+const nav=navigationSummary(performance.getEntriesByType?.('navigation')?.[0]);
+const navText=nav?'等待 '+seconds(nav.waitMs)+'，传输 '+seconds(nav.transferMs):'此浏览器未提供入口计时';$('navigation').textContent=navText;
+let lines=['晴汀园手机加载检查','入口：'+navText];
+function decode(blob){return new Promise((resolve,reject)=>{
+  const image=new Image(),url=URL.createObjectURL(blob),start=performance.now();let done=false;
+  const finish=error=>{if(done)return;done=true;clearTimeout(timer);image.onload=null;image.onerror=null;URL.revokeObjectURL(url);if(error)reject(error);else resolve(performance.now()-start);};
+  const timer=setTimeout(()=>finish(new Error('解码超时')),8000);image.onerror=()=>finish(new Error('图片解码未成功'));
+  if(typeof image.decode!=='function')image.onload=()=>finish();image.src=url;
+  if(typeof image.decode==='function')image.decode().then(()=>finish(),()=>finish(new Error('图片解码未成功')));
+});}
+$('select').addEventListener('click',()=>{$('report').focus();$('report').select();});
+$('start').addEventListener('click',async()=>{
+  $('start').disabled=true;$('rows').replaceChildren();$('results').hidden=false;lines=['晴汀园手机加载检查','入口：'+navText];
+  const tests=[['景点目录','photo-vr-index-v17.js',false],['轻量环视','assets/preview-mobile/overview.jpg',true],['高清单面','assets/cubes-v5/overview/ny.avif',true]];
+  for(let i=0;i<tests.length;i++){
+    const [name,url,isImage]=tests[i];$('progress').textContent=(i+1)+' / 3 · '+name;
+    const row=document.createElement('div'),label=document.createElement('dt'),value=document.createElement('dd');label.textContent=name;value.textContent='检查中…';row.append(label,value);$('rows').append(row);
+    try{
+      const r=await probeAsset(url);let text='等待 '+seconds(r.waitMs)+'，下载 '+seconds(r.transferMs)+'，'+Math.round(r.bytes/1024)+'KB';
+      if(isImage){try{text+='，解码 '+seconds(await decode(r.blob));}catch(error){text+='，'+error.message;}}
+      value.textContent=text;lines.push(name+'：'+text);
+    }catch(error){const message=error.name==='AbortError'?'12秒内未读完（连接或传输超时）':error.message;value.textContent=message;lines.push(name+'：'+message);}
+    $('report').value=lines.join('\n');
+  }
+  $('progress').textContent='检查完成。请复制下面的结果发到聊天。';$('start').textContent='重新检查';$('start').disabled=false;
+});
+})();
+</script></body></html>
