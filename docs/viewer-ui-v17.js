@@ -71,7 +71,7 @@
       if (sourcePhotoAnchor && (typeof node.sourceFov !== 'number' || !Number.isFinite(node.sourceFov) || node.sourceFov <= 0 || node.sourceFov >= 179)) throw new Error(label + '须提供取景计划中有效的画面水平视角 sourceFov。');
       if (node.modelSHA !== undefined && !isSHA(node.modelSHA)) throw new Error(label + '的补全依据标识无效。');
       if (node.cubeEdgeBlend !== undefined && (![0, .05].includes(node.cubeEdgeBlend))) throw new Error(label + '的六面边缘过渡设置无效。');
-      return { id, label, sourceSecond: node.sourceSecond, sourceSHA: node.sourceSHA, nodeScript, cubeSize, modelSHA: node.modelSHA || input.modelSHA, completionNote: typeof node.completionNote === 'string' ? node.completionNote : '', cubeEdgeBlend: node.cubeEdgeBlend || 0,
+      return { id, label, sourceSecond: node.sourceSecond, sourceSHA: node.sourceSHA, nodeScript, inlinePayload: node.inlinePayload || null, cubeSize, modelSHA: node.modelSHA || input.modelSHA, completionNote: typeof node.completionNote === 'string' ? node.completionNote : '', cubeEdgeBlend: node.cubeEdgeBlend || 0,
         modelYaw: wrapYaw(finite(node.modelYaw, 0)), modelPitch: clamp(finite(node.modelPitch, 0), -MAX_PITCH, MAX_PITCH), modelFov: clamp(finite(node.modelFov, 75), MIN_FOV, MAX_FOV),
         sourcePhotoAnchor, sourceFov: finite(node.sourceFov, finite(node.modelFov, 75)),
         sourceYaw: wrapYaw(finite(node.sourceYaw, finite(node.modelYaw, 0))), sourcePitch: clamp(finite(node.sourcePitch, finite(node.modelPitch, 0)), -90, 90) };
@@ -205,6 +205,10 @@
       load(id) {
         const node = known.get(id);
         if (!node || !safeNodeScript(node.nodeScript, id)) return Promise.reject(new Error('节点路径不在本站白名单内。'));
+        if (node.inlinePayload) {
+          try { return Promise.resolve(validateNodePayload(node.inlinePayload, node)); }
+          catch (error) { return Promise.reject(error); }
+        }
         if (cache.has(id)) { const value = cache.get(id); cache.delete(id); cache.set(id, value); return Promise.resolve(value); }
         if (pending.has(id)) return pending.get(id).promise;
         let resolve, reject;

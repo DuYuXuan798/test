@@ -403,8 +403,8 @@
     },
     {
       "path": "index.html",
-      "bytes": 7001,
-      "sha256": "ca0676426ce25fe03bba41d2f9cda287901c1556ccda5f262ce1f5d3f85116c0"
+      "bytes": 7016,
+      "sha256": "17878353fa9055b5fc74185cd8763f3a8602f086c677fe72d4887abd7f067fc8"
     },
     {
       "path": "nodes-v17/bamboo.js",
@@ -458,8 +458,8 @@
     },
     {
       "path": "photo-vr-index-v17.js",
-      "bytes": 5966,
-      "sha256": "fb241718ae9e64f0a15c1239ddeee69ea0204c7b38cd7f53e3bc81a92f2e2724"
+      "bytes": 9691,
+      "sha256": "9edbe10901ffefaf5343d0e33b4f957f87a98b1f90bf137d9cb3b74ea0fef9d5"
     },
     {
       "path": "provenance-source-v17.json",
@@ -468,8 +468,8 @@
     },
     {
       "path": "review-v17.html",
-      "bytes": 7001,
-      "sha256": "ca0676426ce25fe03bba41d2f9cda287901c1556ccda5f262ce1f5d3f85116c0"
+      "bytes": 7016,
+      "sha256": "17878353fa9055b5fc74185cd8763f3a8602f086c677fe72d4887abd7f067fc8"
     },
     {
       "path": "style-fresh-v17.css",
@@ -478,8 +478,8 @@
     },
     {
       "path": "viewer-ui-v17.js",
-      "bytes": 60249,
-      "sha256": "3141400bd5106741e3bcfbbd60e8c04a1c9ca28a61d394734010e4d5576ca363"
+      "bytes": 60487,
+      "sha256": "c44f3b7488af972c65778126ce8106844807a3fee4455006cd2066634f2dbf77"
     },
     {
       "path": "使用说明.txt",
