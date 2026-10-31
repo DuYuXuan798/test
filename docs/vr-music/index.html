@@ -1,0 +1,97 @@
+<!doctype html><html lang="zh-CN"><head><base href="../">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#183d35"><meta name="description" content="循水入园，停步听风。走近晴汀园的十处风景。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none';script-src 'self' 'sha256-EJ2QuegWITfI6kiPLx90hZavHDzVGTG/41f+7agcog8=';style-src 'self' 'sha256-dFieiVG28LImjTDx4jLx+UmC51jgkGdHujaFeq3X1mE=';img-src 'self' data:;connect-src 'none';media-src 'self';object-src 'none';base-uri 'self';form-action 'none'">
+<title>晴汀园 · 沉浸云游</title><link rel="stylesheet" href="style-fresh-v17.css"><style>:root{--leaf:#244d40;--paper:#f5faf7;--edge:#d7e5dc}
+    .music {position:fixed;z-index:5;right:max(16px,env(safe-area-inset-right));top:max(16px,env(safe-area-inset-top));display:flex;align-items:center;gap:9px;min-width:108px;min-height:46px;padding:10px 15px;border:1px solid var(--edge);border-radius:25px;background:var(--paper);color:var(--leaf);box-shadow:0 3px 18px #163b2e20;font:inherit;font-size:14px;font-weight:500;line-height:1.3;cursor:pointer;-webkit-tap-highlight-color:transparent;touch-action:manipulation}
+    .music svg {width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .music .state {font-size:12px;color:#6b7f73;margin-left:1px;white-space:nowrap}
+    .music[aria-pressed="true"] {background:#e8f3ec}
+    .music[aria-pressed="true"] .slash {display:none}
+    .music:focus-visible {outline:3px solid white;outline-offset:3px;box-shadow:0 0 0 6px var(--leaf)}
+    .message {position:fixed;z-index:5;right:max(16px,env(safe-area-inset-right));top:calc(max(16px,env(safe-area-inset-top)) + 54px);max-width:min(280px,calc(100vw - 32px));padding:9px 12px;border-radius:10px;background:#f5faf7f5;color:var(--leaf);font-size:13px;line-height:1.5;box-shadow:0 3px 18px #163b2e20;pointer-events:none}
+    .message:empty {display:none}
+    @media (max-width:480px) {.music {min-width:102px;right:max(12px,env(safe-area-inset-right));top:max(12px,env(safe-area-inset-top));padding:10px 13px}}
+    @media (prefers-reduced-motion:no-preference) {.music {transition:background .15s ease}}
+  
+#about-open{display:none} .message{margin:0} .music{top:max(22px,env(safe-area-inset-top));right:24px} @media(max-width:700px){.scene-bar{right:132px;max-width:calc(100% - 146px);padding-left:12px}.brand{gap:6px}.brand p{font-size:18px}.brand h1{font-size:14px}.music{top:max(14px,env(safe-area-inset-top));right:max(14px,env(safe-area-inset-right));min-width:104px}.message{top:70px}}
+</style></head>
+<body><main id="tour" class="tour" aria-label="晴汀园沉浸云游">
+<section class="picture-frame" aria-label="园景">
+<section id="view-area" class="view-area" tabindex="0" role="region" aria-label="园景，拖动环顾四周">
+<div id="photo-stage" class="photo-stage"><div id="photo-slot" class="photo-slot"></div></div>
+<canvas id="model-canvas" class="panorama" aria-hidden="true" hidden></canvas></section>
+<div id="load-state" class="load-state" role="status" aria-live="polite" aria-atomic="true"><span class="load-orbit" aria-hidden="true"></span><p id="load-title">正在打开一园清景</p><p id="load-message">影像载入后，可拖动环视。</p><button id="retry" class="primary-button" type="button" hidden>重新载入</button></div>
+<p id="toast" class="toast" role="status" aria-live="polite" hidden></p></section>
+<header class="scene-bar chrome" aria-label="当前景点"><div class="brand"><p id="tour-title">晴汀园</p><span aria-hidden="true">·</span><h1 id="scene-title">全园鸟瞰</h1></div><span id="scene-counter" class="scene-counter">01 / 10</span>
+<button id="about-open" type="button" class="icon-button" aria-label="关于晴汀园" title="关于晴汀园" aria-haspopup="dialog" aria-controls="about-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/></svg></button><button id="hide-ui" type="button" class="icon-button" aria-label="收起界面" title="收起界面" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 3 18 18M8 6a13 13 0 0 1 4-1c7 0 10 7 10 7a19 19 0 0 1-4 5M6 7a20 20 0 0 0-4 5s3 7 10 7a13 13 0 0 0 5-1"/></svg></button>
+</header><div class="view-dock chrome" aria-label="游览控制">
+<button id="scene-prev" type="button" class="icon-button" aria-label="上一处景点" title="上一处景点" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button>
+<button id="scenes-open" class="scenes-open" type="button" aria-label="选择景点" aria-expanded="false" aria-haspopup="dialog" aria-controls="scene-dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>景点</span></button>
+<button id="scene-next" type="button" class="icon-button" aria-label="下一处景点" title="下一处景点" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
+<span class="dock-rule" aria-hidden="true"></span><div class="mode-switch" role="group" aria-label="观看方式"><button id="mode-model" type="button" aria-label="环视" aria-pressed="true" disabled>环视</button><button id="mode-photo" type="button" aria-label="画面" aria-pressed="false">画面</button></div>
+<button id="tools-toggle" type="button" class="icon-button" aria-label="画面工具" title="画面工具" aria-expanded="false" aria-controls="view-tools"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h9m4 0h3M4 17h3m4 0h9"/><circle cx="15" cy="7" r="2"/><circle cx="9" cy="17" r="2"/></svg></button>
+</div><button id="show-ui" class="show-ui" type="button" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><span>显示界面</span></button>
+<div id="view-tools" class="view-tools chrome" role="toolbar" aria-label="画面工具" hidden>
+<button id="zoom-in" type="button" class="icon-button" aria-label="放大画面" title="放大画面" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg></button><button id="zoom-out" type="button" class="icon-button" aria-label="缩小画面" title="缩小画面" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button><output id="view-value" aria-label="画面缩放">100%</output><button id="reset-view" type="button" class="icon-button" aria-label="复位画面" title="复位画面" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5"/></svg></button><button id="fullscreen" type="button" class="icon-button" aria-label="进入全屏" title="进入全屏" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+</div><p class="gesture-hint chrome">拖动环顾四周 · 轻点画面收起界面</p>
+<dialog id="scene-dialog" class="scene-dialog" aria-labelledby="scene-dialog-title"><div class="sheet-heading"><div><p class="eyebrow">循水入园，停步听风</p><h2 id="scene-dialog-title">一园十景</h2></div><button id="scenes-close" type="button" class="icon-button" aria-label="关闭景点目录" title="关闭景点目录" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><nav id="scene-nav" class="scene-nav" aria-label="选择景点"></nav></dialog>
+<dialog id="about-dialog" class="about-dialog" aria-labelledby="about-title"><div class="sheet-heading"><h2 id="about-title">晴汀园</h2><button id="about-close" type="button" class="icon-button" aria-label="关闭介绍" title="关闭介绍" ><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>以水为脉，以竹石和花木分隔空间。沿着曲岸，经过雨庭、溪桥、竹院与荷湾，在开合之间发现风景。</p><p id="scene-intro" class="current-description"></p><p class="about-help">拖动环顾四周，双指或滚轮缩放。可收起界面专心看景，再轻点画面或按 Esc 唤回。方向键移动视角，Home 复位。</p><details class="creation-note"><summary>作品说明</summary><p>园林影像为AI创作，环视依据画面补全，未出现的方向与细节为推定。固定取景位置可环顾，不支持自由行走。</p><a id="download-source" class="download-source" download hidden>保存这一幅园景</a></details></dialog>
+<div hidden aria-hidden="true"><span id="source-time"></span><span id="scope-label"></span><span id="view-hint"></span><span id="movie-sha"></span><span id="source-sha"></span><span id="about-time"></span><span id="model-sha"></span><span id="model-status"></span></div>
+  <button class="music" id="music" type="button" aria-label="开启音乐" aria-pressed="false" aria-controls="bgm">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5l11-2v13M9 9l11-2"/><ellipse cx="6" cy="18" rx="3" ry="2.5"/><ellipse cx="17" cy="16" rx="3" ry="2.5"/><path class="slash" d="M3 3l18 18"/></svg>
+    <span>音乐</span><span class="state" id="music-state">关</span>
+  </button>
+<p id="music-message" class="message" role="status" aria-live="polite"></p>
+<audio id="bgm" preload="none" loop playsinline></audio>
+</main><noscript><p class="noscript-message">请启用 JavaScript 后查看园林。</p></noscript><script src="photo-vr-index-v17.js?load=20261030d"></script><script src="viewer-ui-v17.js?load=20261030d"></script><script>
+    (() => {
+      const button = document.getElementById('music');
+      const label = document.getElementById('music-state');
+      const message = document.getElementById('music-message');
+      const audio = document.getElementById('bgm');
+      let wanted = false;
+      let sequence = 0;
+      function render(state) {
+        button.setAttribute('aria-pressed', wanted ? 'true' : 'false');
+        button.setAttribute('aria-label', wanted ? '关闭音乐' : '开启音乐');
+        button.setAttribute('aria-busy', state === 'loading' ? 'true' : 'false');
+        label.textContent = wanted ? (state === 'loading' ? '加载中' : '开') : '关';
+      }
+      function stop() {
+        wanted = false;
+        sequence += 1;
+        audio.pause();
+        message.textContent = '';
+        render('off');
+      }
+      button.addEventListener('click', async () => {
+        if (wanted) { stop(); return; }
+        wanted = true;
+        const ticket = ++sequence;
+        message.textContent = '';
+        render('loading');
+        if (!audio.getAttribute('src')) audio.src = new URL('./bgm.mp3', location.href).href;
+        try {
+          await audio.play();
+          if (!wanted) audio.pause();
+          if (ticket === sequence) render(wanted ? 'on' : 'off');
+        } catch (error) {
+          if (ticket !== sequence) return;
+          wanted = false;
+          render('off');
+          message.textContent = '音乐未能播放，请再点一次重试。';
+        }
+      });
+      audio.addEventListener('playing', () => { if (!wanted) audio.pause(); else render('on'); });
+      audio.addEventListener('error', () => {
+        if (!wanted) return;
+        wanted = false;
+        sequence += 1;
+        render('off');
+        message.textContent = '音乐加载失败，请点按重试。';
+      });
+      document.addEventListener('visibilitychange', () => { if (document.hidden && wanted) stop(); });
+      render('off');
+    })();
+  </script></body></html>
